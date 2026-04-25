@@ -13,13 +13,15 @@ public class Document : MonoBehaviour
     [SerializeField, CanBeNull] private Decision currentDecision;
     [SerializeField] private int index;
 
+    /*
     [field: Header("Sprites")]
     [SerializeField] private Sprite emptyStampSprite;
     [SerializeField] private Sprite approvedStampSprite;
     [SerializeField] private Sprite rejectedStampSprite;
+    */
 
 
-    [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private StampMarkController stampMarkController;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -58,19 +60,7 @@ public class Document : MonoBehaviour
     {
         index = (index + value + decisions.Count + 1) % (decisions.Count + 1);
         SetCurrentDecision(index > 0 ? decisions[index - 1] : null);
-        Debug.Log(currentDecision?.GetStampState());
-
-        switch (currentDecision.GetStampState()) {
-            case Decision.StampState.None:
-                spriteRenderer.sprite = emptyStampSprite;
-            break;
-            case Decision.StampState.Approved:
-                spriteRenderer.sprite = approvedStampSprite;
-            break;
-            case Decision.StampState.Disapproved:
-                spriteRenderer.sprite = rejectedStampSprite;
-            break;
-        }
+        stampMarkController.SetStampMark( currentDecision?.GetStampState() ?? Decision.StampState.None );
     }
 
     public Decision GetCurrentDecision()

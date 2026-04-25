@@ -5,7 +5,7 @@ public class Stampable : MonoBehaviour
 {
     [SerializeField] private Document document;
     [SerializeField] private SpriteRenderer spriteRenderer;
-
+    [SerializeField] private StampMarkController stampMarkController;
     void Start()
     {
         document = GetComponentInParent<Document>();
@@ -19,9 +19,34 @@ public class Stampable : MonoBehaviour
         }
         if (other.gameObject.GetComponent<StampDragAndDrop>().currentStampleState == CurrentStampleState.Placed)
         {
-            document.GetCurrentDecision()?.SetStampState(other.gameObject.GetComponent<StampDragAndDrop>().stampState);
-            Debug.Log(document.GetCurrentDecision());
-            Debug.Log(document.GetCurrentDecision()?.GetStampState());
+            Decision.StampState stampState = other.gameObject.GetComponent<StampDragAndDrop>().stampState;
+
+            document.GetCurrentDecision()?.SetStampState(stampState);
+            //stampMarkController.SetStampMark(stampState);
+            Debug.Log(
+                "Stampable >> Setting state to: " + other
+                 .gameObject
+                 .name
+            );
+            Debug.Log("RAGH");
+            
+            Decision.StampState stampType;
+            switch (other.gameObject.name) {
+                case "Approve":
+                    stampType = Decision.StampState.Approved;
+                break;
+
+                case "Reject":
+                    stampType = Decision.StampState.Disapproved;
+                break;
+
+                default:
+                    stampType = Decision.StampState.None;
+                break;
+            }
+
+            stampMarkController.SetStampMark(stampType);
+
         }
         
         

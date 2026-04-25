@@ -14,7 +14,6 @@ public class SwapDecisions : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        Debug.Log("Clicked");
         document.ChangePage(value);
     }
 }
