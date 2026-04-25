@@ -11,12 +11,12 @@ enum CurrentStampleState {
 public class StampDragAndDrop : MonoBehaviour, IPointerClickHandler
 {
     [field: Header("Initial Position")]
-    [SerializeField] public const float initialStartX = 0.0f;
-    [SerializeField] public const float initialStartY = 0.0f;
+    [SerializeField] public float initialStartX = 0.0f;
+    [SerializeField] public float initialStartY = 0.0f;
 
 
     [field: Header("Stamp Time")]
-    [SerializeField] public const float stampTime = 1.0f;
+    [SerializeField] public float stampTime = 1.0f;
 
 
 

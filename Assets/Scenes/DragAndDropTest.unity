@@ -349,6 +349,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b52b222a4e6f4eacad9abdb9dd17cec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StampDragAndDrop
+  initialStartX: -7.93
+  initialStartY: 3.77
+  stampTime: 1
 --- !u!1 &1924289871
 GameObject:
   m_ObjectHideFlags: 0
