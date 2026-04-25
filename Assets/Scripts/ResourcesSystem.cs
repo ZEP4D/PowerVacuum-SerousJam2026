@@ -58,10 +58,16 @@ public class ResourcesSystem : MonoBehaviour
                 switch (pp.Gettypeofpowerp())
                 {
                     case type.coal:
-                        resources[ResourceType.Coal] -= pp.GetresourceUsage();
+                        if(resources[ResourceType.Coal] > 0)
+                        {
+                            resources[ResourceType.Coal] -= pp.GetresourceUsage();    
+                        }
                         break;
                     case type.atomic:
-                        resources[ResourceType.Uranium] -= pp.GetresourceUsage();
+                        if(resources[ResourceType.Uranium] > 0)
+                        {
+                            resources[ResourceType.Uranium] -= pp.GetresourceUsage();    
+                        }
                         break;
                     default:
                         break;
