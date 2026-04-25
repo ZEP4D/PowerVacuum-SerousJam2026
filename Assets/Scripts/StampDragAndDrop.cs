@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
-enum CurrentStampleState {
+public enum CurrentStampleState {
     Idle,
     Grabbed,
     Placed,
@@ -19,10 +19,10 @@ public class StampDragAndDrop : MonoBehaviour, IPointerClickHandler
     [SerializeField] public float stampTime;
     [SerializeField] public float returnTime;
 
-
+    [SerializeField] public Decision.StampState stampState;
     Vector3 startPosition;
     Vector3 placedLocation;
-    CurrentStampleState currentStampleState = CurrentStampleState.Idle;
+    public CurrentStampleState currentStampleState = CurrentStampleState.Idle;
     
     float timeTillPositionReset = 0;
     float lerpTimeLeft = 0;

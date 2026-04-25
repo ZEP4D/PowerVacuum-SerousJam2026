@@ -1,11 +1,20 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class SwapDecisions : MonoBehaviour
+public class SwapDecisions : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] private Document document;
     [SerializeField] private int value;
-    public void OnMouseDown()
+    
+    private void Start()
     {
+        document = GetComponentInParent<Document>();
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        Debug.Log("Clicked");
         document.ChangePage(value);
     }
 }

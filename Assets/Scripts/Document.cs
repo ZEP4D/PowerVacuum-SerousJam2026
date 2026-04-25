@@ -10,8 +10,8 @@ public class Document : MonoBehaviour
     [SerializeField] private GameObject cons;
     [SerializeField] private GameObject cost;
     [SerializeField] private List<Decision> decisions = new List<Decision>();
-    [SerializeField, CanBeNull] private Decision currentDecision = null;
-    [SerializeField] private int index = 0;
+    [SerializeField, CanBeNull] private Decision currentDecision;
+    [SerializeField] private int index;
     private SpriteRenderer spriteRenderer;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -49,7 +49,6 @@ public class Document : MonoBehaviour
     }
     public void ChangePage(int value)
     {
-        Debug.Log("Next Page");
         index = (index + value + decisions.Count + 1) % (decisions.Count + 1);
         SetCurrentDecision(index > 0 ? decisions[index - 1] : null);
         Debug.Log(currentDecision?.GetStampState());
