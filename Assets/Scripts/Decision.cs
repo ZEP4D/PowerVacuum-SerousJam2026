@@ -17,39 +17,69 @@ public class Decision : MonoBehaviour
     }
     
     [SerializeField] private StampState stampState = StampState.None;
-    [SerializeField] private string text;
-    [SerializeField] private Collider2D trigger;
+    [SerializeField] private string description;
+    [SerializeField] private string pros;
+    [SerializeField] private string cons;
+    [SerializeField] private string cost;
     [SerializeField] private List<string> powerPlants;
     [SerializeField] private TypeOfProject typeOfProject;
     
     public void Start()
     {
-        // _textMesh = GetComponentInChildren<TextMeshPro>();
-        // _textMesh.text = text;
+        
     }
     public bool IsStamped()
     {
         return stampState != StampState.None;
     }
 
-    void OnMouseDown()
-    {
-        switch (stampState)
-        {
-            case StampState.Approved:
-                Debug.Log("Approved");
-                break;
-            case StampState.Disapproved:
-                Debug.Log("Disapproved");
-                break;
-            default:
-                Debug.Log("Choice not made");
-                break;
-        }
-    }
+    // void OnMouseDown()
+    // {
+    //     switch (stampState)
+    //     {
+    //         case StampState.Approved:
+    //             Debug.Log("Approved");
+    //             break;
+    //         case StampState.Disapproved:
+    //             Debug.Log("Disapproved");
+    //             break;
+    //         default:
+    //             Debug.Log("Choice not made");
+    //             break;
+    //     }
+    // }
 
     void OnMouseOver()
     {
         // Debug.Log("Is hovering");
+    }
+
+    public StampState GetStampState()
+    {
+        return stampState;
+    }
+    public void SetStampState(StampState state)
+    {
+        stampState = state;
+    }
+
+    public string GetDescription()
+    {
+        return description;
+    }
+
+    public string GetPros()
+    {
+        return pros;
+    }
+    
+    public string GetCons()
+    {
+        return cons;
+    }
+    
+    public string GetCost()
+    {
+        return cost;
     }
 }
