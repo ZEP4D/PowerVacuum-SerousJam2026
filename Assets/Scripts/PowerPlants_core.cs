@@ -1,16 +1,16 @@
 using UnityEngine;
 
 
-enum  type{ coal, wind, water, atomic, solar, gas }
+public enum  type{ coal, wind, water, atomic, solar, gas}
 [CreateAssetMenu(fileName = "gameobject", menuName = "Powerplants/PowerPlants_core", order = 2)] 
 public class PowerPlants_core : ScriptableObject
 {
     [SerializeField] private string description;
     [SerializeField] private bool isRenewable;
-    [SerializeField] private type type;
+    [SerializeField] private type type_pp;
     [SerializeField] private int cost;
     [SerializeField] private int liked;
-
+    [SerializeField] private int generateofpower;
     [SerializeField] private int polution;
     [SerializeField] private int resoureceUsage;
     [SerializeField] private Mesh Object;
@@ -18,7 +18,7 @@ public class PowerPlants_core : ScriptableObject
 
     void Awake()
     {
-        if(type == type.wind || type == type.solar || type == type.water)
+        if(type_pp == type.wind || type_pp == type.solar || type_pp == type.water)
         {
             isRenewable = true;
         }
@@ -27,4 +27,35 @@ public class PowerPlants_core : ScriptableObject
             isRenewable = false;            
         }
     }
-}
+
+
+    public bool GetisRenewable()
+    {
+        return isRenewable;
+    }
+
+    public int GetresourceUsage()
+    {
+        return resoureceUsage;
+    }
+
+    public int Getpolution()
+    {
+        return polution;
+    }
+
+    public type Gettypeofpowerp()
+    {
+        return type_pp;
+    }
+
+    public int Getliked()
+    {
+        return liked;
+    }
+
+    public int GetEnergy()
+    {
+        return generateofpower;
+    }
+}   
