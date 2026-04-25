@@ -18,22 +18,14 @@ public class Decision : MonoBehaviour
     
     [SerializeField] private StampState stampState = StampState.None;
     [SerializeField] private string text;
-    private TextMeshPro _textMesh;
     [SerializeField] private Collider2D trigger;
     [SerializeField] private List<string> powerPlants;
     [SerializeField] private TypeOfProject typeOfProject;
-
-    public Decision(string text, List<string> pp, TypeOfProject type)
-    {
-        this.text = text;
-        this.powerPlants = pp;
-        this.typeOfProject = type;
-    }
     
     public void Start()
     {
-        _textMesh = GetComponentInChildren<TextMeshPro>();
-        _textMesh.text = text;
+        // _textMesh = GetComponentInChildren<TextMeshPro>();
+        // _textMesh.text = text;
     }
     public bool IsStamped()
     {
