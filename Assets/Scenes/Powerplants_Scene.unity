@@ -382,13 +382,10 @@ MonoBehaviour:
   approval: 100
   climate: 0
   energy: 100
+  budget: 0
   coal: 250
   uran: 300
-  powerPlants:
-  - {fileID: 11400000, guid: de957d0c919e3c56fbec8b6331ac8f30, type: 2}
-  - {fileID: 11400000, guid: de957d0c919e3c56fbec8b6331ac8f30, type: 2}
-  - {fileID: 11400000, guid: 2fd99ed61abd3bad6a261f0855031c26, type: 2}
-  - {fileID: 11400000, guid: 2fd99ed61abd3bad6a261f0855031c26, type: 2}
+  powerPlants: []
   newCoal: 0
   newUran: 0
 --- !u!1 &945893477
