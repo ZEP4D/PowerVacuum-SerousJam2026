@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.Collections;
@@ -21,37 +22,16 @@ public class Decision : MonoBehaviour
     [SerializeField] private string pros;
     [SerializeField] private string cons;
     [SerializeField] private string cost;
-    [SerializeField] private List<string> powerPlants;
-    [SerializeField] private TypeOfProject typeOfProject;
-    
-    public void Start()
-    {
-        
-    }
+
+    [field: Header("0 - approval, 1 - climate, 2 - energy, 3 - budget, 4 - coal, 5 - uranium ")] [SerializeField]
+    public List<int> approvalCosts;
+
+    [SerializeField] public List<int> disapprovalCosts;
+    [SerializeField] public PowerPlants_core powerPlant;
+    [SerializeField] public TypeOfProject typeOfProject;
     public bool IsStamped()
     {
         return stampState != StampState.None;
-    }
-
-    // void OnMouseDown()
-    // {
-    //     switch (stampState)
-    //     {
-    //         case StampState.Approved:
-    //             Debug.Log("Approved");
-    //             break;
-    //         case StampState.Disapproved:
-    //             Debug.Log("Disapproved");
-    //             break;
-    //         default:
-    //             Debug.Log("Choice not made");
-    //             break;
-    //     }
-    // }
-
-    void OnMouseOver()
-    {
-        // Debug.Log("Is hovering");
     }
 
     public StampState GetStampState()

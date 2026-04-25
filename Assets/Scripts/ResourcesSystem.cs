@@ -1,22 +1,26 @@
 using System.Collections.Generic;
+using Unity.Mathematics.Geometry;
 using UnityEngine;
 
 public class ResourcesSystem : MonoBehaviour
 {
-
+    public enum ResourceType
+    {
+        Approval, Climate, Energy, Budget, Coal, Uranium
+    }
 
     public static ResourcesSystem instance;
-    [SerializeField] private int approval;
-    [SerializeField] private int climate;
-    [SerializeField] private int energy;
+    [SerializeField] private int startingApproval;
+    [SerializeField] private int startingClimate;
+    [SerializeField] private int startingEnergy;
     
-    [SerializeField] private int budget;
+    [SerializeField] private int startingBudget;
 
     // Storage Attribute
     
-    [SerializeField] private int coal;
-    [SerializeField] private int uran;
-    
+    [SerializeField] private int startingCoal;
+    [SerializeField] private int startingUranium;
+    private Dictionary<ResourceType, int> resources = new();
     [SerializeField] private List<PowerPlants_core> powerPlants;
 
 
@@ -36,34 +40,28 @@ public class ResourcesSystem : MonoBehaviour
     void Start()
     {
         numbersofturn = 0;
-    }
-    void Update()
-    {
-          Debug.Log(
-            "approval: " + approval + " " +
-            "climate: " + climate + " " +
-            "energy: " + energy + " " +
-            "money: " + budget + " " +
-            "coal: " + coal + " " +
-            "uran: " + uran + " "  
-        );
+        resources.Add(ResourceType.Approval, startingApproval);
+        resources.Add(ResourceType.Climate, startingClimate);
+        resources.Add(ResourceType.Energy, startingEnergy);
+        resources.Add(ResourceType.Budget, startingBudget);
+        resources.Add(ResourceType.Coal, startingCoal);
+        resources.Add(ResourceType.Uranium, startingUranium);
     }
 
 
-    void Howmuchusage()
+    public void Howmuchusage()
     {
-        
-        foreach(PowerPlants_core pp in powerPlants)
+        foreach (PowerPlants_core pp in powerPlants)
         {
             if (!pp.GetisRenewable())
             {
                 switch (pp.Gettypeofpowerp())
                 {
                     case type.coal:
-                        coal -= pp.GetresourceUsage();
+                        resources[ResourceType.Coal] -= pp.GetresourceUsage();
                         break;
                     case type.atomic:
-                        uran -= pp.GetresourceUsage();
+                        resources[ResourceType.Uranium] -= pp.GetresourceUsage();
                         break;
                     default:
                         break;
@@ -74,39 +72,37 @@ public class ResourcesSystem : MonoBehaviour
     }
 
 
-    void Calculatepolution()
+    public void Calculatepolution()
     {   
-        climate = 0; 
-        foreach(PowerPlants_core pp in powerPlants)
+        resources[ResourceType.Climate] = 0; 
+        foreach (PowerPlants_core pp in powerPlants)
         {
-            climate += pp.Getpolution(); 
+            resources[ResourceType.Climate] += pp.Getpolution(); 
         }
     }
 
-    void ApprovalCalulate()
+    public void ApprovalCalulate()
     {
-        if(approval > 0)
-        {
-            foreach(PowerPlants_core pp in powerPlants)
+        foreach (PowerPlants_core pp in powerPlants)
             {
-                approval += pp.Getliked();
+                resources[ResourceType.Approval] += pp.Getliked();
             }
-        }
+        resources[ResourceType.Approval] = Mathf.Min(100, resources[ResourceType.Approval]);
     }
 
-    void Howmuchenerygenerate()
+    public void Howmuchenerygenerate()
     {
-        energy = 0;
+        resources[ResourceType.Energy] = 0;
 
         foreach(PowerPlants_core pp in powerPlants)
         {
-            energy += pp.GetEnergy();
+            resources[ResourceType.Energy] += pp.GetEnergy();
         }
 
     }
 
 
-    void AddnewPlant(PowerPlants_core powerp)
+    public void AddnewPlant(PowerPlants_core powerp)
     {
         powerPlants.Add(powerp);        
     }
@@ -130,43 +126,28 @@ public class ResourcesSystem : MonoBehaviour
             ApprovalCalulate();
             Howmuchenerygenerate();
 
-            coal += newCoal;
-            uran += newUran;
+            resources[ResourceType.Coal] += newCoal;
+            resources[ResourceType.Uranium] += newUran;
 
             numbersofturn++;
         }
-        
-
-        
-        
+        Debug.Log(numbersofturn);
     }    
 
 
     public void PayforConstrut(PowerPlants_core pp, int number)
     {
-
-        int fullcost = 0;
-        for (int i = 0 ; i <= number; i++)
-        {
-            fullcost += pp.GetCost();
-        }
-
-
-        if(fullcost < budget)
-        {
-            for (int i = 0 ; i <= number; i++)
-            {
-                AddnewPlant(pp);
-            }
-        }
-        else
-        {
-            return;
+        int fullcost = number * pp.GetCost();
+        while (fullcost < resources[ResourceType.Budget] && number > 0)
+        { 
+            AddnewPlant(pp);
+            number--;
+            fullcost -= pp.GetCost();
         }
     }
 
 
-    public void deletemulitply(PowerPlants_core pp, int number)
+    public void deletemulitple(PowerPlants_core pp, int number)
     {
         if(number < powerPlants.Count)
         {
@@ -175,31 +156,37 @@ public class ResourcesSystem : MonoBehaviour
                 RemovePlant(pp);
             }
         }
-        else
-        {
-            return;
-        }
     }
 
 
     public int getApproval()
     {
-        return approval;
+        return resources[ResourceType.Approval];
     }
 
     public int getbudget()
     {
-        return budget;
+        return resources[ResourceType.Budget];
     }
 
     public int getclimate()
     {
-        return climate;
+        return resources[ResourceType.Climate];
     }
 
 
     public int getnumbersofturn()
     {
         return numbersofturn;
+    }
+
+    public Dictionary<ResourceType, int> GetResources()
+    {
+        return resources;
+    }
+
+    public void AffectResource(ResourceType type, int value)
+    {
+        resources[type] = Mathf.Min(100, resources[type] + value);
     }
 }

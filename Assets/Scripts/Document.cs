@@ -58,4 +58,9 @@ public class Document : MonoBehaviour
     {
         return currentDecision;
     }
+
+    public List<Decision> GetDecisions()
+    {
+        return decisions;
+    }
 }

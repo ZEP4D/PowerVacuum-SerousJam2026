@@ -4,7 +4,6 @@ using UnityEngine.UI;
 public class clickButtonprotopytesting : MonoBehaviour
 {
     [SerializeField] private Button button;
-    [SerializeField] private ResourcesSystem resources;
 
 
     void Start()
@@ -15,6 +14,11 @@ public class clickButtonprotopytesting : MonoBehaviour
 
     void EndTurn()
     {
-        resources.Endturnisup();
+        ResourcesSystem.instance.Endturnisup();
+        CalculateTurnOutput.instance.CalculateTurn();
+        foreach (var item in ResourcesSystem.instance.GetResources())
+        {
+            Debug.Log($"{item.Key}: {item.Value}");
+        }
     }
 }
