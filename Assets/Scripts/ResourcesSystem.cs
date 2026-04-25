@@ -8,6 +8,7 @@ public class ResourcesSystem : MonoBehaviour
     [SerializeField] private int climate;
     [SerializeField] private int energy;
     
+    [SerializeField] private int Money;
 
     // Storage Attribute
     
@@ -17,6 +18,12 @@ public class ResourcesSystem : MonoBehaviour
     [SerializeField] private List<PowerPlants_core> powerPlants;
 
 
+    // New Resource Attribute
+
+    [SerializeField] private int newCoal;
+    [SerializeField] private int newUran;
+
+
 
      void Update()
     {
@@ -24,6 +31,7 @@ public class ResourcesSystem : MonoBehaviour
             "approval: " + approval + " " +
             "climate: " + climate + " " +
             "energy: " + energy + " " +
+            "money: " + Money + " " +
             "coal: " + coal + " " +
             "uran: " + uran + " "  
         );
@@ -86,6 +94,17 @@ public class ResourcesSystem : MonoBehaviour
     }
 
 
+    public void AddnewPlant(PowerPlants_core powerp)
+    {
+        powerPlants.Add(powerp);        
+    }
+
+    public void RemovePlant(PowerPlants_core plant)
+    {
+        powerPlants.Remove(plant);
+    }
+
+
     public void Endturnisup()
     {
         if (powerPlants.Count == 0)
@@ -97,7 +116,12 @@ public class ResourcesSystem : MonoBehaviour
             Howmuchusage();
             Calculatepolution();
             ApprovalCalulate();
+            Howmuchenerygenerate();
         }
+
+
+        coal += newCoal;
+        uran += newUran;
         
     }    
 }

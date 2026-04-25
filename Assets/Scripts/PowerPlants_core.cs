@@ -2,7 +2,7 @@ using UnityEngine;
 
 
 public enum  type{ coal, wind, water, atomic, solar, gas}
-[CreateAssetMenu(fileName = "gameobject", menuName = "Powerplants/PowerPlants_core", order = 2)] 
+[CreateAssetMenu(fileName = "PowerPlants_core", menuName = "Scriptable Objects/PowerPlants_core", order = 2)] 
 public class PowerPlants_core : ScriptableObject
 {
     [SerializeField] private string description;
