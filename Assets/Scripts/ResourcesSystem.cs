@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class ResourcesSystem : MonoBehaviour
 {
+
+
+    public static ResourcesSystem instance;
     [SerializeField] private int approval;
     [SerializeField] private int climate;
     [SerializeField] private int energy;
@@ -22,9 +25,19 @@ public class ResourcesSystem : MonoBehaviour
     [SerializeField] private int newCoal;
     [SerializeField] private int newUran;
 
+    private int numbersofturn;
 
 
-     void Update()
+    void Awake()
+    {
+        instance = this;
+    }
+
+    void Start()
+    {
+        numbersofturn = 0;
+    }
+    void Update()
     {
           Debug.Log(
             "approval: " + approval + " " +
@@ -116,11 +129,15 @@ public class ResourcesSystem : MonoBehaviour
             Calculatepolution();
             ApprovalCalulate();
             Howmuchenerygenerate();
+
+            coal += newCoal;
+            uran += newUran;
+
+            numbersofturn++;
         }
+        
 
-
-        coal += newCoal;
-        uran += newUran;
+        
         
     }    
 
@@ -162,5 +179,27 @@ public class ResourcesSystem : MonoBehaviour
         {
             return;
         }
+    }
+
+
+    public int getApproval()
+    {
+        return approval;
+    }
+
+    public int getbudget()
+    {
+        return budget;
+    }
+
+    public int getclimate()
+    {
+        return climate;
+    }
+
+
+    public int getnumbersofturn()
+    {
+        return numbersofturn;
     }
 }
