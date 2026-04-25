@@ -26,12 +26,12 @@ public class EndChecker : MonoBehaviour
             { 
                 Invoke(nameof(YouLose),0);
             }
-            else if(ResourcesSystem.instance.getclimate() > 100)
+            else if(ResourcesSystem.instance.getclimate() == 100)
             {
                 Invoke(nameof(YouLose),0);
             }
 
-            if(ResourcesSystem.instance.getnumbersofturn() > howmanyturn)
+            else if(ResourcesSystem.instance.getnumbersofturn() > howmanyturn)
             {
                 if(ResourcesSystem.instance.getApproval() < 50)
                 {
