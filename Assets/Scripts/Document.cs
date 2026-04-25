@@ -47,11 +47,12 @@ public class Document : MonoBehaviour
             cost.GetComponent<TextMeshPro>().text = decision.GetCost();
         }
     }
-    void OnMouseDown()
+    public void ChangePage(int value)
     {
-        Debug.Log("MouseDown");
-        index = (index + 1) % (decisions.Count + 1);
+        Debug.Log("Next Page");
+        index = (index + value + decisions.Count + 1) % (decisions.Count + 1);
         SetCurrentDecision(index > 0 ? decisions[index - 1] : null);
+        Debug.Log(currentDecision?.GetStampState());
     }
 
     public Decision GetCurrentDecision()
