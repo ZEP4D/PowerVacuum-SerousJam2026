@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class ResourcesSystem : MonoBehaviour
@@ -8,7 +7,7 @@ public class ResourcesSystem : MonoBehaviour
     [SerializeField] private int climate;
     [SerializeField] private int energy;
     
-    [SerializeField] private int Money;
+    [SerializeField] private int budget;
 
     // Storage Attribute
     
@@ -31,7 +30,7 @@ public class ResourcesSystem : MonoBehaviour
             "approval: " + approval + " " +
             "climate: " + climate + " " +
             "energy: " + energy + " " +
-            "money: " + Money + " " +
+            "money: " + budget + " " +
             "coal: " + coal + " " +
             "uran: " + uran + " "  
         );
@@ -94,7 +93,7 @@ public class ResourcesSystem : MonoBehaviour
     }
 
 
-    public void AddnewPlant(PowerPlants_core powerp)
+    void AddnewPlant(PowerPlants_core powerp)
     {
         powerPlants.Add(powerp);        
     }
@@ -124,4 +123,44 @@ public class ResourcesSystem : MonoBehaviour
         uran += newUran;
         
     }    
+
+
+    public void PayforConstrut(PowerPlants_core pp, int number)
+    {
+
+        int fullcost = 0;
+        for (int i = 0 ; i <= number; i++)
+        {
+            fullcost += pp.GetCost();
+        }
+
+
+        if(fullcost < budget)
+        {
+            for (int i = 0 ; i <= number; i++)
+            {
+                AddnewPlant(pp);
+            }
+        }
+        else
+        {
+            return;
+        }
+    }
+
+
+    public void deletemulitply(PowerPlants_core pp, int number)
+    {
+        if(number < powerPlants.Count)
+        {
+            for (int i = 0 ; i <= number; i++)
+            {
+                RemovePlant(pp);
+            }
+        }
+        else
+        {
+            return;
+        }
+    }
 }

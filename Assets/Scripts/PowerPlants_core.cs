@@ -58,4 +58,9 @@ public class PowerPlants_core : ScriptableObject
     {
         return generateofpower;
     }
+
+    public int GetCost()
+    {
+        return cost;
+    }
 }   
