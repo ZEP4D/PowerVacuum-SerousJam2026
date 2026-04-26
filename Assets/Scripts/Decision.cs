@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.Collections;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Decision : MonoBehaviour
 {
@@ -19,9 +20,8 @@ public class Decision : MonoBehaviour
     
     [SerializeField] private StampState stampState = StampState.None;
     [SerializeField] private string description;
-    [SerializeField] private string pros;
-    [SerializeField] private string cons;
-    [SerializeField] private string cost;
+    [FormerlySerializedAs("pros")] [SerializeField] private string approvalGains;
+    [FormerlySerializedAs("cons")] [SerializeField] private string denyGains;
 
     [field: Header("0 - approval, 1 - climate, 2 - energy, 3 - budget, 4 - coal, 5 - uranium ")] [SerializeField]
     public List<int> approvalCosts;
@@ -50,16 +50,11 @@ public class Decision : MonoBehaviour
 
     public string GetPros()
     {
-        return pros;
+        return approvalGains;
     }
     
     public string GetCons()
     {
-        return cons;
-    }
-    
-    public string GetCost()
-    {
-        return cost;
+        return denyGains;
     }
 }

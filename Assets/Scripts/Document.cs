@@ -2,14 +2,14 @@ using System.Collections.Generic;
 using JetBrains.Annotations;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Document : MonoBehaviour
 {
     [SerializeField] private GameObject description;
-    [SerializeField] private GameObject pros;
-    [SerializeField] private GameObject cons;
-    [SerializeField] private GameObject cost;
-    [SerializeField] private List<Decision> decisions = new List<Decision>();
+    [FormerlySerializedAs("pros")] [SerializeField] private GameObject approvalGains;
+    [FormerlySerializedAs("cons")] [SerializeField] private GameObject denyGains;
+    [SerializeField] private List<Decision> decisions = new ();
     [SerializeField, CanBeNull] private Decision currentDecision;
     [SerializeField] public int index;
     private SpriteRenderer spriteRenderer;
@@ -31,20 +31,17 @@ public class Document : MonoBehaviour
         if (decision == null)
         {
             description.SetActive(false);
-            pros.SetActive(false);
-            cons.SetActive(false);
-            cost.SetActive(false);
+            approvalGains.SetActive(false);
+            denyGains.SetActive(false);
         }
         else
         {
             description.SetActive(true);
             description.GetComponent<TextMeshPro>().text = decision.GetDescription();
-            pros.SetActive(true);
-            pros.GetComponent<TextMeshPro>().text = decision.GetPros();
-            cons.SetActive(true);
-            cons.GetComponent<TextMeshPro>().text = decision.GetCons();
-            cost.SetActive(true);
-            cost.GetComponent<TextMeshPro>().text = decision.GetCost();
+            approvalGains.SetActive(true);
+            approvalGains.GetComponent<TextMeshPro>().text = decision.GetPros();
+            denyGains.SetActive(true);
+            denyGains.GetComponent<TextMeshPro>().text = decision.GetCons();
         }
     }
     public void ChangePage(int value)
