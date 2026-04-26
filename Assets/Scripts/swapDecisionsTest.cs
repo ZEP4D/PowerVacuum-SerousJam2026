@@ -2,14 +2,14 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class SwapDecisions : MonoBehaviour, IPointerClickHandler
+public class swapDecisionsTest : MonoBehaviour, IPointerClickHandler
 {
-    [SerializeField] private Document document;
+    [SerializeField] private Document_test document;
     [SerializeField] private int value;
     
     private void Start()
     {
-        document = GetComponentInParent<Document>();
+        document = GetComponentInParent<Document_test>();
     }
 
     public void OnPointerClick(PointerEventData eventData)
