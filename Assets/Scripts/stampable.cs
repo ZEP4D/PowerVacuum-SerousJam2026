@@ -5,6 +5,8 @@ public class Stampable : MonoBehaviour
 {
     [SerializeField] private Document document;
     [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private Sprite stampSpriteDisapprove;
+    [SerializeField] private Sprite stampSpriteApprove;
 
     void Start()
     {
@@ -19,7 +21,19 @@ public class Stampable : MonoBehaviour
         }
         if (other.gameObject.GetComponent<StampDragAndDrop>().currentStampleState == CurrentStampleState.Placed)
         {
-            document.GetCurrentDecision()?.SetStampState(other.gameObject.GetComponent<StampDragAndDrop>().stampState);
+            var state = other.gameObject.GetComponent<StampDragAndDrop>().stampState;
+            document.GetCurrentDecision()?.SetStampState(state);
+            switch (state)
+            {
+                case Decision.StampState.Approved:
+                    spriteRenderer.sprite = stampSpriteApprove;
+                    break;
+                case Decision.StampState.Disapproved:
+                    spriteRenderer.sprite = stampSpriteDisapprove;
+                    break;
+                default:
+                    break;
+            }
             Debug.Log(document.GetCurrentDecision());
             Debug.Log(document.GetCurrentDecision()?.GetStampState());
         }
