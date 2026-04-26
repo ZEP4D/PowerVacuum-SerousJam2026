@@ -313,7 +313,7 @@ GameObject:
   - component: {fileID: 313416039}
   - component: {fileID: 313416038}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1181,7 +1181,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1816956776896545995, guid: 25da08b8164f01340b5b082e06d669a6, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 5923262747649348789, guid: 25da08b8164f01340b5b082e06d669a6, type: 3}
       insertIndex: -1
@@ -1289,7 +1290,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1816956776896545995, guid: 25da08b8164f01340b5b082e06d669a6, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 5923262747649348789, guid: 25da08b8164f01340b5b082e06d669a6, type: 3}
       insertIndex: -1
@@ -1953,7 +1955,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1816956776896545995, guid: 25da08b8164f01340b5b082e06d669a6, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 5923262747649348789, guid: 25da08b8164f01340b5b082e06d669a6, type: 3}
       insertIndex: -1
@@ -2069,7 +2072,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1816956776896545995, guid: 25da08b8164f01340b5b082e06d669a6, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 5923262747649348789, guid: 25da08b8164f01340b5b082e06d669a6, type: 3}
       insertIndex: -1
@@ -2185,7 +2189,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1816956776896545995, guid: 25da08b8164f01340b5b082e06d669a6, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 5923262747649348789, guid: 25da08b8164f01340b5b082e06d669a6, type: 3}
       insertIndex: -1
@@ -2546,7 +2551,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1816956776896545995, guid: 25da08b8164f01340b5b082e06d669a6, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 5923262747649348789, guid: 25da08b8164f01340b5b082e06d669a6, type: 3}
       insertIndex: -1
