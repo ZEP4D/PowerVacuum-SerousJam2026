@@ -279,6 +279,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Stampable
   document: {fileID: 1381096731}
   spriteRenderer: {fileID: 0}
+  stampSpriteDisapprove: {fileID: 4102133886280439897, guid: c4ed48fcd2e0fa644945b5efdb2c7b99, type: 3}
+  stampSpriteApprove: {fileID: -1823829712903839183, guid: e4d739102395c70488f4c1e6e2eaf9fb, type: 3}
 --- !u!50 &13491255
 Rigidbody2D:
   serializedVersion: 5
@@ -383,7 +385,6 @@ MonoBehaviour:
   description: bla bla bla even more text
   pros: money ^^^^
   cons: approval VVVVVV
-  cost: 2 nickles and a dime
   approvalCosts: 000000000000000000000000fdffffff0300000000000000
   disapprovalCosts: fdffffff0000000000000000000000000000000000000000
   powerPlant: {fileID: 0}
@@ -1947,7 +1948,6 @@ MonoBehaviour:
   description: 'blablabla text here '
   pros: ppl ^^^
   cons: money VVVV
-  cost: col
   approvalCosts: 050000000500000005000000010000000000000000000000
   disapprovalCosts: fbfffffffbffffff00000000ffffffff0000000000000000
   powerPlant: {fileID: 11400000, guid: ae8e64126805c2047bd2e8d23de3a589, type: 2}
@@ -2297,9 +2297,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Document
   description: {fileID: 1940787047}
-  pros: {fileID: 1680177886}
-  cons: {fileID: 1398085889}
-  cost: {fileID: 788245886}
+  approvalCost: {fileID: 1680177886}
+  denyCost: {fileID: 1398085889}
   decisions:
   - {fileID: 1306684333}
   - {fileID: 117004441}
