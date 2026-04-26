@@ -134,7 +134,7 @@ public class ResourcesSystem : MonoBehaviour
 
             resources[ResourceType.Coal] += newCoal;
             resources[ResourceType.Uranium] += newUran;
-
+            GetComponent<EndChecker>().CheckForWinCondition();
             numbersofturn++;
         }
         Debug.Log(numbersofturn);

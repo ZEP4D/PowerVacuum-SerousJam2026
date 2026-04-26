@@ -11,41 +11,41 @@ public class EndChecker : MonoBehaviour
         endisactive = false;
     }
 
-
-    void Update()
+    public void CheckForWinCondition()
     {
-
-
-        if (!endisactive)
+        if (endisactive)
         {
-            if(ResourcesSystem.instance.getApproval() < 0)
+            return;
+        }
+        if(ResourcesSystem.instance.getApproval() < 0)
+        {
+            YouLose();
+            return;
+        }
+        else if (ResourcesSystem.instance.getbudget() < 0)
+        {
+            YouLose();
+            return;
+        }
+        else if (ResourcesSystem.instance.getclimate() >= 100)
+        {
+            YouLose();
+            return;
+        }
+        else if (ResourcesSystem.instance.getnumbersofturn() >= howmanyturn)
+        {
+            if (ResourcesSystem.instance.getApproval() < 50)
             {
-                Invoke(nameof(YouLose),0);    
+                YouLose();
+                return;
             }
-            else if(ResourcesSystem.instance.getbudget() < 0)
-            { 
-                Invoke(nameof(YouLose),0);
-            }
-            else if(ResourcesSystem.instance.getclimate() == 100)
+            else
             {
-                Invoke(nameof(YouLose),0);
-            }
-
-            else if(ResourcesSystem.instance.getnumbersofturn() > howmanyturn)
-            {
-                if(ResourcesSystem.instance.getApproval() < 50)
-                {
-                    Invoke(nameof(YouLose),0);
-                }
-                else
-                {
-                    Invoke(nameof(Youwin),0);
-                }
+                Youwin();
+                return;
             }
         }
-       
     }
-
 
     void YouLose()
     {   
