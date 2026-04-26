@@ -45,14 +45,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18a729f3a4a94b96ae67e2f5a7e96471, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Decision
-  stampState: 0
-  description: "Solar Panels \L\LDear Minister, \LOur nation is still facing serious
-    energy shortages. v\L\LInvesting in Solar Panel Infrastructure could improve
-    our energy production, but it would require: \L\L$4 billion from the national
-    budget \L1 building space \L+10% environmental health "
-  approvalGains: "\LBenefits:\L\L+10% public approval during elections"
-  denyGains: "If we reject this project: \L\L+10% environmental health\L-5% public
-    approval"
+  stampState: 1
+  description: "Solar Panels \LDear Minister, \LOur nation is still facing serious
+    energy shortages.\LInvesting in Solar Panel Infrastructure could improve our
+    energy production, but it would require: \L<br>$4 billion from the national budget
+    \L<br>1 building space <br>+10% environmental health "
+  approvalGains: Benefits:<br>+10% public approval during elections
+  denyGains: 'If we reject this project: <br>+10% environmental health<br>-5% public
+    approval'
   approvalCosts: 0a0000000a00000000000000fcffffff0000000000000000000000000000000000000000
   disapprovalCosts: fbffffff0a00000000000000000000000000000000000000000000000000000000000000
   powerPlants:

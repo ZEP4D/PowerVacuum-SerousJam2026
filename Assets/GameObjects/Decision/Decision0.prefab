@@ -51,10 +51,10 @@ MonoBehaviour:
     with significant costs: <br> $6 billion from the national budget <br>2 building
     spaces <br> -15% environmental health  <br>-15% relations with neighboring countries
     if the plant is built near their borders <br> 1 unit of uranium '
-  approvalGains: 'However, the project would also provide: <br> <br> +20% public
-    approval during elections '
-  denyGains: 'If we reject this project: <br> <br> -10% public approval <br> +5%
-    relations with neighboring countries'
+  approvalGains: 'However, the project would also provide:<br> +20% public approval
+    during elections '
+  denyGains: If we reject this project:<br> -10% public approval <br> +5% relations
+    with neighboring countries
   approvalCosts: 14000000f1ffffff00000000faffffff0000000001000000020000000200000002000000
   disapprovalCosts: f6ffffff0000000000000000000000000000000000000000050000000500000005000000
   powerPlants: []
