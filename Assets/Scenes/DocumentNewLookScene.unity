@@ -1335,6 +1335,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92f0063dd1c641ec8c9c3b7aee042008, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DecisionListPreset
+--- !u!224 &1285571855 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8679222527291416239, guid: 598375b562db3a745beaf124957714bf, type: 3}
+  m_PrefabInstance: {fileID: 8082821054749016270}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1306684331
 GameObject:
   m_ObjectHideFlags: 0
@@ -1566,6 +1571,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92f0063dd1c641ec8c9c3b7aee042008, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DecisionListPreset
+--- !u!224 &1327613052 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2004060285838621027, guid: 598375b562db3a745beaf124957714bf, type: 3}
+  m_PrefabInstance: {fileID: 8082821054749016270}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1340240942
 GameObject:
   m_ObjectHideFlags: 0
@@ -1664,6 +1674,7 @@ GameObject:
   - component: {fileID: 1420351453}
   - component: {fileID: 1420351455}
   - component: {fileID: 1420351456}
+  - component: {fileID: 1420351457}
   m_Layer: 0
   m_Name: ResourceSystem
   m_TagString: Untagged
@@ -1736,6 +1747,103 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CalculateTurnOutput
   document: {fileID: 1381096731}
+--- !u!82 &1420351457
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1420351452}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 4a4a73e64cf705d60a1cc4105b306fb7, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.75
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1514867721
 GameObject:
   m_ObjectHideFlags: 0
@@ -1902,6 +2010,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92f0063dd1c641ec8c9c3b7aee042008, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DecisionListPreset
+--- !u!224 &1717094811 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 645896769344634956, guid: 598375b562db3a745beaf124957714bf, type: 3}
+  m_PrefabInstance: {fileID: 8082821054749016270}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1808176335 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8532197703353552513, guid: 598375b562db3a745beaf124957714bf, type: 3}
@@ -1913,6 +2026,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92f0063dd1c641ec8c9c3b7aee042008, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DecisionListPreset
+--- !u!224 &1808176336 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2976895554287658452, guid: 598375b562db3a745beaf124957714bf, type: 3}
+  m_PrefabInstance: {fileID: 8082821054749016270}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1814566005
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2335,32 +2453,136 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1966028164}
   m_CullTransparentMesh: 1
---- !u!114 &885113324313371978
+--- !u!61 &82244151147819755
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6608693042227397772}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0.049999997, y: 0.049999997, z: 0.049999997, w: 0.049999997}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.16, y: 0.16}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.16, y: 0.16}
+  m_EdgeRadius: 0
+--- !u!4 &346972993582841669
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348097772113561875}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 30, y: 60, z: 3}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1717094811}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &348097772113561875
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 346972993582841669}
+  - component: {fileID: 7147918441152774333}
+  - component: {fileID: 6793199294823579508}
+  m_Layer: 0
+  m_Name: DecisionT 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &672529313238805053
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7759347042079927524}
+  m_GameObject: {fileID: 7976857077847810963}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 18a729f3a4a94b96ae67e2f5a7e96471, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Decision
   stampState: 0
-  description: 'Our nation is still facing serious energy shortages. \nThe Nuclear
+  description: 'Our nation is still facing serious energy shortages.  <br>The Nuclear
     Energy Project could solve a large part of our energy crisis, but it would come
-    with significant costs: <br> $6 billion from the national budget <br>  2 building
-    spaces <br> -15% environmental health <br> -15% relations with neighboring countries
+    with significant costs: <br> $6 billion from the national budget <br>2 building
+    spaces <br> -15% environmental health  <br>-15% relations with neighboring countries
     if the plant is built near their borders <br> 1 unit of uranium '
-  approvalGains: 'However, the project would also provide: <br> <br> +20% public
-    approval during elections '
-  denyGains: 'If we reject this project: <br> <br> -10% public approval <br> +5%
-    relations with neighboring countries'
-  approvalCosts: 14000000f1ffffff00000000faffffff0000000001000000020000000200000002000000
+  approvalGains: 'However, the project would also provide:<br> +20% public approval
+    during elections '
+  denyGains: If we reject this project:<br> -10% public approval <br> +5% relations
+    with neighboring countries
+  approvalCosts: 140000000f00000000000000faffffff0000000001000000020000000200000002000000
   disapprovalCosts: f6ffffff0000000000000000000000000000000000000000050000000500000005000000
   powerPlants: []
   typeOfProject: 1
+--- !u!114 &1020561973330572530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7624580227778018652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18a729f3a4a94b96ae67e2f5a7e96471, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Decision
+  stampState: 0
+  description: "Solar Panels \LDear Minister, \LOur nation is still facing serious
+    energy shortages.\LInvesting in Solar Panel Infrastructure could improve our
+    energy production, but it would require: \L<br>$4 billion from the national budget
+    \L<br>1 building space <br>+10% environmental health "
+  approvalGains: Benefits:<br>+10% public approval during elections
+  denyGains: 'If we reject this project: <br>+10% environmental health<br>-5% public
+    approval'
+  approvalCosts: 0a000000f6ffffff00000000fcffffff0000000000000000000000000000000000000000
+  disapprovalCosts: fbffffff0a00000000000000000000000000000000000000000000000000000000000000
+  powerPlants:
+  - {fileID: 11400000, guid: 24fce1840cd5a8d488aba02c3b39b258, type: 2}
+  typeOfProject: 0
 --- !u!1001 &1740768864247802308
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2454,6 +2676,142 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88cc5093ffb3ee34d92b47cf13d06868, type: 3}
+--- !u!114 &1767501612921402530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9178720582283509004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18a729f3a4a94b96ae67e2f5a7e96471, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Decision
+  stampState: 0
+  description: 'Trade Offer: ASU (Arosa State United)  Dear Minister,  We have recently
+    concluded diplomatic meetings with our neighboring countries regarding our ongoing
+    energy crisis. The Arosa State United (ASU) has offered to supply us with uranium,
+    which could support advanced energy projects.'
+  approvalGains: 'However, this agreement would come at a cost: $5 billion from the
+    national budget -15% relations with Bettaso '
+  denyGains: 
+  approvalCosts: 000000000000000000000000fbffffff000000000500000000000000f1ffffff00000000
+  disapprovalCosts: 000000000000000000000000000000000000000000000000000000000000000000000000
+  powerPlants: []
+  typeOfProject: 2
+--- !u!61 &2734712385995049835
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9178720582283509004}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0.049999997, y: 0.049999997, z: 0.049999997, w: 0.049999997}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.16, y: 0.16}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.16, y: 0.16}
+  m_EdgeRadius: 0
+--- !u!1 &2993478504815006482
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2994607716816889156}
+  - component: {fileID: 5651111741728955068}
+  - component: {fileID: 8293382042801907061}
+  m_Layer: 0
+  m_Name: DecisionT 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2994607716816889156
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2993478504815006482}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 30, y: 60, z: 3}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1285571855}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &3238165329162003732
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3239290142571647810}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 30, y: 60, z: 3}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1327613052}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3239290142571647810
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3238165329162003732}
+  - component: {fileID: 5409515706383817452}
+  - component: {fileID: 8531716452001244453}
+  m_Layer: 0
+  m_Name: Decision2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1001 &3458357341634299250
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2543,13 +2901,13 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31a6774fccd35634d8362e31551923e2, type: 3}
---- !u!61 &3547788492365716099
+--- !u!61 &3701123823671135035
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7759347042079927524}
+  m_GameObject: {fileID: 7624580227778018652}
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
@@ -2589,6 +2947,125 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.16, y: 0.16}
   m_EdgeRadius: 0
+--- !u!61 &3756431928893789684
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7976857077847810963}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0.049999997, y: 0.049999997, z: 0.049999997, w: 0.049999997}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.16, y: 0.16}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.16, y: 0.16}
+  m_EdgeRadius: 0
+--- !u!114 &4346250346331393314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6608693042227397772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18a729f3a4a94b96ae67e2f5a7e96471, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Decision
+  stampState: 0
+  description: "Coal Mines \\nDear Minister, <br>Our nation is still facing serious
+    energy shortages. <br>\L<br>Expanding the Coal Mining Program could ease part
+    of the energy problem, but it would require:\L<br>$2 billion from the national
+    budget <br>\L1 building space <br>-10% environmental health <br>"
+  approvalGains: 'Benefits: <br>+10% public approval during elections'
+  denyGains: "If we reject this project: <br>+5% environmental health <br>\L-10%
+    public approval "
+  approvalCosts: 0a0000000a00000000000000020000000000000000000000000000000000000000000000
+  disapprovalCosts: f6fffffffbffffff00000000000000000000000000000000000000000000000000000000
+  powerPlants:
+  - {fileID: 11400000, guid: ae8e64126805c2047bd2e8d23de3a589, type: 2}
+  - {fileID: 11400000, guid: ae8e64126805c2047bd2e8d23de3a589, type: 2}
+  typeOfProject: 0
+--- !u!114 &5409515706383817452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3239290142571647810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18a729f3a4a94b96ae67e2f5a7e96471, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Decision
+  stampState: 0
+  description: " Wind Turbines  \LDear Minister, \LOur nation is still facing serious
+    energy shortages.\L\LConstructing Wind Turbines could help strengthen our energy
+    supply, though it would require:\L\L$4 billion from the national budget\L1 building
+    space\L+10% environmental health"
+  approvalGains: "Benefits: \L\L+5% public approval during elections "
+  denyGains: "\LIf we reject this project:\L-%5 approval  -10% environmental health "
+  approvalCosts: 05000000f6ffffff00000000fcffffff0000000000000000000000000000000000000000
+  disapprovalCosts: fbffffff0a00000000000000000000000000000000000000000000000000000000000000
+  powerPlants:
+  - {fileID: 11400000, guid: 51233ebd82d557741b769ac35661099f, type: 2}
+  typeOfProject: 0
+--- !u!114 &5651111741728955068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2993478504815006482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18a729f3a4a94b96ae67e2f5a7e96471, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Decision
+  stampState: 0
+  description: 'Trade Offer: Bettaso  Dear Minister,  Following our diplomatic discussions,
+    Bettaso has proposed supplying us with coal in  quantities sufficient to significantly
+    address our energy shortage.'
+  approvalGains: 'This agreement would require: $4 billion from the national budget
+    +10% public approval during elections -15% relations with Carosa '
+  denyGains: 
+  approvalCosts: 0a0000000000000000000000fcffffff05000000000000000000000000000000f1ffffff
+  disapprovalCosts: 000000000000000000000000000000000000000000000000000000000000000000000000
+  powerPlants: []
+  typeOfProject: 2
 --- !u!1001 &6393537149864652371
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2694,22 +3171,22 @@ PrefabInstance:
       addedObject: {fileID: 1638300543}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25da08b8164f01340b5b082e06d669a6, type: 3}
---- !u!4 &7758222263037549234
+--- !u!4 &6607563795596899034
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7759347042079927524}
+  m_GameObject: {fileID: 6608693042227397772}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.81192, y: -0.30385, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 30, y: 60, z: 3}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 1662001803}
+  m_Father: {fileID: 1285571855}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &7759347042079927524
+--- !u!1 &6608693042227397772
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2717,9 +3194,132 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7758222263037549234}
-  - component: {fileID: 885113324313371978}
-  - component: {fileID: 3547788492365716099}
+  - component: {fileID: 6607563795596899034}
+  - component: {fileID: 4346250346331393314}
+  - component: {fileID: 82244151147819755}
+  m_Layer: 0
+  m_Name: Decision1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!61 &6793199294823579508
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348097772113561875}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0.049999997, y: 0.049999997, z: 0.049999997, w: 0.049999997}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.16, y: 0.16}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.16, y: 0.16}
+  m_EdgeRadius: 0
+--- !u!114 &7147918441152774333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348097772113561875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18a729f3a4a94b96ae67e2f5a7e96471, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Decision
+  stampState: 0
+  description: ' Trade Offer: Carosa  Dear Minister,  As part of our ongoing negotiations,
+    Carosa has offered to provide wind turbines and  solar panels, supporting a transition
+    to renewable energy.'
+  approvalGains: 'This agreement would involve: $3 billion cost from the national
+    budget -10% public approval during elections  -10% relations with all neighboring
+    countries '
+  denyGains: 
+  approvalCosts: f6ffffff0000000000000000fdffffff000000000000000014000000f6fffffff6ffffff
+  disapprovalCosts: 000000000000000000000000000000000000000000000000000000000000000000000000
+  powerPlants:
+  - {fileID: 11400000, guid: 24fce1840cd5a8d488aba02c3b39b258, type: 2}
+  - {fileID: 11400000, guid: 51233ebd82d557741b769ac35661099f, type: 2}
+  typeOfProject: 0
+--- !u!4 &7623451086122863370
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7624580227778018652}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 30, y: 60, z: 3}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1808176336}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7624580227778018652
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7623451086122863370}
+  - component: {fileID: 1020561973330572530}
+  - component: {fileID: 3701123823671135035}
+  m_Layer: 0
+  m_Name: Decision3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &7976857077847810963
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7977984022383580613}
+  - component: {fileID: 672529313238805053}
+  - component: {fileID: 3756431928893789684}
   m_Layer: 0
   m_Name: Decision0
   m_TagString: Untagged
@@ -2727,6 +3327,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &7977984022383580613
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7976857077847810963}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 30, y: 60, z: 3}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1662001803}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &8082821054749016270
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2746,11 +3361,11 @@ PrefabInstance:
     - target: {fileID: 1291216101283513131, guid: 598375b562db3a745beaf124957714bf, type: 3}
       propertyPath: 'decisions.Array.data[0]'
       value: 
-      objectReference: {fileID: 3327770269359959970, guid: 4694775d1205e5dfaa72d02a69383e7a, type: 3}
+      objectReference: {fileID: 4346250346331393314}
     - target: {fileID: 1291216101283513131, guid: 598375b562db3a745beaf124957714bf, type: 3}
       propertyPath: 'decisions.Array.data[1]'
       value: 
-      objectReference: {fileID: 3327770269359959970, guid: 834171384d85512168669f390e9eb7ff, type: 3}
+      objectReference: {fileID: 5651111741728955068}
     - target: {fileID: 1291216101283513131, guid: 598375b562db3a745beaf124957714bf, type: 3}
       propertyPath: 'decisions.Array.data[2]'
       value: 
@@ -2906,11 +3521,11 @@ PrefabInstance:
     - target: {fileID: 4387334459676561836, guid: 598375b562db3a745beaf124957714bf, type: 3}
       propertyPath: 'decisions.Array.data[0]'
       value: 
-      objectReference: {fileID: 3327770269359959970, guid: e15105457480190daac80d5504ed7cf3, type: 3}
+      objectReference: {fileID: 1767501612921402530}
     - target: {fileID: 4387334459676561836, guid: 598375b562db3a745beaf124957714bf, type: 3}
       propertyPath: 'decisions.Array.data[1]'
       value: 
-      objectReference: {fileID: 3327770269359959970, guid: b581bde281a19d2a884d9cd7588dfcae, type: 3}
+      objectReference: {fileID: 7147918441152774333}
     - target: {fileID: 4408425736365447514, guid: 598375b562db3a745beaf124957714bf, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 5.16
@@ -2926,7 +3541,7 @@ PrefabInstance:
     - target: {fileID: 7192003204095592354, guid: 598375b562db3a745beaf124957714bf, type: 3}
       propertyPath: 'decisions.Array.data[0]'
       value: 
-      objectReference: {fileID: 885113324313371978}
+      objectReference: {fileID: 672529313238805053}
     - target: {fileID: 8245715833671712309, guid: 598375b562db3a745beaf124957714bf, type: 3}
       propertyPath: decisions.Array.size
       value: 1
@@ -2934,7 +3549,7 @@ PrefabInstance:
     - target: {fileID: 8245715833671712309, guid: 598375b562db3a745beaf124957714bf, type: 3}
       propertyPath: 'decisions.Array.data[0]'
       value: 
-      objectReference: {fileID: 3327770269359959970, guid: eb09c3c028c05efc1b143bf70e129a17, type: 3}
+      objectReference: {fileID: 5409515706383817452}
     - target: {fileID: 8245715833671712309, guid: 598375b562db3a745beaf124957714bf, type: 3}
       propertyPath: 'decisions.Array.data[1]'
       value: 
@@ -2946,7 +3561,7 @@ PrefabInstance:
     - target: {fileID: 8532197703353552513, guid: 598375b562db3a745beaf124957714bf, type: 3}
       propertyPath: 'decisions.Array.data[0]'
       value: 
-      objectReference: {fileID: 3327770269359959970, guid: a69cc249385f1370ebdfe3c565cac561, type: 3}
+      objectReference: {fileID: 1020561973330572530}
     - target: {fileID: 8716963416551242657, guid: 598375b562db3a745beaf124957714bf, type: 3}
       propertyPath: m_Color.b
       value: 0.2471698
@@ -2968,7 +3583,25 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 1102155691146718836, guid: 598375b562db3a745beaf124957714bf, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7758222263037549234}
+      addedObject: {fileID: 7977984022383580613}
+    - targetCorrespondingSourceObject: {fileID: 8679222527291416239, guid: 598375b562db3a745beaf124957714bf, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6607563795596899034}
+    - targetCorrespondingSourceObject: {fileID: 8679222527291416239, guid: 598375b562db3a745beaf124957714bf, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2994607716816889156}
+    - targetCorrespondingSourceObject: {fileID: 2004060285838621027, guid: 598375b562db3a745beaf124957714bf, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3238165329162003732}
+    - targetCorrespondingSourceObject: {fileID: 2976895554287658452, guid: 598375b562db3a745beaf124957714bf, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7623451086122863370}
+    - targetCorrespondingSourceObject: {fileID: 645896769344634956, guid: 598375b562db3a745beaf124957714bf, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9179847526265949018}
+    - targetCorrespondingSourceObject: {fileID: 645896769344634956, guid: 598375b562db3a745beaf124957714bf, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 346972993582841669}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7004727621074766775, guid: 598375b562db3a745beaf124957714bf, type: 3}
       insertIndex: -1
@@ -2980,6 +3613,131 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 598375b562db3a745beaf124957714bf, type: 3}
+--- !u!61 &8293382042801907061
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2993478504815006482}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0.049999997, y: 0.049999997, z: 0.049999997, w: 0.049999997}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.16, y: 0.16}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.16, y: 0.16}
+  m_EdgeRadius: 0
+--- !u!61 &8531716452001244453
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3239290142571647810}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0.049999997, y: 0.049999997, z: 0.049999997, w: 0.049999997}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.16, y: 0.16}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.16, y: 0.16}
+  m_EdgeRadius: 0
+--- !u!1 &9178720582283509004
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9179847526265949018}
+  - component: {fileID: 1767501612921402530}
+  - component: {fileID: 2734712385995049835}
+  m_Layer: 0
+  m_Name: DecisionT
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9179847526265949018
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9178720582283509004}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 30, y: 60, z: 3}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1717094811}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18a729f3a4a94b96ae67e2f5a7e96471, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Decision
-  stampState: 1
+  stampState: 0
   description: "Solar Panels \LDear Minister, \LOur nation is still facing serious
     energy shortages.\LInvesting in Solar Panel Infrastructure could improve our
     energy production, but it would require: \L<br>$4 billion from the national budget
@@ -53,7 +53,7 @@ MonoBehaviour:
   approvalGains: Benefits:<br>+10% public approval during elections
   denyGains: 'If we reject this project: <br>+10% environmental health<br>-5% public
     approval'
-  approvalCosts: 0a0000000a00000000000000fcffffff0000000000000000000000000000000000000000
+  approvalCosts: 0a000000f6ffffff00000000fcffffff0000000000000000000000000000000000000000
   disapprovalCosts: fbffffff0a00000000000000000000000000000000000000000000000000000000000000
   powerPlants:
   - {fileID: 11400000, guid: 24fce1840cd5a8d488aba02c3b39b258, type: 2}

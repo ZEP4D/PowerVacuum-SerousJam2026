@@ -55,10 +55,10 @@ MonoBehaviour:
     during elections '
   denyGains: If we reject this project:<br> -10% public approval <br> +5% relations
     with neighboring countries
-  approvalCosts: 14000000f1ffffff00000000faffffff0000000001000000020000000200000002000000
+  approvalCosts: 140000000f00000000000000faffffff0000000001000000020000000200000002000000
   disapprovalCosts: f6ffffff0000000000000000000000000000000000000000050000000500000005000000
   powerPlants: []
-  typeOfProject: 1
+  typeOfProject: 2
 --- !u!61 &1394521981441462379
 BoxCollider2D:
   m_ObjectHideFlags: 0

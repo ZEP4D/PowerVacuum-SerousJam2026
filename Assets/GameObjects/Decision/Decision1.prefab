@@ -53,8 +53,8 @@ MonoBehaviour:
   approvalGains: 'Benefits: <br>+10% public approval during elections'
   denyGains: "If we reject this project: <br>+5% environmental health <br>\L-10%
     public approval "
-  approvalCosts: 0a000000f6ffffff00000000020000000000000000000000000000000000000000000000
-  disapprovalCosts: f6ffffff0500000000000000000000000000000000000000000000000000000000000000
+  approvalCosts: 0a0000000a00000000000000020000000000000000000000000000000000000000000000
+  disapprovalCosts: f6fffffffbffffff00000000000000000000000000000000000000000000000000000000
   powerPlants:
   - {fileID: 11400000, guid: ae8e64126805c2047bd2e8d23de3a589, type: 2}
   - {fileID: 11400000, guid: ae8e64126805c2047bd2e8d23de3a589, type: 2}

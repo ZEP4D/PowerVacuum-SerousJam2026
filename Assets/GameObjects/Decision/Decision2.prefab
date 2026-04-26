@@ -52,8 +52,8 @@ MonoBehaviour:
     space\L+10% environmental health"
   approvalGains: "Benefits: \L\L+5% public approval during elections "
   denyGains: "\LIf we reject this project:\L-%5 approval  -10% environmental health "
-  approvalCosts: 050000000a00000000000000fcffffff0000000000000000000000000000000000000000
-  disapprovalCosts: fbfffffff6ffffff00000000000000000000000000000000000000000000000000000000
+  approvalCosts: 05000000f6ffffff00000000fcffffff0000000000000000000000000000000000000000
+  disapprovalCosts: fbffffff0a00000000000000000000000000000000000000000000000000000000000000
   powerPlants:
   - {fileID: 11400000, guid: 51233ebd82d557741b769ac35661099f, type: 2}
   typeOfProject: 0

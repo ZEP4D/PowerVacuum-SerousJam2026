@@ -52,7 +52,7 @@ MonoBehaviour:
   approvalGains: 'This agreement would require: $4 billion from the national budget
     +10% public approval during elections -15% relations with Carosa '
   denyGains: 
-  approvalCosts: 0a0000000000000000000000fcffffff00000000050000000000000000000000f1ffffff
+  approvalCosts: 0a0000000000000000000000fcffffff05000000000000000000000000000000f1ffffff
   disapprovalCosts: 000000000000000000000000000000000000000000000000000000000000000000000000
   powerPlants: []
   typeOfProject: 2
