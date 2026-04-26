@@ -6,6 +6,7 @@ public enum CurrentStampleState {
     Idle,
     Grabbed,
     Placed,
+    PostPlacedHover,
     Returning
 }
 
@@ -17,14 +18,23 @@ public class StampDragAndDrop : MonoBehaviour, IPointerClickHandler
 
     [field: Header("Timeings")]
     [SerializeField] public float stampTime;
+    [SerializeField] public float stampIdleTime;
     [SerializeField] public float returnTime;
+
+    [field: Header("Sprites")]
+    [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private Sprite upSprite;
+    [SerializeField] private Sprite downSprite;
+
+    [field: Header("Misc")]
 
     [SerializeField] public Decision.StampState stampState;
     Vector3 startPosition;
     Vector3 placedLocation;
     public CurrentStampleState currentStampleState = CurrentStampleState.Idle;
     
-    float timeTillPositionReset = 0;
+    float timeTillStampLiftReset = 0;
+    float timeTillStampReturns = 0;
     float lerpTimeLeft = 0;
 
 
@@ -56,17 +66,32 @@ public class StampDragAndDrop : MonoBehaviour, IPointerClickHandler
 
             case CurrentStampleState.Placed:
 
-                if (timeTillPositionReset <= 0)
+                if (timeTillStampLiftReset <= 0)
                 {
-                    // When the stamp timer is finished, store where we placed it and setup the return journey
-                    placedLocation = transform.position;
+                    timeTillStampReturns = stampIdleTime;
 
-                    lerpTimeLeft = returnTime;
-                    currentStampleState = CurrentStampleState.Returning;
+                    // Lift the stamp
+                    spriteRenderer.sprite = upSprite;
+                    currentStampleState = CurrentStampleState.PostPlacedHover;
                 } else {
 
                     // Reduce the timer's time left
-                    timeTillPositionReset -= Time.deltaTime;
+                    timeTillStampLiftReset -= Time.deltaTime;
+                }
+            break;
+
+
+            case CurrentStampleState.PostPlacedHover:
+
+                if (timeTillStampReturns <= 0)
+                {
+                    // When the stamp timer is finished, store where we placed it and setup the return journey
+                    placedLocation = transform.position;
+                    lerpTimeLeft = returnTime;
+
+                    currentStampleState = CurrentStampleState.Returning;
+                } else {
+                    timeTillStampReturns -= Time.deltaTime;
                 }
             break;
 
@@ -105,12 +130,19 @@ public class StampDragAndDrop : MonoBehaviour, IPointerClickHandler
 
 
             case CurrentStampleState.Grabbed:
-                timeTillPositionReset = stampTime;
+                timeTillStampLiftReset = stampTime;
+
+                // Place it down
                 currentStampleState = CurrentStampleState.Placed;
+                spriteRenderer.sprite = downSprite;
             break;
 
 
             case CurrentStampleState.Placed:
+            break;
+
+
+            case CurrentStampleState.PostPlacedHover:
             break;
 
 

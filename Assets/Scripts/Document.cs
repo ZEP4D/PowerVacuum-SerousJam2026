@@ -11,7 +11,7 @@ public class Document : MonoBehaviour
     [SerializeField] private GameObject cost;
     [SerializeField] private List<Decision> decisions = new List<Decision>();
     [SerializeField, CanBeNull] private Decision currentDecision;
-    [SerializeField] private int index;
+    [SerializeField] public int index;
     private SpriteRenderer spriteRenderer;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
