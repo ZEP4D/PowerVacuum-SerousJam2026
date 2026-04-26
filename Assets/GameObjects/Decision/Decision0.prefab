@@ -46,11 +46,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Decision
   stampState: 0
-  description: 'Our nation is still facing serious energy shortages. <br> <br> The
-    Nuclear Energy Project could solve a large part of our energy crisis, but it
-    would come with significant costs: <br> $6 billion from the national budget <br> 
-    2 building spaces <br> -15% environmental health <br> -15% relations with neighboring
-    countries if the plant is built near their borders <br> 1 unit of uranium '
+  description: 'Our nation is still facing serious energy shortages.  <br>The Nuclear
+    Energy Project could solve a large part of our energy crisis, but it would come
+    with significant costs: <br> $6 billion from the national budget <br>2 building
+    spaces <br> -15% environmental health  <br>-15% relations with neighboring countries
+    if the plant is built near their borders <br> 1 unit of uranium '
   approvalGains: 'However, the project would also provide: <br> <br> +20% public
     approval during elections '
   denyGains: 'If we reject this project: <br> <br> -10% public approval <br> +5%

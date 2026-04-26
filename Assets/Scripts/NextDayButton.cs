@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Unity.VisualScripting;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class NextDayButton : MonoBehaviour
@@ -14,9 +15,7 @@ public class NextDayButton : MonoBehaviour
     {
         ResourcesSystem.instance.Endturnisup();
         CalculateTurnOutput.instance.CalculateTurn();
-        foreach (var item in ResourcesSystem.instance.GetResources())
-        {
-            Debug.Log($"{item.Key}: {item.Value}");
-        }
+        FindFirstObjectByType<Document>().loadDecisionList(ResourcesSystem.instance.getnumbersofturn());
+        button.GameObject().SetActive(false);
     }
 }

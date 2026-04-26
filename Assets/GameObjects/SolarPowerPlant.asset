@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: SolarPowerPlant
   m_EditorClassIdentifier: Assembly-CSharp::PowerPlants_core
   description: 
-  isRenewable: 0
+  isRenewable: 1
   type_pp: 4
   cost: 10
   liked: 10
   generateofpower: 10
   polution: 10
-  resoureceUsage: 10
+  resoureceUsage: 0
   Object: {fileID: 0}

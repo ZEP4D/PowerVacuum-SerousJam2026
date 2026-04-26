@@ -15,10 +15,10 @@ public class Document : MonoBehaviour
     [SerializeField] private Decision currentDecision;
     [SerializeField] public int index;
     [SerializeField] private GameObject nextDayButton;
-    private SpriteRenderer spriteRenderer;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        decisions = decisionsList[0].GetDecisions();
         SetCurrentDecision(decisions[index]);
     }
 
@@ -62,5 +62,16 @@ public class Document : MonoBehaviour
     public bool AreDecisionsMade()
     {
         return decisions.All(decision => decision.IsStamped());
+    }
+
+    public void loadDecisionList(int index)
+    {
+        if (index >= decisionsList.Count)
+        {
+            return;
+        }
+        decisions = decisionsList[index].GetDecisions();
+        SetCurrentDecision(decisions[0]);
+        GetComponentInChildren<Stampable>().showStamp(currentDecision.GetStampState());
     }
 }

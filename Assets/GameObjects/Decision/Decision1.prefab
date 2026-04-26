@@ -46,10 +46,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Decision
   stampState: 0
-  description: "Coal Mines <br>\L<br>\LDear Minister, <br>\LOur nation is still facing
-    serious energy shortages. <br>\L<br>\LExpanding the Coal Mining Program could
-    ease part of the energy problem, but it would require:\L<br>\L$2 billion from
-    the national budget <br>\L1 building space <br>\L-10% environmental health <br>"
+  description: "Coal Mines \\n\LDear Minister, <br>\LOur nation is still facing serious
+    energy shortages. <br>\L<br>\LExpanding the Coal Mining Program could ease part
+    of the energy problem, but it would require:\L<br>\L$2 billion from the national
+    budget <br>\L1 building space <br>\L-10% environmental health <br>"
   approvalGains: "\LBenefits: <br>\L<br>\L+10% public approval during elections"
   denyGains: "\LIf we reject this project: <br>\L<br>\L+5% environmental health <br>\L-10%
     public approval <br>"

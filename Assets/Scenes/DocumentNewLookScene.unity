@@ -160,7 +160,7 @@ MonoBehaviour:
   denyGains: approval VVVVVV
   approvalCosts: 000000000000000000000000fdffffff0300000000000000
   disapprovalCosts: fdffffff0000000000000000000000000000000000000000
-  powerPlant: {fileID: 0}
+  powerPlants: []
   typeOfProject: 1
 --- !u!61 &117004442
 BoxCollider2D:
@@ -223,6 +223,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &206858596 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4387334459676561836, guid: 598375b562db3a745beaf124957714bf, type: 3}
+  m_PrefabInstance: {fileID: 8082821054749016270}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f0063dd1c641ec8c9c3b7aee042008, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DecisionListPreset
 --- !u!1 &224807640
 GameObject:
   m_ObjectHideFlags: 0
@@ -1313,6 +1324,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5923262747649348789, guid: 25da08b8164f01340b5b082e06d669a6, type: 3}
   m_PrefabInstance: {fileID: 1814566005}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1285571854 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1291216101283513131, guid: 598375b562db3a745beaf124957714bf, type: 3}
+  m_PrefabInstance: {fileID: 8082821054749016270}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f0063dd1c641ec8c9c3b7aee042008, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DecisionListPreset
 --- !u!1 &1306684331
 GameObject:
   m_ObjectHideFlags: 0
@@ -1355,7 +1377,9 @@ MonoBehaviour:
     borders 1 unit of uranium
   approvalCosts: 050000000500000005000000010000000000000000000000
   disapprovalCosts: fbfffffffbffffff00000000ffffffff0000000000000000
-  powerPlant: {fileID: 11400000, guid: ae8e64126805c2047bd2e8d23de3a589, type: 2}
+  powerPlants:
+  - {fileID: 11400000, guid: ae8e64126805c2047bd2e8d23de3a589, type: 2}
+  - {fileID: 11400000, guid: ae8e64126805c2047bd2e8d23de3a589, type: 2}
   typeOfProject: 0
 --- !u!4 &1306684334
 Transform:
@@ -1531,6 +1555,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1327613051 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8245715833671712309, guid: 598375b562db3a745beaf124957714bf, type: 3}
+  m_PrefabInstance: {fileID: 8082821054749016270}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f0063dd1c641ec8c9c3b7aee042008, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DecisionListPreset
 --- !u!1 &1340240942
 GameObject:
   m_ObjectHideFlags: 0
@@ -1648,17 +1683,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b08d2d593a3954c18e9364b942c93ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ResourcesSystem
-  startingApproval: 0
-  startingClimate: 0
+  startingApproval: 50
+  startingClimate: 20
   startingEnergy: 0
   startingBudget: 10
-  startingCoal: 0
+  startingCoal: 100
   startingUranium: 0
   powerPlants:
   - {fileID: 11400000, guid: ae8e64126805c2047bd2e8d23de3a589, type: 2}
   - {fileID: 11400000, guid: 24fce1840cd5a8d488aba02c3b39b258, type: 2}
   newCoal: 0
   newUran: 0
+  newBudget: 3
 --- !u!4 &1420351454
 Transform:
   m_ObjectHideFlags: 0
@@ -1850,6 +1886,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1638300542}
   m_CullTransparentMesh: 1
+--- !u!224 &1662001803 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1102155691146718836, guid: 598375b562db3a745beaf124957714bf, type: 3}
+  m_PrefabInstance: {fileID: 8082821054749016270}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1662001804 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7192003204095592354, guid: 598375b562db3a745beaf124957714bf, type: 3}
+  m_PrefabInstance: {fileID: 8082821054749016270}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f0063dd1c641ec8c9c3b7aee042008, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DecisionListPreset
+--- !u!114 &1808176335 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8532197703353552513, guid: 598375b562db3a745beaf124957714bf, type: 3}
+  m_PrefabInstance: {fileID: 8082821054749016270}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f0063dd1c641ec8c9c3b7aee042008, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DecisionListPreset
 --- !u!1001 &1814566005
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2272,6 +2335,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1966028164}
   m_CullTransparentMesh: 1
+--- !u!114 &885113324313371978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7759347042079927524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18a729f3a4a94b96ae67e2f5a7e96471, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Decision
+  stampState: 0
+  description: 'Our nation is still facing serious energy shortages. \nThe Nuclear
+    Energy Project could solve a large part of our energy crisis, but it would come
+    with significant costs: <br> $6 billion from the national budget <br>  2 building
+    spaces <br> -15% environmental health <br> -15% relations with neighboring countries
+    if the plant is built near their borders <br> 1 unit of uranium '
+  approvalGains: 'However, the project would also provide: <br> <br> +20% public
+    approval during elections '
+  denyGains: 'If we reject this project: <br> <br> -10% public approval <br> +5%
+    relations with neighboring countries'
+  approvalCosts: 14000000f1ffffff00000000faffffff0000000001000000020000000200000002000000
+  disapprovalCosts: f6ffffff0000000000000000000000000000000000000000050000000500000005000000
+  powerPlants: []
+  typeOfProject: 1
 --- !u!1001 &1740768864247802308
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2454,6 +2543,52 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31a6774fccd35634d8362e31551923e2, type: 3}
+--- !u!61 &3547788492365716099
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7759347042079927524}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0.049999997, y: 0.049999997, z: 0.049999997, w: 0.049999997}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.16, y: 0.16}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.16, y: 0.16}
+  m_EdgeRadius: 0
 --- !u!1001 &6393537149864652371
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2559,6 +2694,39 @@ PrefabInstance:
       addedObject: {fileID: 1638300543}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25da08b8164f01340b5b082e06d669a6, type: 3}
+--- !u!4 &7758222263037549234
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7759347042079927524}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.81192, y: -0.30385, z: 0}
+  m_LocalScale: {x: 30, y: 60, z: 3}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1662001803}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7759347042079927524
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7758222263037549234}
+  - component: {fileID: 885113324313371978}
+  - component: {fileID: 3547788492365716099}
+  m_Layer: 0
+  m_Name: Decision0
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1001 &8082821054749016270
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2571,6 +2739,22 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 5.1600003
       objectReference: {fileID: 0}
+    - target: {fileID: 1291216101283513131, guid: 598375b562db3a745beaf124957714bf, type: 3}
+      propertyPath: decisions.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291216101283513131, guid: 598375b562db3a745beaf124957714bf, type: 3}
+      propertyPath: 'decisions.Array.data[0]'
+      value: 
+      objectReference: {fileID: 3327770269359959970, guid: 4694775d1205e5dfaa72d02a69383e7a, type: 3}
+    - target: {fileID: 1291216101283513131, guid: 598375b562db3a745beaf124957714bf, type: 3}
+      propertyPath: 'decisions.Array.data[1]'
+      value: 
+      objectReference: {fileID: 3327770269359959970, guid: 834171384d85512168669f390e9eb7ff, type: 3}
+    - target: {fileID: 1291216101283513131, guid: 598375b562db3a745beaf124957714bf, type: 3}
+      propertyPath: 'decisions.Array.data[2]'
+      value: 
+      objectReference: {fileID: 3327770269359959970, guid: e15105457480190daac80d5504ed7cf3, type: 3}
     - target: {fileID: 2083981709846758485, guid: 598375b562db3a745beaf124957714bf, type: 3}
       propertyPath: nextDayButton
       value: 
@@ -2583,6 +2767,30 @@ PrefabInstance:
       propertyPath: 'decisions.Array.data[1]'
       value: 
       objectReference: {fileID: 117004441}
+    - target: {fileID: 2083981709846758485, guid: 598375b562db3a745beaf124957714bf, type: 3}
+      propertyPath: decisionsList.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2083981709846758485, guid: 598375b562db3a745beaf124957714bf, type: 3}
+      propertyPath: 'decisionsList.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1662001804}
+    - target: {fileID: 2083981709846758485, guid: 598375b562db3a745beaf124957714bf, type: 3}
+      propertyPath: 'decisionsList.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1285571854}
+    - target: {fileID: 2083981709846758485, guid: 598375b562db3a745beaf124957714bf, type: 3}
+      propertyPath: 'decisionsList.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1327613051}
+    - target: {fileID: 2083981709846758485, guid: 598375b562db3a745beaf124957714bf, type: 3}
+      propertyPath: 'decisionsList.Array.data[3]'
+      value: 
+      objectReference: {fileID: 1808176335}
+    - target: {fileID: 2083981709846758485, guid: 598375b562db3a745beaf124957714bf, type: 3}
+      propertyPath: 'decisionsList.Array.data[4]'
+      value: 
+      objectReference: {fileID: 206858596}
     - target: {fileID: 3379791689725734805, guid: 598375b562db3a745beaf124957714bf, type: 3}
       propertyPath: m_Color.b
       value: 0.2509804
@@ -2691,6 +2899,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4387334459676561836, guid: 598375b562db3a745beaf124957714bf, type: 3}
+      propertyPath: decisions.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4387334459676561836, guid: 598375b562db3a745beaf124957714bf, type: 3}
+      propertyPath: 'decisions.Array.data[0]'
+      value: 
+      objectReference: {fileID: 3327770269359959970, guid: e15105457480190daac80d5504ed7cf3, type: 3}
+    - target: {fileID: 4387334459676561836, guid: 598375b562db3a745beaf124957714bf, type: 3}
+      propertyPath: 'decisions.Array.data[1]'
+      value: 
+      objectReference: {fileID: 3327770269359959970, guid: b581bde281a19d2a884d9cd7588dfcae, type: 3}
     - target: {fileID: 4408425736365447514, guid: 598375b562db3a745beaf124957714bf, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 5.16
@@ -2699,6 +2919,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: Document
       objectReference: {fileID: 0}
+    - target: {fileID: 7192003204095592354, guid: 598375b562db3a745beaf124957714bf, type: 3}
+      propertyPath: decisions.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7192003204095592354, guid: 598375b562db3a745beaf124957714bf, type: 3}
+      propertyPath: 'decisions.Array.data[0]'
+      value: 
+      objectReference: {fileID: 885113324313371978}
+    - target: {fileID: 8245715833671712309, guid: 598375b562db3a745beaf124957714bf, type: 3}
+      propertyPath: decisions.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8245715833671712309, guid: 598375b562db3a745beaf124957714bf, type: 3}
+      propertyPath: 'decisions.Array.data[0]'
+      value: 
+      objectReference: {fileID: 3327770269359959970, guid: eb09c3c028c05efc1b143bf70e129a17, type: 3}
+    - target: {fileID: 8245715833671712309, guid: 598375b562db3a745beaf124957714bf, type: 3}
+      propertyPath: 'decisions.Array.data[1]'
+      value: 
+      objectReference: {fileID: 3327770269359959970, guid: a69cc249385f1370ebdfe3c565cac561, type: 3}
+    - target: {fileID: 8532197703353552513, guid: 598375b562db3a745beaf124957714bf, type: 3}
+      propertyPath: decisions.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8532197703353552513, guid: 598375b562db3a745beaf124957714bf, type: 3}
+      propertyPath: 'decisions.Array.data[0]'
+      value: 
+      objectReference: {fileID: 3327770269359959970, guid: a69cc249385f1370ebdfe3c565cac561, type: 3}
     - target: {fileID: 8716963416551242657, guid: 598375b562db3a745beaf124957714bf, type: 3}
       propertyPath: m_Color.b
       value: 0.2471698
@@ -2717,7 +2965,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 1102155691146718836, guid: 598375b562db3a745beaf124957714bf, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7758222263037549234}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7004727621074766775, guid: 598375b562db3a745beaf124957714bf, type: 3}
       insertIndex: -1

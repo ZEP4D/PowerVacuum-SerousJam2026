@@ -60,11 +60,4 @@ public class EndChecker : MonoBehaviour
         Debug.Log("Sad face,Sad Face");
         endisactive = true;
     }
-
-
-
-
-
-
-
 }
