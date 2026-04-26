@@ -34,11 +34,8 @@ public class Stampable : MonoBehaviour
                 default:
                     break;
             }
-            Debug.Log(document.GetCurrentDecision());
-            Debug.Log(document.GetCurrentDecision()?.GetStampState());
+            document.SetCurrentDecision(document.GetCurrentDecision());
         }
-        
-        
     }
 
     public void showStamp(Decision.StampState state)

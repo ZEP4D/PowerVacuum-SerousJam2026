@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using JetBrains.Annotations;
 using TMPro;
 using UnityEngine;
@@ -12,17 +13,12 @@ public class Document : MonoBehaviour
     [SerializeField] private List<Decision> decisions = new ();
     [SerializeField] private Decision currentDecision;
     [SerializeField] public int index;
+    [SerializeField] private GameObject nextDayButton;
     private SpriteRenderer spriteRenderer;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         SetCurrentDecision(decisions[index]);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void SetCurrentDecision(Decision decision)
@@ -43,6 +39,7 @@ public class Document : MonoBehaviour
             denyGains.SetActive(true);
             denyGains.GetComponent<TextMeshPro>().text = decision.GetCons();
         }
+        nextDayButton.SetActive(AreDecisionsMade());
     }
     public void ChangePage(int value)
     {
@@ -59,5 +56,10 @@ public class Document : MonoBehaviour
     public List<Decision> GetDecisions()
     {
         return decisions;
+    }
+
+    public bool AreDecisionsMade()
+    {
+        return decisions.All(decision => decision.IsStamped());
     }
 }
