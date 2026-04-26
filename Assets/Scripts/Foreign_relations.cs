@@ -1,22 +1,25 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering;
-using UnityEngine.UIElements;
 
 public class Foreign_relations : MonoBehaviour
 {
     
     [SerializeField] private List<Countries> countries;
 
+    public static Foreign_relations instance;
 
-
-    void Update()
+    void Awake()
     {
-        foreach(Countries core in countries)
-        {
-            Debug.Log(core.GetCountry());
-        }
+        instance = this;
     }
+
+    // void Update()
+    // {
+    //     foreach(Countries core in countries)
+    //     {
+    //         Debug.Log(core.GetCountry());
+    //     }
+    // }
 
     public int getrelation(Countries core)
     {
