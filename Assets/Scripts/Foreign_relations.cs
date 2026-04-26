@@ -1,32 +1,59 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.UIElements;
 
 public class Foreign_relations : MonoBehaviour
 {
     
-    [SerializeField] private List<Country_core> countries; 
+    [SerializeField] private List<Countries> countries;
 
-    
-    public int getrelation(Country_core core)
+
+
+    void Update()
     {
-        int index = Listfinder(core);
-        return countries[index].getrelation();
+        foreach(Countries core in countries)
+        {
+            Debug.Log(core.GetCountry());
+        }
+    }
+
+    public int getrelation(Countries core)
+    {
+        return countries[Listfinder(core)].getrelation();
     }
 
 
-    public int getliked(Country_core core)
-    {
-        int index = Listfinder(core);
-        return countries[index].getliked();
+    public int getliked(Countries core)
+    { 
+        return countries[Listfinder(core)].getliked();
     }
 
 
+    public void changeRelation(Countries core, int para)
+    {
+        countries[Listfinder(core)].changeRelation(para);
+    }
 
-    
+    public void changeLiked(Countries core, int para)
+    {
+        countries[Listfinder(core)].changeLiked(para);
+    }
 
 
+    public bool CountrywantTrade(Countries core)
+    {
+        if(countries[Listfinder(core)].getrelation() > 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }    
 
-    private int Listfinder(Country_core count)
+    private int Listfinder(Countries count)
     {
         for(int i = 0; i < countries.Count; i++)
         {
@@ -38,5 +65,6 @@ public class Foreign_relations : MonoBehaviour
 
         return 0;
     }
+
 
 }
