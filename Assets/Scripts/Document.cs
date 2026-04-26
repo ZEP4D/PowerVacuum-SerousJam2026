@@ -10,13 +10,13 @@ public class Document : MonoBehaviour
     [FormerlySerializedAs("pros")] [SerializeField] private GameObject approvalGains;
     [FormerlySerializedAs("cons")] [SerializeField] private GameObject denyGains;
     [SerializeField] private List<Decision> decisions = new ();
-    [SerializeField, CanBeNull] private Decision currentDecision;
+    [SerializeField] private Decision currentDecision;
     [SerializeField] public int index;
     private SpriteRenderer spriteRenderer;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        SetCurrentDecision(index > 0 ? decisions[index - 1] : null);
+        SetCurrentDecision(decisions[index]);
     }
 
     // Update is called once per frame
@@ -46,17 +46,9 @@ public class Document : MonoBehaviour
     }
     public void ChangePage(int value)
     {
-        index = (index + value + decisions.Count + 1) % (decisions.Count + 1);
-        SetCurrentDecision(index > 0 ? decisions[index - 1] : null);
-        if (currentDecision == null)
-        {
-            GetComponentInChildren<Stampable>().showStamp(Decision.StampState.None);
-        }
-        else
-        {
-            GetComponentInChildren<Stampable>().showStamp(currentDecision.GetStampState());
-        }
-            
+        index = (index + value + decisions.Count) % (decisions.Count);
+        SetCurrentDecision(decisions[index]);
+        GetComponentInChildren<Stampable>().showStamp(currentDecision.GetStampState());
     }
 
     public Decision GetCurrentDecision()
