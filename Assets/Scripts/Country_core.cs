@@ -11,4 +11,17 @@ public class Country_core : ScriptableObject
     [SerializeField] private int Liked;
 
     [SerializeField] private List<type> resourcesexport;
+
+
+
+    public int getrelation()
+    {
+        return relation;
+    }
+
+
+    public int getliked()
+    {
+        return Liked;
+    }
 }

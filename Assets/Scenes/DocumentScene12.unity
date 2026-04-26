@@ -383,9 +383,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Decision
   stampState: 0
   description: bla bla bla even more text
-  pros: money ^^^^
-  cons: approval VVVVVV
-  cost: 
+  approvalGains: money ^^^^
+  denyGains: approval VVVVVV
   approvalCosts: 000000000000000000000000fdffffff0300000000000000
   disapprovalCosts: fdffffff0000000000000000000000000000000000000000
   powerPlant: {fileID: 0}
@@ -1448,7 +1447,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d6e0ece6d5942b29e2ba56cfadfe1a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SwapDecisions
-  document: {fileID: 0}
+  document: {fileID: 1381096733}
   value: 1
 --- !u!212 &647418775
 SpriteRenderer:
@@ -1947,9 +1946,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Decision
   stampState: 0
   description: 'blablabla text here '
-  pros: ppl ^^^
-  cons: money VVVV
-  cost: 
+  approvalGains: ppl ^^^
+  denyGains: money VVVV
   approvalCosts: 050000000500000005000000010000000000000000000000
   disapprovalCosts: fbfffffffbffffff00000000ffffffff0000000000000000
   powerPlant: {fileID: 11400000, guid: ae8e64126805c2047bd2e8d23de3a589, type: 2}
@@ -2329,8 +2327,8 @@ MonoBehaviour:
   cons: {fileID: 1398085889}
   cost: {fileID: 788245886}
   decisions:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 03712303179d05d32ab71726a82f0f0b, type: 2}
+  - {fileID: 11400000, guid: 202caeaf3c9b546878c97476536afd04, type: 2}
   currentDecision: {fileID: 0}
   index: 1
 --- !u!1 &1398085889
@@ -2525,7 +2523,6 @@ GameObject:
   - component: {fileID: 1420351454}
   - component: {fileID: 1420351453}
   - component: {fileID: 1420351455}
-  - component: {fileID: 1420351456}
   m_Layer: 0
   m_Name: ResourceSystem
   m_TagString: Untagged
@@ -2584,19 +2581,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EndChecker
   howmanyturn: 5
---- !u!114 &1420351456
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1420351452}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b2d478148dd411da6c2c285507aac65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CalculateTurnOutput
-  document: {fileID: 0}
 --- !u!1 &1514867721
 GameObject:
   m_ObjectHideFlags: 0
