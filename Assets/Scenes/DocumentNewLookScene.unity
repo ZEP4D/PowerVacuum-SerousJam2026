@@ -481,6 +481,7 @@ GameObject:
   - component: {fileID: 348270051}
   - component: {fileID: 348270050}
   - component: {fileID: 348270053}
+  - component: {fileID: 348270054}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -597,11 +598,24 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 348270048}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 92dc40756aab3e11ba2ef5c03132c05a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::clickButtonprotopytesting
+  button: {fileID: 348270050}
+--- !u!114 &348270054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348270048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf7b17228ccd4a7c9578bc2c01d29bbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NextDayButton
   button: {fileID: 348270050}
 --- !u!1 &519420028
 GameObject:
@@ -2551,6 +2565,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 5.1600003
       objectReference: {fileID: 0}
+    - target: {fileID: 2083981709846758485, guid: 598375b562db3a745beaf124957714bf, type: 3}
+      propertyPath: nextDayButton
+      value: 
+      objectReference: {fileID: 348270048}
     - target: {fileID: 2083981709846758485, guid: 598375b562db3a745beaf124957714bf, type: 3}
       propertyPath: 'decisions.Array.data[0]'
       value: 
