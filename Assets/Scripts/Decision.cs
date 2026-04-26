@@ -15,7 +15,7 @@ public class Decision : MonoBehaviour
 
     public enum TypeOfProject
     {
-        Build, Demolish, Replace
+        Build, Demolish, Trade
     }
     
     [SerializeField] private StampState stampState = StampState.None;
@@ -23,9 +23,8 @@ public class Decision : MonoBehaviour
     [FormerlySerializedAs("pros")] [SerializeField] private string approvalGains;
     [FormerlySerializedAs("cons")] [SerializeField] private string denyGains;
 
-    [field: Header("0 - approval, 1 - climate, 2 - energy, 3 - budget, 4 - coal, 5 - uranium ")] [SerializeField]
-    public List<int> approvalCosts;
-
+    [field: Header("0 - approval, 1 - climate, 2 - energy, 3 - budget, 4 - coal, 5 - uranium\n6 - CountryA , 7 - CountryB,  8 - CountryC")] 
+    [SerializeField] public List<int> approvalCosts;
     [SerializeField] public List<int> disapprovalCosts;
     [SerializeField] public PowerPlants_core powerPlant;
     [SerializeField] public TypeOfProject typeOfProject;
@@ -56,5 +55,25 @@ public class Decision : MonoBehaviour
     public string GetCons()
     {
         return denyGains;
+    }
+
+    public PowerPlants_core GetPowerPlants()
+    {
+        return powerPlant;
+    }
+
+    public TypeOfProject GetTypeOfProject()
+    {
+        return typeOfProject;
+    }
+
+    public List<int> GetApprovalCosts()
+    {
+        return approvalCosts;
+    }
+    
+    public List<int> GetDisapprovalCosts()
+    {
+        return disapprovalCosts;
     }
 }

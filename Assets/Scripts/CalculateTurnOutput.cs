@@ -22,32 +22,34 @@ public class CalculateTurnOutput : MonoBehaviour
         {
             if (decision.GetStampState() == Decision.StampState.Approved)
             {
-                switch (decision.typeOfProject)
+                switch (decision.GetTypeOfProject())
                 {
                     case Decision.TypeOfProject.Build:
                     {
-                        ResourcesSystem.instance.PayforConstrut(decision.powerPlant, 1);
+                        ResourcesSystem.instance.PayforConstrut(decision.GetPowerPlants(), 1);
                         break;
                     }
                     case Decision.TypeOfProject.Demolish:
                     {
-                        ResourcesSystem.instance.RemovePlant(decision.powerPlant);
+                        ResourcesSystem.instance.RemovePlant(decision.GetPowerPlants());
                         break;
                     }
                     default: break;
                 }
 
-                for (int i = 0; i < decision.approvalCosts.Count; i++)
+                for (int i = 0; i < decision.GetApprovalCosts().Count; i++)
                 {
-                    ResourcesSystem.instance.AffectResource((ResourcesSystem.ResourceType)i, decision.approvalCosts[i]);
+                    if (i > 5) break;
+                    ResourcesSystem.instance.AffectResource((ResourcesSystem.ResourceType)i, decision.GetApprovalCosts()[i]);
                 }
         }
 
             if (decision.GetStampState() == Decision.StampState.Disapproved)
             {
-                for (int i = 0; i < decision.disapprovalCosts.Count; i++)
+                for (int i = 0; i < decision.GetDisapprovalCosts().Count; i++)
                 {
-                    ResourcesSystem.instance.AffectResource((ResourcesSystem.ResourceType)i, decision.disapprovalCosts[i]);
+                    if (i > 5) break;
+                    ResourcesSystem.instance.AffectResource((ResourcesSystem.ResourceType)i, decision.GetDisapprovalCosts()[i]);
                 }
             }
         }

@@ -22,7 +22,7 @@ public class Stampable : MonoBehaviour
         if (other.gameObject.GetComponent<StampDragAndDrop>().currentStampleState == CurrentStampleState.Placed)
         {
             var state = other.gameObject.GetComponent<StampDragAndDrop>().stampState;
-            document.GetCurrentDecision()?.SetStampState(state);
+            document.GetCurrentDecision().SetStampState(state);
             switch (state)
             {
                 case Decision.StampState.Approved:

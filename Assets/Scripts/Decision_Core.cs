@@ -3,14 +3,15 @@ using UnityEngine;
 
 
 
-public enum StampState { None, Approved, Disapproved }
-public enum TypeOfProject { Build, Demolish, Trade }
+
 
 
 [CreateAssetMenu(fileName = "Decision_Core", menuName = "Scriptable Objects/Decision_Core")]
 public class Decision_Core : ScriptableObject
 {   
-     [SerializeField] private StampState stampState = StampState.None;
+    public enum StampState { None, Approved, Disapproved }
+    public enum TypeOfProject { Build, Demolish, Trade }
+    [SerializeField] private StampState stampState = StampState.None;
     [SerializeField] private string description;
     [SerializeField] private string approvalgain;
     [SerializeField] private string lostgain;
@@ -23,8 +24,8 @@ public class Decision_Core : ScriptableObject
     [SerializeField] private TypeOfProject typeOfProject;
     [SerializeField] private Country_core CountryA;
     [SerializeField] private Country_core CountryB;
-    [SerializeField] private Country_core CountryC;    
-
+    [SerializeField] private Country_core CountryC;
+    
      public bool IsStamped()
     {
         return stampState != StampState.None;
@@ -67,5 +68,25 @@ public class Decision_Core : ScriptableObject
     public Country_core GetCountryC()
     {
         return CountryA;
+    }
+
+    public PowerPlants_core GetPowerPlants()
+    {
+        return powerplants;
+    }
+
+    public TypeOfProject GetTypeOfProject()
+    {
+        return typeOfProject;
+    }
+
+    public List<int> GetApprovalCosts()
+    {
+        return approvalCost;
+    }
+
+    public List<int> GetDisapprovalCosts()
+    {
+        return disapprovalCosts;
     }
 }   
