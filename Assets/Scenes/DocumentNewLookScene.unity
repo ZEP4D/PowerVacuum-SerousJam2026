@@ -1006,7 +1006,7 @@ MonoBehaviour:
   m_text: End day
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a5afbac0d8b6864408fcb5b53555fa44, type: 2}
-  m_sharedMaterial: {fileID: 3247065126483600558, guid: a5afbac0d8b6864408fcb5b53555fa44, type: 2}
+  m_sharedMaterial: {fileID: -1258985091214042044, guid: a5afbac0d8b6864408fcb5b53555fa44, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1733,7 +1733,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 718d7abf4adc84912844597fb40f8510, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EndChecker
-  howmanyturn: 5
+  howmanyturn: 4
 --- !u!114 &1420351456
 MonoBehaviour:
   m_ObjectHideFlags: 0

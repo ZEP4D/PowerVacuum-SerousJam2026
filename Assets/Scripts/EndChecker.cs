@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EndChecker : MonoBehaviour
 {
@@ -48,14 +49,14 @@ public class EndChecker : MonoBehaviour
     }
 
     void YouLose()
-    {   
-        Debug.Log("Lost");
-        Debug.Log("hehehehehe");
+    {
+        SceneManager.LoadScene("EndingLose");
         endisactive = true;
     }
 
     void Youwin()
     {
+        SceneManager.LoadScene("EndingWin");
         Debug.Log("Win");
         Debug.Log("Sad face,Sad Face");
         endisactive = true;
