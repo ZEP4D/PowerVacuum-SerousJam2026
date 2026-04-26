@@ -1,3 +1,5 @@
+using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -10,6 +12,8 @@ public enum CurrentStampleState {
     Returning
 }
 
+[RequireComponent(typeof(AudioSource))]
+[RequireComponent(typeof(SpriteRenderer))]
 public class StampDragAndDrop : MonoBehaviour, IPointerClickHandler
 {
     [field: Header("Initial Position")]
@@ -22,20 +26,29 @@ public class StampDragAndDrop : MonoBehaviour, IPointerClickHandler
     [SerializeField] public float returnTime;
 
     [field: Header("Sprites")]
-    [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private Sprite upSprite;
     [SerializeField] private Sprite downSprite;
 
     [field: Header("Misc")]
 
     [SerializeField] public Decision.StampState stampState;
+    [SerializeField] private AudioClip stampSFX;
+
+
+
+
     Vector3 startPosition;
     Vector3 placedLocation;
     public CurrentStampleState currentStampleState = CurrentStampleState.Idle;
+
+
+    SpriteRenderer spriteRenderer;
+    AudioSource audioSource;
     
     float timeTillStampLiftReset = 0;
     float timeTillStampReturns = 0;
     float lerpTimeLeft = 0;
+
 
 
 
@@ -45,6 +58,7 @@ public class StampDragAndDrop : MonoBehaviour, IPointerClickHandler
         // Where we'll return to
         startPosition = new(initialStartX, initialStartY, 0);   
         spriteRenderer = GetComponent<SpriteRenderer>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -134,6 +148,7 @@ public class StampDragAndDrop : MonoBehaviour, IPointerClickHandler
                 timeTillStampLiftReset = stampTime;
 
                 // Place it down
+                audioSource.PlayOneShot(stampSFX, 1);
                 currentStampleState = CurrentStampleState.Placed;
                 spriteRenderer.sprite = downSprite;
             break;
