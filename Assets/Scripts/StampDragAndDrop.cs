@@ -59,6 +59,8 @@ public class StampDragAndDrop : MonoBehaviour, IPointerClickHandler
         startPosition = new(initialStartX, initialStartY, 0);   
         spriteRenderer = GetComponent<SpriteRenderer>();
         audioSource = GetComponent<AudioSource>();
+
+        spriteRenderer.sprite = downSprite;
     }
 
     // Update is called once per frame
@@ -117,6 +119,7 @@ public class StampDragAndDrop : MonoBehaviour, IPointerClickHandler
                 {
                     transform.position = startPosition;  // Just to make sure
                     currentStampleState = CurrentStampleState.Idle;
+                    spriteRenderer.sprite = downSprite;
                 } else {
 
                     lerpTimeLeft -= Time.deltaTime;
@@ -141,6 +144,7 @@ public class StampDragAndDrop : MonoBehaviour, IPointerClickHandler
         if (eventData.button == PointerEventData.InputButton.Left) {switch (currentStampleState) {
             case CurrentStampleState.Idle:
                 currentStampleState = CurrentStampleState.Grabbed;
+                spriteRenderer.sprite = upSprite;
             break;
 
 
