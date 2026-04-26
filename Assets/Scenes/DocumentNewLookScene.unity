@@ -2135,11 +2135,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 77146531063013235, guid: 88cc5093ffb3ee34d92b47cf13d06868, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 77146531063013235, guid: 88cc5093ffb3ee34d92b47cf13d06868, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 77146531063013235, guid: 88cc5093ffb3ee34d92b47cf13d06868, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2177,46 +2177,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Approved
       objectReference: {fileID: 0}
-    - target: {fileID: 1453688418436083920, guid: 88cc5093ffb3ee34d92b47cf13d06868, type: 3}
-      propertyPath: stampSFX
-      value: 
-      objectReference: {fileID: 8300000, guid: a482fa73c5d85f05e8ab281f81677059, type: 3}
-    - target: {fileID: 1453688418436083920, guid: 88cc5093ffb3ee34d92b47cf13d06868, type: 3}
-      propertyPath: upSprite
-      value: 
-      objectReference: {fileID: -429062179448801907, guid: 8517e238e3a086c4da6d77f2b340b15e, type: 3}
-    - target: {fileID: 1453688418436083920, guid: 88cc5093ffb3ee34d92b47cf13d06868, type: 3}
-      propertyPath: downSprite
-      value: 
-      objectReference: {fileID: 7190737614338943992, guid: 5e152f1076e66634faef1c7301776742, type: 3}
-    - target: {fileID: 1453688418436083920, guid: 88cc5093ffb3ee34d92b47cf13d06868, type: 3}
-      propertyPath: spriteRenderer
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1721675602700823282, guid: 88cc5093ffb3ee34d92b47cf13d06868, type: 3}
-      propertyPath: m_Resource
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1721675602700823282, guid: 88cc5093ffb3ee34d92b47cf13d06868, type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2761094095960777293, guid: 88cc5093ffb3ee34d92b47cf13d06868, type: 3}
-      propertyPath: m_Size.x
-      value: 2.9670434
-      objectReference: {fileID: 0}
-    - target: {fileID: 2761094095960777293, guid: 88cc5093ffb3ee34d92b47cf13d06868, type: 3}
-      propertyPath: m_Size.y
-      value: 1.6030087
-      objectReference: {fileID: 0}
-    - target: {fileID: 2761094095960777293, guid: 88cc5093ffb3ee34d92b47cf13d06868, type: 3}
-      propertyPath: m_Offset.x
-      value: 0.05192542
-      objectReference: {fileID: 0}
-    - target: {fileID: 2761094095960777293, guid: 88cc5093ffb3ee34d92b47cf13d06868, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.009794474
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2232,11 +2192,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1357640809729530274, guid: 31a6774fccd35634d8362e31551923e2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 14
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1357640809729530274, guid: 31a6774fccd35634d8362e31551923e2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1357640809729530274, guid: 31a6774fccd35634d8362e31551923e2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2269,74 +2229,6 @@ PrefabInstance:
     - target: {fileID: 1357640809729530274, guid: 31a6774fccd35634d8362e31551923e2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5757193590740120774, guid: 31a6774fccd35634d8362e31551923e2, type: 3}
-      propertyPath: m_Size.x
-      value: 2.9670434
-      objectReference: {fileID: 0}
-    - target: {fileID: 5757193590740120774, guid: 31a6774fccd35634d8362e31551923e2, type: 3}
-      propertyPath: m_Size.y
-      value: 1.6030087
-      objectReference: {fileID: 0}
-    - target: {fileID: 5757193590740120774, guid: 31a6774fccd35634d8362e31551923e2, type: 3}
-      propertyPath: m_Offset.x
-      value: 0.05192542
-      objectReference: {fileID: 0}
-    - target: {fileID: 5757193590740120774, guid: 31a6774fccd35634d8362e31551923e2, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.009794474
-      objectReference: {fileID: 0}
-    - target: {fileID: 5757193590740120774, guid: 31a6774fccd35634d8362e31551923e2, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 3.66
-      objectReference: {fileID: 0}
-    - target: {fileID: 5757193590740120774, guid: 31a6774fccd35634d8362e31551923e2, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 2.22
-      objectReference: {fileID: 0}
-    - target: {fileID: 6049956147618799315, guid: 31a6774fccd35634d8362e31551923e2, type: 3}
-      propertyPath: m_Resource
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6049956147618799315, guid: 31a6774fccd35634d8362e31551923e2, type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6327183474585414997, guid: 31a6774fccd35634d8362e31551923e2, type: 3}
-      propertyPath: m_SortingOrder
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 7872041107557567624, guid: 31a6774fccd35634d8362e31551923e2, type: 3}
-      propertyPath: m_Size.x
-      value: 3.723209
-      objectReference: {fileID: 0}
-    - target: {fileID: 7872041107557567624, guid: 31a6774fccd35634d8362e31551923e2, type: 3}
-      propertyPath: m_Size.y
-      value: 2.24225
-      objectReference: {fileID: 0}
-    - target: {fileID: 7872041107557567624, guid: 31a6774fccd35634d8362e31551923e2, type: 3}
-      propertyPath: m_Offset.x
-      value: 0.011134803
-      objectReference: {fileID: 0}
-    - target: {fileID: 7872041107557567624, guid: 31a6774fccd35634d8362e31551923e2, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.0055675507
-      objectReference: {fileID: 0}
-    - target: {fileID: 9046188566533670515, guid: 31a6774fccd35634d8362e31551923e2, type: 3}
-      propertyPath: stampSFX
-      value: 
-      objectReference: {fileID: 8300000, guid: a482fa73c5d85f05e8ab281f81677059, type: 3}
-    - target: {fileID: 9046188566533670515, guid: 31a6774fccd35634d8362e31551923e2, type: 3}
-      propertyPath: upSprite
-      value: 
-      objectReference: {fileID: -5318520668804742233, guid: f465c908d8d772e429878f2ada472715, type: 3}
-    - target: {fileID: 9046188566533670515, guid: 31a6774fccd35634d8362e31551923e2, type: 3}
-      propertyPath: downSprite
-      value: 
-      objectReference: {fileID: -8434593715182763767, guid: 28c72ad84f14b06429d05abc48ba2e17, type: 3}
-    - target: {fileID: 9046188566533670515, guid: 31a6774fccd35634d8362e31551923e2, type: 3}
-      propertyPath: spriteRenderer
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 9162456100318949476, guid: 31a6774fccd35634d8362e31551923e2, type: 3}
       propertyPath: m_Name
