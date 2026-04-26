@@ -28,7 +28,7 @@ public class ResourcesSystem : MonoBehaviour
 
     [SerializeField] private int newCoal;
     [SerializeField] private int newUran;
-
+    [SerializeField] private int newBudget = 3;
     private int numbersofturn;
 
 
@@ -46,35 +46,6 @@ public class ResourcesSystem : MonoBehaviour
         resources.Add(ResourceType.Budget, startingBudget);
         resources.Add(ResourceType.Coal, startingCoal);
         resources.Add(ResourceType.Uranium, startingUranium);
-    }
-
-
-    public void Howmuchusage()
-    {
-        foreach (PowerPlants_core pp in powerPlants)
-        {
-            if (!pp.GetisRenewable())
-            {
-                switch (pp.Gettypeofpowerp())
-                {
-                    case type.coal:
-                        if(! (resources[ResourceType.Coal] <= 0))
-                        {
-                            resources[ResourceType.Coal] -= pp.GetresourceUsage();    
-                        }
-                        break;
-                    case type.atomic:
-                        if(! (resources[ResourceType.Uranium] <= 0))
-                        {
-                            resources[ResourceType.Uranium] -= pp.GetresourceUsage();    
-                        }
-                        break;
-                    default:
-                        break;
-                }
-            }
-        }
-
     }
 
 
@@ -102,6 +73,35 @@ public class ResourcesSystem : MonoBehaviour
 
         foreach(PowerPlants_core pp in powerPlants)
         {
+            if (!pp.GetisRenewable())
+            {
+                switch (pp.Gettypeofpowerp())
+                {
+                    case type.coal:
+                    {
+                        if (resources[ResourceType.Coal] >= pp.GetresourceUsage())
+                        {
+                            resources[ResourceType.Coal] -= pp.GetresourceUsage();
+                            resources[ResourceType.Energy] += pp.GetEnergy();
+                        }
+
+                        break;
+                    }
+                    case type.atomic:
+                    {
+                        if (resources[ResourceType.Uranium] <= pp.GetresourceUsage())
+                        {
+                            resources[ResourceType.Uranium] -= pp.GetresourceUsage();
+                            resources[ResourceType.Energy] += pp.GetEnergy();
+                        }
+
+                        break;
+                    }
+                    default:
+                        break;
+                }
+                
+            }
             resources[ResourceType.Energy] += pp.GetEnergy();
         }
 
@@ -127,41 +127,42 @@ public class ResourcesSystem : MonoBehaviour
         }
         else
         {
-            Howmuchusage();
             Calculatepolution();
             ApprovalCalulate();
             Howmuchenerygenerate();
 
             resources[ResourceType.Coal] += newCoal;
             resources[ResourceType.Uranium] += newUran;
+            resources[ResourceType.Budget] += newBudget;
             GetComponent<EndChecker>().CheckForWinCondition();
             numbersofturn++;
+            
         }
         Debug.Log(numbersofturn);
     }    
 
 
-    public void PayforConstrut(PowerPlants_core pp, int number)
+    public void PayforConstrut(List<PowerPlants_core> pp)
     {
-        int fullcost = number * pp.GetCost();
-        while (fullcost < resources[ResourceType.Budget] && number > 0)
-        { 
-            AddnewPlant(pp);
-            number--;
-            fullcost -= pp.GetCost();
+        var fullcost = 0;
+        foreach (PowerPlants_core plant in pp)
+        {
+            fullcost += plant.GetCost();
+            if (fullcost > resources[ResourceType.Budget])
+            {
+                return;
+            }
+            AddnewPlant(plant);
         }
     }
 
 
-    public void deletemulitple(PowerPlants_core pp, int number)
+    public void deletemulitple(List<PowerPlants_core> pp)
     {
-        if(number < powerPlants.Count)
-        {
-            for (int i = 0 ; i <= number; i++)
+        for (int i = 0 ; i < pp.Count; i++)
             {
-                RemovePlant(pp);
+                RemovePlant(pp[i]);
             }
-        }
     }
 
 

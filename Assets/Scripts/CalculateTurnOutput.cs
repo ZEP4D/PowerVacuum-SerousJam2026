@@ -26,12 +26,12 @@ public class CalculateTurnOutput : MonoBehaviour
                 {
                     case Decision.TypeOfProject.Build:
                     {
-                        ResourcesSystem.instance.PayforConstrut(decision.GetPowerPlants(), 1);
+                        ResourcesSystem.instance.PayforConstrut(decision.GetPowerPlants());
                         break;
                     }
                     case Decision.TypeOfProject.Demolish:
                     {
-                        ResourcesSystem.instance.RemovePlant(decision.GetPowerPlants());
+                        ResourcesSystem.instance.deletemulitple(decision.GetPowerPlants());
                         break;
                     }
                     default: break;

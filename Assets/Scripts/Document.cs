@@ -11,6 +11,7 @@ public class Document : MonoBehaviour
     [FormerlySerializedAs("pros")] [SerializeField] private GameObject approvalGains;
     [FormerlySerializedAs("cons")] [SerializeField] private GameObject denyGains;
     [SerializeField] private List<Decision> decisions = new ();
+    [SerializeField] private List<DecisionListPreset> decisionsList = new();
     [SerializeField] private Decision currentDecision;
     [SerializeField] public int index;
     [SerializeField] private GameObject nextDayButton;

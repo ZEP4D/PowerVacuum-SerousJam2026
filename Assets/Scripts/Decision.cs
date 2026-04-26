@@ -26,7 +26,7 @@ public class Decision : MonoBehaviour
     [field: Header("0 - approval, 1 - climate, 2 - energy, 3 - budget, 4 - coal, 5 - uranium\n6 - CountryA , 7 - CountryB,  8 - CountryC")] 
     [SerializeField] public List<int> approvalCosts;
     [SerializeField] public List<int> disapprovalCosts;
-    [SerializeField] public PowerPlants_core powerPlant;
+    [FormerlySerializedAs("powerPlant")] [SerializeField] public List<PowerPlants_core> powerPlants;
     [SerializeField] public TypeOfProject typeOfProject;
     public bool IsStamped()
     {
@@ -57,9 +57,9 @@ public class Decision : MonoBehaviour
         return denyGains;
     }
 
-    public PowerPlants_core GetPowerPlants()
+    public List<PowerPlants_core> GetPowerPlants()
     {
-        return powerPlant;
+        return powerPlants;
     }
 
     public TypeOfProject GetTypeOfProject()

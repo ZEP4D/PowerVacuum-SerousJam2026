@@ -1,7 +1,7 @@
 using UnityEngine;
 
 
-public enum  type{ coal, wind, water, atomic, solar, gas}
+public enum  type { coal, wind, water, atomic, solar, gas}
 [CreateAssetMenu(fileName = "PowerPlants_core", menuName = "Scriptable Objects/PowerPlants_core", order = 2)] 
 public class PowerPlants_core : ScriptableObject
 {
