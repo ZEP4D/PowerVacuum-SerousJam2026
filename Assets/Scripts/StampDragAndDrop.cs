@@ -44,6 +44,7 @@ public class StampDragAndDrop : MonoBehaviour, IPointerClickHandler
     {
         // Where we'll return to
         startPosition = new(initialStartX, initialStartY, 0);   
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame

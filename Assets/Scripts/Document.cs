@@ -48,7 +48,15 @@ public class Document : MonoBehaviour
     {
         index = (index + value + decisions.Count + 1) % (decisions.Count + 1);
         SetCurrentDecision(index > 0 ? decisions[index - 1] : null);
-        Debug.Log(currentDecision?.GetStampState());
+        if (currentDecision == null)
+        {
+            GetComponentInChildren<Stampable>().showStamp(Decision.StampState.None);
+        }
+        else
+        {
+            GetComponentInChildren<Stampable>().showStamp(currentDecision.GetStampState());
+        }
+            
     }
 
     public Decision GetCurrentDecision()

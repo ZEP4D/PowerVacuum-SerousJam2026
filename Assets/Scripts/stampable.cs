@@ -41,4 +41,20 @@ public class Stampable : MonoBehaviour
         
     }
 
+    public void showStamp(Decision.StampState state)
+    {
+        switch (state)
+        {
+            case Decision.StampState.Approved:
+                spriteRenderer.sprite = stampSpriteApprove;
+                break;
+            case Decision.StampState.Disapproved:
+                spriteRenderer.sprite = stampSpriteDisapprove;
+                break;
+            default:
+                spriteRenderer.sprite = null;
+                break;
+        }
+    }
+
 }
