@@ -11,7 +11,7 @@ public class ReturnToMenu : MonoBehaviour, IPointerClickHandler
         Debug.Log("Returning");
 
         SceneManager.LoadScene(
-            targetSceneName
+            "MainMenu"
         );
     }
 }
