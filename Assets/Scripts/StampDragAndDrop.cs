@@ -28,6 +28,7 @@ public class StampDragAndDrop : MonoBehaviour, IPointerClickHandler
     [field: Header("Sprites")]
     [SerializeField] private Sprite upSprite;
     [SerializeField] private Sprite downSprite;
+    [SerializeField] private Sprite placedSprite;
 
     [field: Header("Misc")]
 
@@ -60,7 +61,7 @@ public class StampDragAndDrop : MonoBehaviour, IPointerClickHandler
         spriteRenderer = GetComponent<SpriteRenderer>();
         audioSource = GetComponent<AudioSource>();
 
-        spriteRenderer.sprite = downSprite;
+        spriteRenderer.sprite = placedSprite;
     }
 
     // Update is called once per frame
@@ -119,7 +120,7 @@ public class StampDragAndDrop : MonoBehaviour, IPointerClickHandler
                 {
                     transform.position = startPosition;  // Just to make sure
                     currentStampleState = CurrentStampleState.Idle;
-                    spriteRenderer.sprite = downSprite;
+                    spriteRenderer.sprite = placedSprite;
                 } else {
 
                     lerpTimeLeft -= Time.deltaTime;
