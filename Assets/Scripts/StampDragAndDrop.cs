@@ -9,165 +9,169 @@ public enum CurrentStampleState {
     Grabbed,
     Placed,
     PostPlacedHover,
-    Returning
+    Returning,
 }
 
 [RequireComponent(typeof(AudioSource))]
 [RequireComponent(typeof(SpriteRenderer))]
 public class StampDragAndDrop : MonoBehaviour, IPointerClickHandler
 {
-    [field: Header("Initial Position")]
-    [SerializeField] public float initialStartX = 0.0f;
-    [SerializeField] public float initialStartY = 0.0f;
+    // --== SERIALISED FIELDS ==-- //
+        [field: Header("Initial Position")]
+        [SerializeField] public float initialStartPositionX = 0.0f;
+        [SerializeField] public float initialStartPositionY = 0.0f;
 
-    [field: Header("Timeings")]
-    [SerializeField] public float stampTime;
-    [SerializeField] public float stampIdleTime;
-    [SerializeField] public float returnTime;
+        [field: Header("Timeings")]
+        [SerializeField] public float stampingTime;
+        [SerializeField] public float postStampIdleTime;
+        [SerializeField] public float returnTime;
 
-    [field: Header("Sprites")]
-    [SerializeField] private Sprite upSprite;
-    [SerializeField] private Sprite downSprite;
+        [field: Header("Sprites")]
+        [SerializeField] private Sprite spritePlaced;
+        [SerializeField] private Sprite spriteCarried;
+        [SerializeField] private Sprite spriteStamped;
 
-    [field: Header("Misc")]
+        [field: Header("Misc")]
 
-    [SerializeField] public Decision.StampState stampState;
-    [SerializeField] private AudioClip stampSFX;
+        [SerializeField] public Decision.StampState stampState;
+        [SerializeField] private AudioClip stampingSFX;
+    // ==--
 
+    // --== STAMP POSITIONS ==-- //
+        Vector3 startPosition;
+        Vector3 placedPosition;
+    // ==--
 
+    // --== ATTACHED COMPONENTS ==-- //
+        SpriteRenderer spriteRenderer;
+        AudioSource audioSource;
+    // ==--
 
-
-    Vector3 startPosition;
-    Vector3 placedLocation;
-    public CurrentStampleState currentStampleState = CurrentStampleState.Idle;
-
-
-    SpriteRenderer spriteRenderer;
-    AudioSource audioSource;
-    
-    float timeTillStampLiftReset = 0;
-    float timeTillStampReturns = 0;
-    float lerpTimeLeft = 0;
-
-
-
-
+    // --== VARIABLES ==-- //
+        public CurrentStampleState currentStampleState = CurrentStampleState.Idle;
+        private float stampingTimeLeft = 0;
+        private float postStampingIdleTimeLeft = 0;
+        private float returnTimeLeft = 0;
+    // ==--
 
     void Start()
     {
-        // Where we'll return to
-        startPosition = new(initialStartX, initialStartY, 0);   
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        audioSource = GetComponent<AudioSource>();
+        this.startPosition = new Vector3(
+            this.initialStartPositionX,
+            this.initialStartPositionY,
+            0
+        );
 
-        spriteRenderer.sprite = downSprite;
+        this.spriteRenderer = GetComponent<SpriteRenderer>();
+        this.audioSource    = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        switch (currentStampleState) {
+        switch (this.currentStampleState)
+        {
             case CurrentStampleState.Idle:
+                // Unused
             break;
+            // CurrentStampleState.Idle
 
 
             case CurrentStampleState.Grabbed:
-
-                // Read the current mouse position in worldspace and move the cursor there
+                // If the stamp is grabbed, move it to the mouse's position
                 var mousePosition = Mouse.current.position.ReadValue();
                 mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
 
                 transform.position = mousePosition;
             break;
+            // CurrentStampleState.Grabbed
 
 
             case CurrentStampleState.Placed:
+                // If we have waited at least `this.stampingTime`, we should lift the stamp and let it hover a bit
+                if (this.stampingTimeLeft <= 0) {
+                    this.postStampingIdleTimeLeft = this.postStampIdleTime;
 
-                if (timeTillStampLiftReset <= 0)
-                {
-                    timeTillStampReturns = stampIdleTime;
-
-                    // Lift the stamp
-                    spriteRenderer.sprite = upSprite;
-                    currentStampleState = CurrentStampleState.PostPlacedHover;
+                    this.spriteRenderer.sprite = this.spriteCarried;
+                    this.currentStampleState = CurrentStampleState.PostPlacedHover;
                 } else {
-
-                    // Reduce the timer's time left
-                    timeTillStampLiftReset -= Time.deltaTime;
+                    this.stampingTimeLeft -= Time.deltaTime;
                 }
             break;
+            // CurrentStampleState.Placed
 
 
             case CurrentStampleState.PostPlacedHover:
+                // If we have waited at least `this.postStampingIdleTime`, we should begin our return journey to the initial start position
+                if (this.postStampingIdleTimeLeft <= 0) {
+                    this.returnTimeLeft = this.returnTime;
 
-                if (timeTillStampReturns <= 0)
-                {
-                    // When the stamp timer is finished, store where we placed it and setup the return journey
-                    placedLocation = transform.position;
-                    lerpTimeLeft = returnTime;
-
-                    currentStampleState = CurrentStampleState.Returning;
+                    this.currentStampleState = CurrentStampleState.Returning;
                 } else {
-                    timeTillStampReturns -= Time.deltaTime;
+                    this.postStampingIdleTimeLeft -= Time.deltaTime;
                 }
             break;
+            // CurrentStampleState.PostPlacedHover
 
 
             case CurrentStampleState.Returning:
+                // If we have waited at least `this.returnTime`, we should place the stamp back down in it's resting spot
+                // If not however, we should put the stamp at the correct spot between the two positions
+                if (this.returnTimeLeft <= 0) {
+                    this.transform.position = this.startPosition;    // Just to make sure
 
-                if (lerpTimeLeft <= 0)
-                {
-                    transform.position = startPosition;  // Just to make sure
-                    currentStampleState = CurrentStampleState.Idle;
-                    spriteRenderer.sprite = downSprite;
+                    this.spriteRenderer.sprite = this.spritePlaced;
+                    this.currentStampleState = CurrentStampleState.Idle;
                 } else {
+                    this.returnTimeLeft -= Time.deltaTime;
 
-                    lerpTimeLeft -= Time.deltaTime;
-                    float lerpPosition = lerpTimeLeft / returnTime;
-                    // 0.0 => Placed Position
-                    // 1.0 => Return Position
-
-                    transform.position = Vector3.Lerp(
-                        startPosition,
-                        placedLocation,
-                        lerpPosition
+                    float currentLerpPosition = this.returnTimeLeft / this.returnTime;    // Goes 100% -> 0%
+                    
+                    this.transform.position = Vector3.Lerp(
+                        this.startPosition,     // Position at   0%
+                        this.placedPosition,    // Position at 100%
+                        currentLerpPosition
                     );
-
                 }
             break;
+            // CurrentStampleState.Returning
         }
+        // switch (this.currentStampleState)
     }
+    // void Update()
 
 
-    public void OnPointerClick(PointerEventData eventData)
+
+    public void OnPointerClick(PointerEventData pointerEventData)
     {
-        if (eventData.button == PointerEventData.InputButton.Left) {switch (currentStampleState) {
+        if (pointerEventData.button == PointerEventData.InputButton.Left) {
+            switch (this.currentStampleState)
+        {
             case CurrentStampleState.Idle:
-                currentStampleState = CurrentStampleState.Grabbed;
-                spriteRenderer.sprite = upSprite;
+                this.currentStampleState = CurrentStampleState.Grabbed;
+                this.spriteRenderer.sprite = this.spriteCarried;
             break;
-
+            // CurrentStampleState.Idle
 
             case CurrentStampleState.Grabbed:
-                timeTillStampLiftReset = stampTime;
+                this.stampingTimeLeft = this.stampingTime;
+                this.audioSource.PlayOneShot(
+                    this.stampingSFX
+                );
 
-                // Place it down
-                audioSource.PlayOneShot(stampSFX, 1);
-                currentStampleState = CurrentStampleState.Placed;
-                spriteRenderer.sprite = downSprite;
+                this.placedPosition = this.transform.position;
+                this.currentStampleState = CurrentStampleState.Placed;
+                this.spriteRenderer.sprite = this.spriteStamped;
             break;
-
-
+            // CurrentStampleState.Grabbed
+            
             case CurrentStampleState.Placed:
-            break;
-
-
             case CurrentStampleState.PostPlacedHover:
-            break;
-
-
             case CurrentStampleState.Returning:
+                // Unused
             break;
         }}
+        // if (pointerEventData.Button == PointerEventData.InputButton.Left) 
+        //     switch (this.currentStampleState)
     }
+    // public void OnPointerClick(PointerEventData)
 }
