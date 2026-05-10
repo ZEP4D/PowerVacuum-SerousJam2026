@@ -2652,11 +2652,47 @@ PrefabInstance:
       value: Approved
       objectReference: {fileID: 0}
     - target: {fileID: 1453688418436083920, guid: 88cc5093ffb3ee34d92b47cf13d06868, type: 3}
+      propertyPath: returnTime
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1453688418436083920, guid: 88cc5093ffb3ee34d92b47cf13d06868, type: 3}
+      propertyPath: stampingSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: a482fa73c5d85f05e8ab281f81677059, type: 3}
+    - target: {fileID: 1453688418436083920, guid: 88cc5093ffb3ee34d92b47cf13d06868, type: 3}
+      propertyPath: spritePlaced
+      value: 
+      objectReference: {fileID: 887936140345609494, guid: 53ac072187169354dad9fc9db3453a81, type: 3}
+    - target: {fileID: 1453688418436083920, guid: 88cc5093ffb3ee34d92b47cf13d06868, type: 3}
+      propertyPath: stampingTime
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1453688418436083920, guid: 88cc5093ffb3ee34d92b47cf13d06868, type: 3}
       propertyPath: initialStartX
       value: 6.9
       objectReference: {fileID: 0}
     - target: {fileID: 1453688418436083920, guid: 88cc5093ffb3ee34d92b47cf13d06868, type: 3}
       propertyPath: initialStartY
+      value: 2.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 1453688418436083920, guid: 88cc5093ffb3ee34d92b47cf13d06868, type: 3}
+      propertyPath: spriteCarried
+      value: 
+      objectReference: {fileID: -429062179448801907, guid: 8517e238e3a086c4da6d77f2b340b15e, type: 3}
+    - target: {fileID: 1453688418436083920, guid: 88cc5093ffb3ee34d92b47cf13d06868, type: 3}
+      propertyPath: spriteStamped
+      value: 
+      objectReference: {fileID: 7190737614338943992, guid: 5e152f1076e66634faef1c7301776742, type: 3}
+    - target: {fileID: 1453688418436083920, guid: 88cc5093ffb3ee34d92b47cf13d06868, type: 3}
+      propertyPath: postStampIdleTime
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1453688418436083920, guid: 88cc5093ffb3ee34d92b47cf13d06868, type: 3}
+      propertyPath: initialStartPositionX
+      value: 6.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1453688418436083920, guid: 88cc5093ffb3ee34d92b47cf13d06868, type: 3}
+      propertyPath: initialStartPositionY
       value: 2.32
       objectReference: {fileID: 0}
     - target: {fileID: 7043370496602153525, guid: 88cc5093ffb3ee34d92b47cf13d06868, type: 3}
@@ -2885,11 +2921,47 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9046188566533670515, guid: 31a6774fccd35634d8362e31551923e2, type: 3}
+      propertyPath: returnTime
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9046188566533670515, guid: 31a6774fccd35634d8362e31551923e2, type: 3}
+      propertyPath: stampingSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: a482fa73c5d85f05e8ab281f81677059, type: 3}
+    - target: {fileID: 9046188566533670515, guid: 31a6774fccd35634d8362e31551923e2, type: 3}
+      propertyPath: spritePlaced
+      value: 
+      objectReference: {fileID: -6214898681016697772, guid: e5c8d3cb389ece642babe947136e9315, type: 3}
+    - target: {fileID: 9046188566533670515, guid: 31a6774fccd35634d8362e31551923e2, type: 3}
+      propertyPath: stampingTime
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 9046188566533670515, guid: 31a6774fccd35634d8362e31551923e2, type: 3}
       propertyPath: initialStartX
       value: 6.9
       objectReference: {fileID: 0}
     - target: {fileID: 9046188566533670515, guid: 31a6774fccd35634d8362e31551923e2, type: 3}
       propertyPath: initialStartY
+      value: -0.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 9046188566533670515, guid: 31a6774fccd35634d8362e31551923e2, type: 3}
+      propertyPath: spriteCarried
+      value: 
+      objectReference: {fileID: -5318520668804742233, guid: f465c908d8d772e429878f2ada472715, type: 3}
+    - target: {fileID: 9046188566533670515, guid: 31a6774fccd35634d8362e31551923e2, type: 3}
+      propertyPath: spriteStamped
+      value: 
+      objectReference: {fileID: -8434593715182763767, guid: 28c72ad84f14b06429d05abc48ba2e17, type: 3}
+    - target: {fileID: 9046188566533670515, guid: 31a6774fccd35634d8362e31551923e2, type: 3}
+      propertyPath: postStampIdleTime
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 9046188566533670515, guid: 31a6774fccd35634d8362e31551923e2, type: 3}
+      propertyPath: initialStartPositionX
+      value: 6.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 9046188566533670515, guid: 31a6774fccd35634d8362e31551923e2, type: 3}
+      propertyPath: initialStartPositionY
       value: -0.17
       objectReference: {fileID: 0}
     - target: {fileID: 9162456100318949476, guid: 31a6774fccd35634d8362e31551923e2, type: 3}
