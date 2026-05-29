@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: WindPowerPlant
   m_EditorClassIdentifier: Assembly-CSharp::PowerPlants_core
   description: 
-  isRenewable: 0
+  isRenewable: 1
   type_pp: 1
-  cost: 0
-  liked: 0
-  generateofpower: 0
-  polution: 0
+  cost: 2
+  liked: -3
+  generateofpower: 8
+  polution: -1
   resoureceUsage: 0
   Object: {fileID: 0}
