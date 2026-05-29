@@ -45,16 +45,14 @@ public class MusicSettingsController : MonoBehaviour
             foreach (
                 AudioSource source
                 in FindObjectsOfType( typeof(AudioSource) )
-            ) {
-                if (
-                    new string[] {
-                        "ResourceSystem",
-                        "Main Camera",
-                    }
-                    .Contains(source.name)
-                ) {
-                    source.volume = ( this.audio_setting / 100f );
+            ) if (
+                new string[] {
+                    "ResourceSystem",
+                    "Main Camera",
                 }
+                .Contains(source.name)
+            ) {
+                source.volume = ( this.audio_setting / 100f );
             }
         }
     // ==--
