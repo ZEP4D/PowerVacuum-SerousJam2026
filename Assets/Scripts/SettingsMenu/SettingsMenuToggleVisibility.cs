@@ -10,8 +10,4 @@ public class SettingsMenuToggleVisibility : MonoBehaviour
             settings_menu_canvas.enabled = !settings_menu_canvas.enabled;
         }
     }
-
-    void Start() {
-        DontDestroyOnLoad(this.gameObject);
-    }
 }
