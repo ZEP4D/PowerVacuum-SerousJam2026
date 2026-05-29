@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using TMPro;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 public class MusicSettingsController : MonoBehaviour
 {
@@ -45,7 +46,14 @@ public class MusicSettingsController : MonoBehaviour
                 AudioSource source
                 in FindObjectsOfType( typeof(AudioSource) )
             ) {
-                source.volume = ( this.audio_setting / 100f );
+                if (
+                    new {
+                        "ResourceSystem",
+                    }
+                    .Contains(source.name)
+                ) {
+                    source.volume = ( this.audio_setting / 100f );
+                }
             }
         }
     // ==--
