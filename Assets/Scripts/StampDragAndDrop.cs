@@ -35,6 +35,8 @@ public class StampDragAndDrop : MonoBehaviour, IPointerClickHandler
 
         [SerializeField] public Decision.StampState stampState;
         [SerializeField] private AudioClip stampingSFX;
+        [SerializeField] private int orderInLayerGrabbed = 11;
+        [SerializeField] private int orderInLayerDefault = 10;
     // ==--
 
     // --== STAMP POSITIONS ==-- //
@@ -80,7 +82,7 @@ public class StampDragAndDrop : MonoBehaviour, IPointerClickHandler
                 // If the stamp is grabbed, move it to the mouse's position
                 var mousePosition = Mouse.current.position.ReadValue();
                 mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
-
+                spriteRenderer.sortingOrder = orderInLayerGrabbed;
                 transform.position = mousePosition;
             break;
             // CurrentStampleState.Grabbed
@@ -121,6 +123,7 @@ public class StampDragAndDrop : MonoBehaviour, IPointerClickHandler
 
                     this.spriteRenderer.sprite = this.spritePlaced;
                     this.currentStampleState = CurrentStampleState.Idle;
+                    spriteRenderer.sortingOrder = orderInLayerDefault;
                 } else {
                     this.returnTimeLeft -= Time.deltaTime;
 
