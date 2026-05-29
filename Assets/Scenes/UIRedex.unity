@@ -4525,7 +4525,7 @@ GameObject:
   - component: {fileID: 588948428}
   - component: {fileID: 588948427}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: Build
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5527,7 +5527,7 @@ GameObject:
   - component: {fileID: 683957692}
   - component: {fileID: 683957691}
   m_Layer: 5
-  m_Name: Text (TMP) (2)
+  m_Name: Demolish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11395,6 +11395,8 @@ MonoBehaviour:
   - {fileID: 531729426}
   - {fileID: 5431882}
   - {fileID: 1965063749}
+  TextBuild: {fileID: 588948425}
+  TextDemolish: {fileID: 683957689}
 --- !u!1 &1690004799
 GameObject:
   m_ObjectHideFlags: 0
