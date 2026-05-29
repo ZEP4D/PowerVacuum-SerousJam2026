@@ -19,6 +19,8 @@ public class Document_Icon : MonoBehaviour
     [SerializeField] private List<GameObject> denyobject = new();
     [SerializeField] private List<GameObject> BuildPowerplant = new ();
     [SerializeField] private List<GameObject> DemolishPowerplant = new();
+    [SerializeField] private GameObject TextBuild;
+    [SerializeField] private GameObject TextDemolish;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -108,6 +110,9 @@ public class Document_Icon : MonoBehaviour
 
     private void IconBuildShow(Decision.TypeOfProject typeOfProject, List<PowerPlants_core> bulid)
     {
+        TextBuild.SetActive(false);
+        TextDemolish.SetActive(false);
+        
         foreach(GameObject gameObj in BuildPowerplant)
         {
             gameObj.SetActive(false);
@@ -119,10 +124,13 @@ public class Document_Icon : MonoBehaviour
         if(typeOfProject == Decision.TypeOfProject.Build)
         {
             IconBuildShowCon(BuildPowerplant,bulid);
+            TextBuild.SetActive(true);
+
         }
         else if(typeOfProject == Decision.TypeOfProject.Demolish)
         {
            IconBuildShowCon(DemolishPowerplant,bulid); 
+           TextDemolish.SetActive(true);
         }
     }
 

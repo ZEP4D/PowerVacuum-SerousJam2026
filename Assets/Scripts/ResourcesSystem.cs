@@ -211,4 +211,9 @@ public class ResourcesSystem : MonoBehaviour
     {
         resources[type] = Mathf.Clamp(resources[type], 0, 100);
     }
+
+    public List<PowerPlants_core> GetPowerPlants_s()
+    {
+        return powerPlants;
+    }
 }
