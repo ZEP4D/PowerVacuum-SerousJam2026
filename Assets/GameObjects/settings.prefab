@@ -278,7 +278,7 @@ GameObject:
   - component: {fileID: 6938594132611269308}
   - component: {fileID: 5930149438768199566}
   m_Layer: 5
-  m_Name: Button
+  m_Name: return_to_menu_button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -291,14 +291,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1715366068406684083}
-  m_LocalRotation: {x: -0, y: -0, z: -0.11635055, w: 0.9932083}
+  m_LocalRotation: {x: -0, y: -0, z: -0.06290578, w: 0.99801946}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 14530979772380822}
   m_Father: {fileID: 6476463373079655283}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -13.363}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -7.213}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 148, y: -146.2}
@@ -1469,16 +1469,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4453952276727477872}
-  m_LocalRotation: {x: -0, y: -0, z: 0.18804435, w: 0.98216057}
+  m_LocalRotation: {x: -0, y: -0, z: 0.076250345, w: 0.99708873}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6476463373079655283}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 21.677}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 8.746}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 162.7, y: 58.4}
+  m_AnchoredPosition: {x: 161.9, y: 73.4}
   m_SizeDelta: {x: 169.4524, y: 65.9695}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6621826774978369764
@@ -2800,9 +2800,9 @@ RectTransform:
   - {fileID: 888685888843554148}
   - {fileID: 6103769452073781181}
   - {fileID: 1055714150191477396}
+  - {fileID: 4429964817117560651}
   - {fileID: 1722591259087789617}
   - {fileID: 7341885536572991181}
-  - {fileID: 4429964817117560651}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2817,7 +2817,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8678953160070357708}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}

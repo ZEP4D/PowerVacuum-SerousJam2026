@@ -49,6 +49,7 @@ public class MusicSettingsController : MonoBehaviour
                 if (
                     new string[] {
                         "ResourceSystem",
+                        "Main Camera",
                     }
                     .Contains(source.name)
                 ) {
