@@ -1409,7 +1409,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   audioSlider: {fileID: 688780401}
   inputField: {fileID: 1564266184}
-  audio_setting: 25
+  audio_setting: 75
 --- !u!1 &1868366550
 GameObject:
   m_ObjectHideFlags: 0
@@ -1549,6 +1549,7 @@ GameObject:
   - component: {fileID: 1967629247}
   - component: {fileID: 1967629246}
   - component: {fileID: 1967629245}
+  - component: {fileID: 1967629249}
   m_Layer: 5
   m_Name: settings_canvas
   m_TagString: Untagged
@@ -1617,7 +1618,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_TargetDisplay: 0
 --- !u!224 &1967629248
 RectTransform:
@@ -1640,6 +1641,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1967629249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1967629244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18d8b7114ce9cfb4eac1a4e1e4d11c08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  settings_menu_canvas: {fileID: 1967629247}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
