@@ -1,9 +1,10 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Collections;
+using System.Collections.Generic;
 
-
-public class AudioSettingsController : MonoBehaviour
+public class SfxSettingsController : MonoBehaviour
 {
     // --== SERIALISABLE FIELDS ==-- //
         [SerializeField] Slider audioSlider;
@@ -38,6 +39,14 @@ public class AudioSettingsController : MonoBehaviour
         public void SliderMoved() {
             this.audio_setting = (int)audioSlider.value;
             this.inputField.text = this.audio_setting.ToString();
+
+
+            foreach (
+                AudioSource source
+                in FindObjectsOfType( typeof(AudioSource) )
+            ) {
+                source.volume = ( this.audio_setting / 100f );
+            }
         }
     // ==--
 
