@@ -18,17 +18,17 @@ public class MusicSettingsController : MonoBehaviour
     // ==--
 
     // --== FUNCTIONS --== //
-
         public void TextFieldEntered() {
             int old_audio_setting = this.audio_setting;
             string entered_text = this.inputField.text;
             int new_audio_setting = 0;
 
             try {
-                new_audio_setting = int.Parse( entered_text );
-            
-                if (new_audio_setting <   0) new_audio_setting = 0;
-                if (new_audio_setting > 100) new_audio_setting = 100;
+                new_audio_setting = Mathf.Clamp(
+                    int.Parse( entered_text ),
+                    0,
+                    100
+                );
             } catch {
                 new_audio_setting = old_audio_setting;
             }
@@ -41,6 +41,7 @@ public class MusicSettingsController : MonoBehaviour
             this.audio_setting = (int)audioSlider.value;
             this.inputField.text = this.audio_setting.ToString();
 
+            PlayerPrefs.SetInt("music_setting", this.audio_setting);
 
             foreach (
                 AudioSource source
@@ -57,8 +58,9 @@ public class MusicSettingsController : MonoBehaviour
         }
     // ==--
 
-    void Start()
-    {
-        this.audioSlider.value = (float)this.audio_setting;
+    void Start() {
+        this.audioSlider.value = PlayerPrefs.GetInt(
+            "music_setting", this.audio_setting
+        );
     }
 }
