@@ -47,7 +47,7 @@ public class MusicSettingsController : MonoBehaviour
                 in FindObjectsOfType( typeof(AudioSource) )
             ) {
                 if (
-                    new {
+                    new string[] {
                         "ResourceSystem",
                     }
                     .Contains(source.name)

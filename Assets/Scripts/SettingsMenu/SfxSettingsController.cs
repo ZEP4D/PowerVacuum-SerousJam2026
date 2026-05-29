@@ -47,7 +47,7 @@ public class SfxSettingsController : MonoBehaviour
                 in FindObjectsOfType( typeof(AudioSource) )
             ) {
                 if (
-                    new {
+                    new string[] {
                         "Approved",
                         "Denied"
                     }
