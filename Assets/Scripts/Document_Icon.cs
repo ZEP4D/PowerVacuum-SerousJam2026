@@ -19,13 +19,12 @@ public class Document_Icon : MonoBehaviour
     [SerializeField] private List<GameObject> denyobject = new();
     [SerializeField] private List<GameObject> BuildPowerplant = new ();
     [SerializeField] private List<GameObject> DemolishPowerplant = new();
-
-    [SerializeField] private GameObject leftArrow;
-    [SerializeField] private GameObject rightArrow;
+    [SerializeField] private GameObject TextBuild;
+    [SerializeField] private GameObject TextDemolish;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        loadDecisionList(0);
+        decisions = decisionsList[0].GetDecisions();
         SetCurrentDecision(decisions[index]);
     }
 
@@ -81,16 +80,6 @@ public class Document_Icon : MonoBehaviour
         decisions = decisionsList[index].GetDecisions();
         SetCurrentDecision(decisions[0]);
         GetComponentInChildren<Stampable_icon>().showStamp(currentDecision.GetStampState());
-        if (decisions.Count == 1)
-        {
-            leftArrow.SetActive(false);
-            rightArrow.SetActive(false);
-        }
-        else
-        {
-            leftArrow.SetActive(true);
-            rightArrow.SetActive(true);
-        }
     }
 
     private void IconShow( List<int> ints, List<GameObject> icons)
@@ -121,22 +110,27 @@ public class Document_Icon : MonoBehaviour
 
     private void IconBuildShow(Decision.TypeOfProject typeOfProject, List<PowerPlants_core> bulid)
     {
-
-        foreach(GameObject gameObject in BuildPowerplant)
+        TextBuild.SetActive(false);
+        TextDemolish.SetActive(false);
+        
+        foreach(GameObject gameObj in BuildPowerplant)
         {
-            gameObject.SetActive(false);
+            gameObj.SetActive(false);
         }
-        foreach(GameObject gameObject1 in DemolishPowerplant)
+        foreach(GameObject gameObj in DemolishPowerplant)
         {
-            gameObject1.SetActive(false);
+            gameObj.SetActive(false);
         }
         if(typeOfProject == Decision.TypeOfProject.Build)
         {
             IconBuildShowCon(BuildPowerplant,bulid);
+            TextBuild.SetActive(true);
+
         }
         else if(typeOfProject == Decision.TypeOfProject.Demolish)
         {
            IconBuildShowCon(DemolishPowerplant,bulid); 
+           TextDemolish.SetActive(true);
         }
     }
 
