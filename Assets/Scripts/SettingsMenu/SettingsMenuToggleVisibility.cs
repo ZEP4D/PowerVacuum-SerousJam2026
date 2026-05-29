@@ -5,11 +5,15 @@ public class SettingsMenuToggleVisibility : MonoBehaviour
 {
     [SerializeField] Canvas settings_menu_canvas;
     
-    void Update()
-    {
+    void Update() {
+
         if ( Input.GetKeyDown(KeyCode.Escape) ) {
-            settings_menu_canvas.enabled = !settings_menu_canvas.enabled;
+            this.ToggleVisibility();
         }
+    }
+
+    public void ToggleVisibility() {
+       settings_menu_canvas.enabled = !settings_menu_canvas.enabled;
     }
 
     public void ReturnToMenuPressed() {
