@@ -86,7 +86,7 @@ SpriteRenderer:
   m_SortingOrder: 10
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7190737614338943992, guid: 5e152f1076e66634faef1c7301776742, type: 3}
-  m_Color: {r: 0.028947234, g: 1, b: 0.0039215684, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -153,15 +153,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b52b222a4e6f4eacad9abdb9dd17cec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StampDragAndDrop
-  initialStartX: 8
-  initialStartY: 8
-  stampTime: 0.25
-  stampIdleTime: 0
-  returnTime: 0.25
-  upSprite: {fileID: -429062179448801907, guid: 8517e238e3a086c4da6d77f2b340b15e, type: 3}
-  downSprite: {fileID: 7190737614338943992, guid: 5e152f1076e66634faef1c7301776742, type: 3}
+  initialStartPositionX: 6.9
+  initialStartPositionY: 2.32
+  stampingTime: 0.25
+  postStampIdleTime: 0.25
+  returnTime: 0.5
+  spritePlaced: {fileID: 887936140345609494, guid: 53ac072187169354dad9fc9db3453a81, type: 3}
+  spriteCarried: {fileID: -429062179448801907, guid: 8517e238e3a086c4da6d77f2b340b15e, type: 3}
+  spriteStamped: {fileID: 7190737614338943992, guid: 5e152f1076e66634faef1c7301776742, type: 3}
   stampState: 1
-  stampSFX: {fileID: 8300000, guid: a482fa73c5d85f05e8ab281f81677059, type: 3}
+  stampingSFX: {fileID: 8300000, guid: a482fa73c5d85f05e8ab281f81677059, type: 3}
+  orderInLayerGrabbed: 11
+  orderInLayerDefault: 10
   currentStampleState: 0
 --- !u!61 &1118262720004435059
 BoxCollider2D:

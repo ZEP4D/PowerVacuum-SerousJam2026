@@ -63,7 +63,6 @@ GameObject:
   - component: {fileID: 8051213370912068282}
   - component: {fileID: 853421381562042678}
   - component: {fileID: 2417448085780235696}
-  - component: {fileID: 8877514380406128930}
   - component: {fileID: 8741279909739234783}
   - component: {fileID: 6896171290747079429}
   m_Layer: 0
@@ -197,22 +196,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.7075253, y: 1.2040696}
   m_EdgeRadius: 0
---- !u!114 &8877514380406128930
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 683242284164742142}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a52001e268505543a30c0d856b1c0b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Stampable
-  document: {fileID: 2083981709846758485}
-  spriteRenderer: {fileID: 0}
-  stampSpriteDisapprove: {fileID: 4102133886280439897, guid: c4ed48fcd2e0fa644945b5efdb2c7b99, type: 3}
-  stampSpriteApprove: {fileID: -1823829712903839183, guid: e4d739102395c70488f4c1e6e2eaf9fb, type: 3}
 --- !u!50 &8741279909739234783
 Rigidbody2D:
   serializedVersion: 5
@@ -518,7 +501,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4200073581592151132}
-  - component: {fileID: 2083981709846758485}
   - component: {fileID: 3073746004429651417}
   m_Layer: 0
   m_Name: Document
@@ -557,28 +539,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2083981709846758485
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5455632910476018798}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a70d29500681ed41ab7ed53489fe186, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Document
-  description: {fileID: 7004727621074766775}
-  approvalGains: {fileID: 9117032475590510704}
-  denyGains: {fileID: 8861423979286330768}
-  decisions:
-  - {fileID: 0}
-  - {fileID: 0}
-  decisionsList: []
-  currentDecision: {fileID: 0}
-  index: 0
-  nextDayButton: {fileID: 0}
 --- !u!212 &3073746004429651417
 SpriteRenderer:
   serializedVersion: 2
@@ -1005,7 +965,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: aaaaaaaaaaaa
+  m_text: Description
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
