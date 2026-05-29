@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SettingsMenuToggleVisibility : MonoBehaviour
 {
@@ -9,5 +10,10 @@ public class SettingsMenuToggleVisibility : MonoBehaviour
         if ( Input.GetKeyDown(KeyCode.Escape) ) {
             settings_menu_canvas.enabled = !settings_menu_canvas.enabled;
         }
+    }
+
+    public void ReturnToMenuPressed() {
+        Debug.Log("See you later :3");
+        SceneManager.LoadScene("MainMenu");
     }
 }
