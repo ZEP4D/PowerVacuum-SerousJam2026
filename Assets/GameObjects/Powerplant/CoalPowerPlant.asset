@@ -15,9 +15,9 @@ MonoBehaviour:
   description: 
   isRenewable: 0
   type_pp: 0
-  cost: 2
-  liked: 10
-  generateofpower: 10
-  polution: 10
-  resoureceUsage: 10
+  cost: 3
+  liked: 3
+  generateofpower: 15
+  polution: 5
+  resoureceUsage: 5
   Object: {fileID: 0}

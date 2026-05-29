@@ -1,15 +1,14 @@
 using System.Collections.Generic;
-using Unity.Mathematics.Geometry;
 using UnityEngine;
 
-public class ResourcesSystem : MonoBehaviour
+public class ResourcesSystem_v2 : MonoBehaviour
 {
     public enum ResourceType
     {
         Approval, Climate, Energy, Budget, Coal, Uranium
     }
 
-    public static ResourcesSystem instance;
+    public static ResourcesSystem_v2 instance;
     [SerializeField] private int startingApproval;
     [SerializeField] private int startingClimate;
     [SerializeField] private int startingEnergy;
@@ -28,7 +27,7 @@ public class ResourcesSystem : MonoBehaviour
 
     [SerializeField] private int newCoal;
     [SerializeField] private int newUran;
-    [SerializeField] private int newBudget;
+    [SerializeField] private int newBudget = 3;
     private int numbersofturn;
 
 
@@ -47,32 +46,28 @@ public class ResourcesSystem : MonoBehaviour
         resources.Add(ResourceType.Coal, startingCoal);
         resources.Add(ResourceType.Uranium, startingUranium);
     }
-    
-    public int CalculatePassivePolution()
-    {
-        int polution = 0;
+
+
+    public void Calculatepolution()
+    {   
         foreach (PowerPlants_core pp in powerPlants)
         {
-            polution += pp.Getpolution(); 
+            resources[ResourceType.Climate] += pp.Getpolution(); 
         }
-
-        return polution;
     }
 
-    public int CalculatePassiveApproval()
+    public void ApprovalCalulate()
     {
-        int approval = 0;
         foreach (PowerPlants_core pp in powerPlants)
             {
-                approval += pp.Getliked();
+                resources[ResourceType.Approval] += pp.Getliked();
             }
-        return approval;
+        resources[ResourceType.Approval] = Mathf.Min(100, resources[ResourceType.Approval]);
     }
 
-    public int CalculatePassiveEnergy()
+    public void Howmuchenerygenerate()
     {
-        int energy = 0;
-        int currentCoalUsage = 0;
+
         foreach(PowerPlants_core pp in powerPlants)
         {
             if (!pp.GetisRenewable())
@@ -81,51 +76,35 @@ public class ResourcesSystem : MonoBehaviour
                 {
                     case type.coal:
                     {
-                        if (currentCoalUsage <= resources[ResourceType.Coal] - pp.GetresourceUsage())
+                        if (resources[ResourceType.Coal] >= pp.GetresourceUsage())
                         {
-                            currentCoalUsage += pp.GetresourceUsage();
-                            energy += pp.GetEnergy();
+                            resources[ResourceType.Coal] -= pp.GetresourceUsage();
+                            resources[ResourceType.Energy] += pp.GetEnergy();
                         }
+
                         break;
                     }
-                    default: break;
+                    case type.atomic:
+                    {
+                        if (resources[ResourceType.Uranium] <= pp.GetresourceUsage())
+                        {
+                            resources[ResourceType.Uranium] -= pp.GetresourceUsage();
+                            resources[ResourceType.Energy] += pp.GetEnergy();
+                        }
+
+                        break;
+                    }
+                    default:
+                        break;
                 }
                 
             }
-            else
-            {
-                energy += pp.GetEnergy();
-            }
+            resources[ResourceType.Energy] += pp.GetEnergy();
         }
 
-        return energy;
     }
 
-    public int CalculateCoalUsage()
-    {
-        int currentCoalUsage = 0;
-        foreach (PowerPlants_core pp in powerPlants)
-        {
-            if (!pp.GetisRenewable())
-            {
-                switch (pp.Gettypeofpowerp())
-                {
-                    case type.coal:
-                    {
-                        if (currentCoalUsage <= resources[ResourceType.Coal] - pp.GetresourceUsage())
-                        {
-                            currentCoalUsage += pp.GetresourceUsage();
-                        }
 
-                        break;
-                    }
-                    default: break;
-                }
-            }
-        }
-        return currentCoalUsage;
-    }
-    
     public void AddnewPlant(PowerPlants_core powerp)
     {
         powerPlants.Add(powerp);        
@@ -139,31 +118,39 @@ public class ResourcesSystem : MonoBehaviour
 
     public void Endturnisup()
     {
-        CalculateTurnOutput_icon.instance.ApplyDecisionCosts();
-        AffectResource(ResourceType.Climate, CalculatePassivePolution());
-        AffectResource(ResourceType.Approval, CalculatePassiveApproval());
-        AffectResource(ResourceType.Energy, CalculatePassiveEnergy());
-        AffectResource(ResourceType.Coal, -CalculateCoalUsage());
-        CalculateTurnOutput_icon.instance.Construction();
-        GetComponent<EndChecker>().CheckForWinCondition();
-        for (int i = 0; i < 6; i++)
+        if (powerPlants.Count == 0)
         {
-            TrimResources((ResourceType)i);
+            Debug.Log("ERROR");
         }
-        numbersofturn++;
+        else
+        {
+            Calculatepolution();
+            ApprovalCalulate();
+            Howmuchenerygenerate();
+
+            resources[ResourceType.Coal] += newCoal;
+            resources[ResourceType.Uranium] += newUran;
+            resources[ResourceType.Budget] += newBudget;
+            GetComponent<EndChecker>().CheckForWinCondition();
+            numbersofturn++;
+            
+        }
         Debug.Log(numbersofturn);
     }    
 
 
-    public void BuildPowerPlants(List<PowerPlants_core> pp)
+    public void PayforConstrut(List<PowerPlants_core> pp)
     {
         var fullcost = 0;
         foreach (PowerPlants_core plant in pp)
         {
             fullcost += plant.GetCost();
+            if (fullcost > resources[ResourceType.Budget])
+            {
+                return;
+            }
             AddnewPlant(plant);
         }
-        resources[ResourceType.Budget] -= fullcost;
     }
 
 
@@ -204,16 +191,6 @@ public class ResourcesSystem : MonoBehaviour
 
     public void AffectResource(ResourceType type, int value)
     {
-        resources[type] += value;
-    }
-
-    public void TrimResources(ResourceType type)
-    {
-        resources[type] = Mathf.Clamp(resources[type], 0, 100);
-    }
-
-    public List<PowerPlants_core> GetPowerPlants_s()
-    {
-        return powerPlants;
+        resources[type] = Mathf.Min(100, resources[type] + value);
     }
 }
