@@ -5,7 +5,7 @@ public class UIShowvalueadded : MonoBehaviour
 {
     private TextMeshProUGUI text;
     [SerializeField] private ResourcesSystem.ResourceType type;
-
+    private CalculateTurnOutput_icon turnOutput;
     void Start()
     {
         text = GetComponent<TextMeshProUGUI>();
@@ -13,24 +13,25 @@ public class UIShowvalueadded : MonoBehaviour
 
     void Update()
     {
+        var showValue = CalculateTurnOutput_icon.instance.CalculateDecisionCosts()[type];
         switch (type)
         {
             case ResourcesSystem.ResourceType.Approval:
-                    text.text = Format(25); 
-                    break;
+                showValue += ResourcesSystem.instance.CalculatePassiveApproval();
+                break;
             case  ResourcesSystem.ResourceType.Climate:
-                    text.text = Format(25);
-                    break;
+                showValue += ResourcesSystem.instance.CalculatePassivePolution();
+                break;
             case ResourcesSystem.ResourceType.Energy:
-                    text.text = Format(-2); 
-                    break;
-            case ResourcesSystem.ResourceType.Budget:
-                    text.text = Format(15);
-                    break;
+                showValue += ResourcesSystem.instance.CalculatePassiveEnergy(); 
+                break;
             case ResourcesSystem.ResourceType.Coal:
-                    text.text = Format(19);
-                    break;
+                showValue -= ResourcesSystem.instance.CalculateCoalUsage();
+                break;
+            default:
+                break;
         }
+        text.text = Format(showValue);
     }
     
     private string Format(int value)

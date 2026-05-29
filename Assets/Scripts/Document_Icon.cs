@@ -108,14 +108,13 @@ public class Document_Icon : MonoBehaviour
 
     private void IconBuildShow(Decision.TypeOfProject typeOfProject, List<PowerPlants_core> bulid)
     {
-
-        foreach(GameObject gameObject in BuildPowerplant)
+        foreach(GameObject gameObj in BuildPowerplant)
         {
-            gameObject.SetActive(false);
+            gameObj.SetActive(false);
         }
-        foreach(GameObject gameObject1 in DemolishPowerplant)
+        foreach(GameObject gameObj in DemolishPowerplant)
         {
-            gameObject1.SetActive(false);
+            gameObj.SetActive(false);
         }
         if(typeOfProject == Decision.TypeOfProject.Build)
         {

@@ -26,7 +26,7 @@ public class CalculateTurnOutput : MonoBehaviour
                 {
                     case Decision.TypeOfProject.Build:
                     {
-                        ResourcesSystem.instance.PayforConstrut(decision.GetPowerPlants());
+                        ResourcesSystem.instance.BuildPowerPlants(decision.GetPowerPlants());
                         break;
                     }
                     case Decision.TypeOfProject.Demolish:
