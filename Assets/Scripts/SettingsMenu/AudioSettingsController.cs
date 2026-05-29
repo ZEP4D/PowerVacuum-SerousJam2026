@@ -18,6 +18,7 @@ public class AudioSettingsController : MonoBehaviour
     // --== FUNCTIONS --== //
 
         public void TextFieldEntered() {
+            int old_audio_setting = this.audio_setting;
             string entered_text = this.inputField.text;
             int new_audio_setting = 0;
 
@@ -26,20 +27,22 @@ public class AudioSettingsController : MonoBehaviour
             
                 if (new_audio_setting <   0) new_audio_setting = 0;
                 if (new_audio_setting > 100) new_audio_setting = 100;
-            } catch { }
+            } catch {
+                new_audio_setting = old_audio_setting;
+            }
 
+            this.inputField.text = this.audio_setting.ToString();
             this.audioSlider.value = new_audio_setting;
-            // Setting input field value is done by the slider which is triggered by the line above
         }
 
         public void SliderMoved() {
-            this.inputField.text = this.audio_setting.ToString();
             this.audio_setting = (int)audioSlider.value;
+            this.inputField.text = this.audio_setting.ToString();
         }
     // ==--
 
-    void OnStart()
+    void Start()
     {
-        this.audioSlider.value = (int)this.audio_setting;
+        this.audioSlider.value = (float)this.audio_setting;
     }
 }
