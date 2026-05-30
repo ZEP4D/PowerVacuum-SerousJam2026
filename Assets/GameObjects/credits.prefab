@@ -202,7 +202,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "The Great Unifier:\n- Marek Kisieli\u0144ski\n\nOrk Informatik:\n- Bartosz
+  m_text: "The Great Unifier:\n- Marek Kisieli\u0144ski\n\nOrk Informatik:\n- Bartosz\n   
     Kropiewnicki\n\nStampler Supreme:\n- Antoni Michalec"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a5afbac0d8b6864408fcb5b53555fa44, type: 2}
