@@ -1058,6 +1058,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: credits
       objectReference: {fileID: 0}
+    - target: {fileID: 5124835863865289230, guid: 30e1a7b289dfc6443b60edfd3d895931, type: 3}
+      propertyPath: m_text
+      value: Close Credits
+      objectReference: {fileID: 0}
     - target: {fileID: 5565908873796105893, guid: 30e1a7b289dfc6443b60edfd3d895931, type: 3}
       propertyPath: m_UiScaleMode
       value: 1
