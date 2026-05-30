@@ -21,10 +21,13 @@ public class Document_Icon : MonoBehaviour
     [SerializeField] private List<GameObject> DemolishPowerplant = new();
     [SerializeField] private GameObject TextBuild;
     [SerializeField] private GameObject TextDemolish;
+
+    [SerializeField] private GameObject LeftArrow;
+    [SerializeField] private GameObject RightArrow;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        decisions = decisionsList[0].GetDecisions();
+        loadDecisionList(0);
         SetCurrentDecision(decisions[index]);
     }
 
@@ -45,7 +48,7 @@ public class Document_Icon : MonoBehaviour
             denyGains.SetActive(true);
             IconShow(decision.GetApprovalCosts(),approvalobject);
             IconShow(decision.GetDisapprovalCosts(),denyobject);
-            IconBuildShow(decision.GetTypeOfProject(),decision.GetPowerPlants());
+            IconBuildShow(decision.GetTypeOfProject(), decision.GetPowerPlants());
         }
         nextDayButton.SetActive(AreDecisionsMade());
     }
@@ -80,13 +83,23 @@ public class Document_Icon : MonoBehaviour
         decisions = decisionsList[index].GetDecisions();
         SetCurrentDecision(decisions[0]);
         GetComponentInChildren<Stampable_icon>().showStamp(currentDecision.GetStampState());
+        if (decisions.Count > 1)
+        {
+            LeftArrow.SetActive(true);
+            RightArrow.SetActive(true);
+        }
+        else
+        {
+            LeftArrow.SetActive(false);
+            RightArrow.SetActive(false);
+        }
     }
 
     private void IconShow( List<int> ints, List<GameObject> icons)
     {   
-        foreach(GameObject gameObject in icons)
+        foreach(GameObject gameObj in icons)
         {
-            gameObject.SetActive(false);
+            gameObj.SetActive(false);
         }
 
         if(ints == null ){ return; }
