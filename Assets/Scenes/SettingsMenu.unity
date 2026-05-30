@@ -368,6 +368,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3411110582266826226, guid: 42391f355aaf0a14fbae64c7d14a23ec, type: 3}
+      propertyPath: m_Name
+      value: Esc To Close
+      objectReference: {fileID: 0}
+    - target: {fileID: 4005371583245307143, guid: 42391f355aaf0a14fbae64c7d14a23ec, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4146208436634354868, guid: 42391f355aaf0a14fbae64c7d14a23ec, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

@@ -2,16 +2,21 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
-public class ReturnToMenu : MonoBehaviour, IPointerClickHandler
+public class ReturnToMenu : MonoBehaviour//, IPointerClickHandler
 {
     [SerializeField] private string targetSceneName;
 
-    public void OnPointerClick(PointerEventData eventData)
+    // public void OnPointerClick(PointerEventData eventData)
+    // {
+    //     Debug.Log("Returning");
+    //
+    //     SceneManager.LoadScene(
+    //         "MainMenu"
+    //     );
+    // }
+    
+    public void ReturnToMainMenu()
     {
-        Debug.Log("Returning");
-
-        SceneManager.LoadScene(
-            "MainMenu"
-        );
+        SceneManager.LoadScene("MainMenu");
     }
 }
