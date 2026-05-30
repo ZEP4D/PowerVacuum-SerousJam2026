@@ -1827,7 +1827,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b36f5bf7af3f6874da9c6806601ab773, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Stampable_icon
-  document: {fileID: 6289757083523395778}
+  document: {fileID: 0}
   spriteRenderer: {fileID: 0}
   stampSpriteDisapprove: {fileID: 4102133886280439897, guid: c4ed48fcd2e0fa644945b5efdb2c7b99, type: 3}
   stampSpriteApprove: {fileID: -1823829712903839183, guid: e4d739102395c70488f4c1e6e2eaf9fb, type: 3}
@@ -5124,7 +5124,6 @@ GameObject:
   - component: {fileID: 508270542482093398}
   - component: {fileID: 8716963416551242657}
   - component: {fileID: 2704271153284282091}
-  - component: {fileID: 8953312389083638157}
   m_Layer: 0
   m_Name: LeftArrow
   m_TagString: Untagged
@@ -5256,20 +5255,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.0271776, y: 0.8617283}
   m_EdgeRadius: 0
---- !u!114 &8953312389083638157
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3290858816840633095}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2933607a5bb607419420c3faf1a25d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SwapDecisions_icon
-  document: {fileID: 6289757083523395778}
-  value: -1
 --- !u!1 &3334345934688027339
 GameObject:
   m_ObjectHideFlags: 0
@@ -5980,7 +5965,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4200073581592151132}
-  - component: {fileID: 6289757083523395778}
   - component: {fileID: 3073746004429651417}
   m_Layer: 0
   m_Name: Document
@@ -6021,63 +6005,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &6289757083523395778
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5455632910476018798}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cda7fb1469929074db2e940804a499c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Document_Icon
-  description: {fileID: 7004727621074766775}
-  approvalGains: {fileID: 6189431466428136697}
-  denyGains: {fileID: 542261051724398963}
-  decisions:
-  - {fileID: 0}
-  - {fileID: 5060655754936295297}
-  decisionsList:
-  - {fileID: 7192003204095592354}
-  - {fileID: 1291216101283513131}
-  - {fileID: 8245715833671712309}
-  - {fileID: 8532197703353552513}
-  - {fileID: 4387334459676561836}
-  currentDecision: {fileID: 0}
-  index: 0
-  nextDayButton: {fileID: 0}
-  approvalobject:
-  - {fileID: 190903911929210720}
-  - {fileID: 301234730879279050}
-  - {fileID: 7185139762849359813}
-  - {fileID: 4049458408548209695}
-  - {fileID: 636674252264500545}
-  - {fileID: 6597140487078778485}
-  - {fileID: 973248439937338463}
-  - {fileID: 8681682977739250224}
-  - {fileID: 5877831800747456608}
-  denyobject:
-  - {fileID: 2093677810014210908}
-  - {fileID: 3174515498984249685}
-  - {fileID: 488104170889186798}
-  - {fileID: 63425040444003287}
-  - {fileID: 7380366611703172592}
-  - {fileID: 2133701425225795772}
-  - {fileID: 8389859492422458346}
-  - {fileID: 1906879193889107772}
-  - {fileID: 4141717576153523039}
-  BuildPowerplant:
-  - {fileID: 4197488150232098078}
-  - {fileID: 2723998388621177390}
-  - {fileID: 7343749289388582488}
-  DemolishPowerplant:
-  - {fileID: 2760849235835144507}
-  - {fileID: 6790750228014401153}
-  - {fileID: 3077840938003291447}
-  leftArrow: {fileID: 3290858816840633095}
-  rightArrow: {fileID: 6658583571434608341}
 --- !u!212 &3073746004429651417
 SpriteRenderer:
   serializedVersion: 2
@@ -7506,7 +7433,6 @@ GameObject:
   - component: {fileID: 4408425736365447514}
   - component: {fileID: 3379791689725734805}
   - component: {fileID: 8705461782700117014}
-  - component: {fileID: 4940090450016697572}
   m_Layer: 0
   m_Name: RightArrow
   m_TagString: Untagged
@@ -7638,20 +7564,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.987241, y: 0.816088}
   m_EdgeRadius: 0
---- !u!114 &4940090450016697572
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6658583571434608341}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2933607a5bb607419420c3faf1a25d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SwapDecisions_icon
-  document: {fileID: 6289757083523395778}
-  value: 1
 --- !u!1 &6790750228014401153
 GameObject:
   m_ObjectHideFlags: 0
