@@ -6,6 +6,8 @@ public class SwapDecisions_icon : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] private Document_Icon document;
     [SerializeField] private int value;
+    [SerializeField] AudioClip audioClip;
+    [SerializeField] AudioSource audioSource;
     
     private void Start()
     {
@@ -14,7 +16,9 @@ public class SwapDecisions_icon : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        Debug.Log("Clicked");
+        this.audioSource.PlayOneShot(
+            this.audioClip
+        );
         document.ChangePage(value);
     }
 }

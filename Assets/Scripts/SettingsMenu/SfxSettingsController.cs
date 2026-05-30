@@ -49,7 +49,9 @@ public class SfxSettingsController : MonoBehaviour
             )  if (
                 new string[] {
                     "Approved",
-                    "Denied"
+                    "Denied",
+                    "RightArrow",
+                    "LeftArrow"
                 }
                 .Contains(source.name)
             ) {
