@@ -56,8 +56,8 @@ public class CalculateTurnOutput_icon : MonoBehaviour
             {
                 for (int i = 0; i < decision.GetApprovalCosts().Count; i++)
                 {
-                    if (i > decisionCosts.Count) break;
-                    decisionCosts[(ResourcesSystem.ResourceType)i] = decision.GetApprovalCosts()[i];
+                    if (i >= decisionCosts.Count) break;
+                    decisionCosts[(ResourcesSystem.ResourceType)i] += decision.GetApprovalCosts()[i];
                 }
                 
                 if (decision.typeOfProject == Decision.TypeOfProject.Build)
@@ -75,8 +75,8 @@ public class CalculateTurnOutput_icon : MonoBehaviour
             {
                 for (int i = 0; i < decision.GetDisapprovalCosts().Count; i++)
                 {
-                    if (i > decisionCosts.Count) break;
-                    decisionCosts[(ResourcesSystem.ResourceType)i] = decision.GetDisapprovalCosts()[i];
+                    if (i >= decisionCosts.Count) break;
+                    decisionCosts[(ResourcesSystem.ResourceType)i] += decision.GetDisapprovalCosts()[i];
                 }
             }
         }
@@ -92,7 +92,8 @@ public class CalculateTurnOutput_icon : MonoBehaviour
             {
                 case Decision.TypeOfProject.Build:
                 {
-                    ResourcesSystem.instance.BuildPowerPlants(decision.GetPowerPlants());
+                    if (decision.GetStampState() == Decision.StampState.Approved) 
+                        ResourcesSystem.instance.BuildPowerPlants(decision.GetPowerPlants());
                     break;
                 }
                 case Decision.TypeOfProject.Demolish:

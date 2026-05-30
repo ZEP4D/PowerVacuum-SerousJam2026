@@ -158,12 +158,18 @@ public class ResourcesSystem : MonoBehaviour
     public void BuildPowerPlants(List<PowerPlants_core> pp)
     {
         var fullcost = 0;
+        var approval = 0;
+        var polution = 0;
         foreach (PowerPlants_core plant in pp)
         {
             fullcost += plant.GetCost();
+            approval += plant.Getliked();
+            polution += plant.Getpolution();
             AddnewPlant(plant);
         }
         resources[ResourceType.Budget] -= fullcost;
+        resources[ResourceType.Approval] += approval;
+        resources[ResourceType.Climate] += polution;
     }
 
 
