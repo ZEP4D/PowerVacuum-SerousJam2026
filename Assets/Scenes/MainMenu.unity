@@ -1058,6 +1058,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: credits
       objectReference: {fileID: 0}
+    - target: {fileID: 5565908873796105893, guid: 30e1a7b289dfc6443b60edfd3d895931, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5565908873796105893, guid: 30e1a7b289dfc6443b60edfd3d895931, type: 3}
+      propertyPath: m_ScreenMatchMode
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7078326786070643537, guid: 30e1a7b289dfc6443b60edfd3d895931, type: 3}
       propertyPath: m_Enabled
       value: 0
