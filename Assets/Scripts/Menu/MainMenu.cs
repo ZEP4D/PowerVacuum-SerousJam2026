@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour
 
     public void Play()
     {
-        SceneManager.LoadScene("DocumentNewLookScene");
+        SceneManager.LoadScene("UIRedex");
     }
     public void Quit()
     {

@@ -14,7 +14,6 @@ public class NextDayButton_icon : MonoBehaviour
     void EndTurn()
     {
         ResourcesSystem.instance.Endturnisup();
-        CalculateTurnOutput_icon.instance.ApplyDecisionCosts();
         FindFirstObjectByType<Document_Icon>().loadDecisionList(ResourcesSystem.instance.getnumbersofturn());
         button.GameObject().SetActive(false);
     }

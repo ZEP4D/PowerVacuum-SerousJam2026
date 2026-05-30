@@ -406,7 +406,7 @@ MonoBehaviour:
   m_text: "Congrats! \n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a5afbac0d8b6864408fcb5b53555fa44, type: 2}
-  m_sharedMaterial: {fileID: 3247065126483600558, guid: a5afbac0d8b6864408fcb5b53555fa44, type: 2}
+  m_sharedMaterial: {fileID: -1258985091214042044, guid: a5afbac0d8b6864408fcb5b53555fa44, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -503,7 +503,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 3247065126483600558, guid: a5afbac0d8b6864408fcb5b53555fa44, type: 2}
+  - {fileID: -1258985091214042044, guid: a5afbac0d8b6864408fcb5b53555fa44, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1067,7 +1067,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.008835793, y: -0.017672896}
+  m_Offset: {x: -0.0609138, y: -0.10416174}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1077,7 +1077,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 3.7216234, y: 0.7172339}
+  m_Size: {x: 4.463757, y: 1.2026892}
   m_EdgeRadius: 0
 --- !u!212 &2097051996
 SpriteRenderer:
