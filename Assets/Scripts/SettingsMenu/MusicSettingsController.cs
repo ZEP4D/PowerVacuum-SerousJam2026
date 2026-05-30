@@ -58,7 +58,7 @@ public class MusicSettingsController : MonoBehaviour
         }
     // ==--
 
-    void Start() {
+    void Awake() {
         this.audioSlider.value = PlayerPrefs.GetInt(
             "music_setting", this.audio_setting
         );

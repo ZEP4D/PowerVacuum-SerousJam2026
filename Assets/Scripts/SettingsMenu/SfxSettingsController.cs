@@ -60,7 +60,7 @@ public class SfxSettingsController : MonoBehaviour
         }
     // ==--
 
-    void Start() {
+    void Awake() {
         this.audioSlider.value = PlayerPrefs.GetInt(
             "sfx_setting", this.audio_setting
         );
