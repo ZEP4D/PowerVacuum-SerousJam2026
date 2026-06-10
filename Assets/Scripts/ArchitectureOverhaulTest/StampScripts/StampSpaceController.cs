@@ -1,16 +1,32 @@
 using UnityEngine;
 
+[RequireComponent(typeof(SpriteRenderer))]
 public class StampSpaceController : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    // --== ATTACHED COMPONENTS ==-- //
+        private SpriteRenderer spriteRenderer;
+    // ==--
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
+    // --== CLASS METHODS ==-- //
+        public void SetHighlight(bool doHighlight)
+        {
+            this.spriteRenderer.color = doHighlight
+                ? new Color(183, 255, 0,   255)
+                : new Color(255, 255, 255, 255);
+        }
+    // ==--
+
+
+    // --== UNITY METHODS ==-- //
+        void Start()
+        {
+            this.spriteRenderer = this.GetComponent<SpriteRenderer>();
+        }
+
+        void Update()
+        {
+            
+        }
+    // ==--
 }
