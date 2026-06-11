@@ -4,4 +4,5 @@ public enum StampState
     Held,
     MovingToArea,
     Placed,
+    ReturnToMouse,
 }

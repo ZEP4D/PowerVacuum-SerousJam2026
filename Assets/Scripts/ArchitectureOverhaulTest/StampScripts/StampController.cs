@@ -18,8 +18,8 @@ public class StampController : MonoBehaviour, IPointerClickHandler
         [SerializeField] StampType stampType;
 
         [field: Header("Timing Values")]
-        [SerializeField] float lerpTravelTime = 0.25f;
-        [SerializeField] float stampDownTime = 0.5f;
+        [SerializeField] float stampLerpTravelTime = 0.25f;
+        [SerializeField] float stampPlaceTime = 0.5f;
     // ==--
 
 
@@ -41,12 +41,35 @@ public class StampController : MonoBehaviour, IPointerClickHandler
 
 
     // --== CLASS METHODS ==-- //
+        private void SetStampState(StampState stampStateIn)
+        {
+            this.currentStampState = stampStateIn;
+            switch(stampStateIn)
+            {
+                case StampState.MovingToArea:
+                    this.lerpTimeLeft = this.stampLerpTravelTime;
+                break;
+                
+                case StampState.Placed:
+                    this.placedTimeLeft = this.stampPlaceTime;
+                break;
+                
+                case StampState.ReturnToMouse:
+                    this.lerpTimeLeft = this.stampLerpTravelTime;
+                break;
+
+                case StampState.Idle:
+                case StampState.Held:
+                break;
+            }
+        }
+
         private void HandleInteractionPrimary()
         {
             switch (this.currentStampState)
             {
                 case StampState.Idle:
-                    this.currentStampState = StampState.Held;
+                    this.SetStampState(StampState.Held);
                 break;
 
                 case StampState.Held:
@@ -56,23 +79,20 @@ public class StampController : MonoBehaviour, IPointerClickHandler
                     //   up the interaction after it is done
                     List<Collider2D> colliders = new();
                     if (this.GetComponent<Rigidbody2D>().Overlap(colliders) == 0) {
-                        this.currentStampState = StampState.Placed;
-                        this.placedTimeLeft = this.stampDownTime;
+                        this.SetStampState(StampState.Placed);
                         break; // Exit early
                     } else {
-                        this.currentStampState = StampState.MovingToArea;
+                        this.SetStampState(StampState.MovingToArea);
                     }
 
-                    // We reset the timer so that we can refer to it to know where we are in our lerping journey. Along with
-                    // that, we take note of our current and target positions to know what line to lerp across
-                    this.lerpTimeLeft = this.lerpTravelTime;
+                    // We tell the stamp where we currently are, and where we need to be
                     this.lerpPositionBegin = this.GetComponent<Rigidbody2D>().position;
                     this.lerpPositionEnd   = colliders[0].gameObject.transform.position;
-                    Debug.Log("State: "+this.currentStampState);
                 break;
 
                 case StampState.MovingToArea:
                 case StampState.Placed:
+                case StampState.ReturnToMouse:
                 break;
             }
         }
@@ -110,20 +130,19 @@ public class StampController : MonoBehaviour, IPointerClickHandler
                 break;
 
                 case StampState.MovingToArea:
-                    Debug.Log("Moving to area; time left: " + this.lerpTimeLeft / this.lerpTravelTime );
                     if (this.lerpTimeLeft <= 0) {
                         // Place the stamp down and interact with the given interactable
-                        this.currentStampState = StampState.Placed;
-                        this.placedTimeLeft = this.stampDownTime;
+                        this.SetStampState(StampState.Placed);
 
                         List<Collider2D> colliders = new();
                         this.GetComponent<Rigidbody2D>().Overlap(colliders);
-
+                        GameObject? candidateCollider = colliders[0].gameObject;
                         
-                        if (colliders[0]?.gameObject.GetComponent<StampSlotController>() != null)
-                        {
-                            this.currentStampState = StampState.Idle;
-                            break;
+                        if (candidateCollider.GetComponent<StampSlotController>() != null) {
+                            this.SetStampState(StampState.Idle);
+                        }
+                        if (candidateCollider.GetComponent<StampSpaceController>() != null) {
+                            this.SetStampState(StampState.Placed);
                         }
                         
                     } else {
@@ -131,16 +150,30 @@ public class StampController : MonoBehaviour, IPointerClickHandler
                         this.GetComponent<Rigidbody2D>().position  = Vector2.Lerp(
                             this.lerpPositionEnd,
                             this.lerpPositionBegin,
-                            ( this.lerpTimeLeft / this.lerpTravelTime )
+                            ( this.lerpTimeLeft / this.stampLerpTravelTime)
                         );
                     }
                 break;
 
                 case StampState.Placed:
                     if (this.placedTimeLeft <= 0) {
-                        this.currentStampState = StampState.Held;
+                        this.SetStampState(StampState.ReturnToMouse);
+                        this.lerpPositionBegin = this.GetComponent<Rigidbody2D>().position;
                     } else {
                         this.placedTimeLeft -= Time.deltaTime;
+                    }
+                break;
+                
+                case StampState.ReturnToMouse:
+                    if (this.lerpTimeLeft <= 0) {
+                        this.SetStampState(StampState.Held);
+                    } else {
+                        this.lerpTimeLeft -= Time.deltaTime;
+                        this.GetComponent<Rigidbody2D>().position = Vector2.Lerp(
+                            Camera.main.ScreenToWorldPoint( Mouse.current.position.ReadValue() ),
+                            this.lerpPositionBegin,
+                            ( this.lerpTimeLeft / this.stampLerpTravelTime )
+                        );
                     }
                 break;
 
