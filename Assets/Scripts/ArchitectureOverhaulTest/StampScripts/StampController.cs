@@ -36,6 +36,7 @@ public class StampController : MonoBehaviour, IPointerClickHandler
         private Vector2 lerpPositionBegin;
         private Vector2 lerpPositionEnd;
         private float lerpTimeLeft;
+        private float placedTimeLeft;
     // ==--
 
 
@@ -56,8 +57,9 @@ public class StampController : MonoBehaviour, IPointerClickHandler
                     List<Collider2D> colliders = new();
                     if (this.GetComponent<Rigidbody2D>().Overlap(colliders) == 0) {
                         this.currentStampState = StampState.Placed;
+                        this.placedTimeLeft = this.stampDownTime;
                         break; // Exit early
-                    } else  {
+                    } else {
                         this.currentStampState = StampState.MovingToArea;
                     }
 
@@ -66,6 +68,7 @@ public class StampController : MonoBehaviour, IPointerClickHandler
                     this.lerpTimeLeft = this.lerpTravelTime;
                     this.lerpPositionBegin = this.GetComponent<Rigidbody2D>().position;
                     this.lerpPositionEnd   = colliders[0].gameObject.transform.position;
+                    Debug.Log("State: "+this.currentStampState);
                 break;
 
                 case StampState.MovingToArea:
@@ -107,8 +110,41 @@ public class StampController : MonoBehaviour, IPointerClickHandler
                 break;
 
                 case StampState.MovingToArea:
-                case StampState.Idle:
+                    Debug.Log("Moving to area; time left: " + this.lerpTimeLeft / this.lerpTravelTime );
+                    if (this.lerpTimeLeft <= 0) {
+                        // Place the stamp down and interact with the given interactable
+                        this.currentStampState = StampState.Placed;
+                        this.placedTimeLeft = this.stampDownTime;
+
+                        List<Collider2D> colliders = new();
+                        this.GetComponent<Rigidbody2D>().Overlap(colliders);
+
+                        
+                        if (colliders[0]?.gameObject.GetComponent<StampSlotController>() != null)
+                        {
+                            this.currentStampState = StampState.Idle;
+                            break;
+                        }
+                        
+                    } else {
+                        this.lerpTimeLeft -= Time.deltaTime;
+                        this.GetComponent<Rigidbody2D>().position  = Vector2.Lerp(
+                            this.lerpPositionEnd,
+                            this.lerpPositionBegin,
+                            ( this.lerpTimeLeft / this.lerpTravelTime )
+                        );
+                    }
+                break;
+
                 case StampState.Placed:
+                    if (this.placedTimeLeft <= 0) {
+                        this.currentStampState = StampState.Held;
+                    } else {
+                        this.placedTimeLeft -= Time.deltaTime;
+                    }
+                break;
+
+                case StampState.Idle:
                 break;
             }
         } // void Update()
