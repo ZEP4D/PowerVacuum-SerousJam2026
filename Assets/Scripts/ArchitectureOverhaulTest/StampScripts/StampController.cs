@@ -13,7 +13,7 @@ using System.Collections.Generic;
 public class StampController : MonoBehaviour, IPointerClickHandler
 {
     // --== SERIALIZED FIELDS ==-- //
-        [field: Header("GameObjects")]
+        [field: Header("Setup")]
         [SerializeField] StampSlotController homeSlot;
         [SerializeField] StampType stampType;
 
