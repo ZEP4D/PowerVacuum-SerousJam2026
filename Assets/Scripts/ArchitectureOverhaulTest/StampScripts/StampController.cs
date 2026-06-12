@@ -74,20 +74,42 @@ public class StampController : MonoBehaviour, IPointerClickHandler
 
                 case StampState.Held:
                     // Get a list of all colliders we are hovering over;
-                    // - If it's empty, that means we aren't interacting with anything, and can move to 'StampState.Placed'
-                    // - If not, we take the first element, then set the state to 'StampState.MovingToArea', which will set
-                    //   up the interaction after it is done
+                    // If the count is less than 4, it means we are not overlapping enough colliders to be overlapping all 4 corners of an interactable
+                    // - In this case, we tell the stamp to place itself, then break early
                     List<Collider2D> colliders = new();
-                    if (this.GetComponent<Rigidbody2D>().Overlap(colliders) == 0) {
+                    if (this.GetComponent<Rigidbody2D>().Overlap(colliders) < 4) {
                         this.SetStampState(StampState.Placed);
                         break; // Exit early
-                    } else {
-                        this.SetStampState(StampState.MovingToArea);
                     }
 
-                    // We tell the stamp where we currently are, and where we need to be
-                    this.lerpPositionBegin = this.GetComponent<Rigidbody2D>().position;
-                    this.lerpPositionEnd   = colliders[0].gameObject.transform.position;
+                    // If we are overlapping at least 4 colliders, we might be doing so for all 4 corner colliders of an interactable, which brings us here
+                    // - We need to both verify if we are overlapping over all 4 corner colliders of an interactable, and also get the GameObject associated
+                    //   With it in order to tell the stamp who to interact with. To do that we group colliders by GameObject, and if a group has 4, that
+                    //   means that GameObject is an interactable
+                    Dictionary<GameObject, List<Collider2D>> gameObjectColliders = new();
+                    foreach (Collider2D collider in colliders)
+                    {
+                        if (!gameObjectColliders.ContainsKey(collider.gameObject)) gameObjectColliders.Add(collider.gameObject, new());
+                        gameObjectColliders[collider.gameObject].Add(collider);
+                    }
+
+                    foreach (KeyValuePair<GameObject, List<Collider2D>> pair in gameObjectColliders)
+                    {
+                        if (pair.Value.Count == 4)
+                        {
+                            // Move stamp to interactable's position, and tell it to stamp down
+                            this.SetStampState(StampState.MovingToArea);
+                            this.lerpPositionBegin = this.GetComponent<Rigidbody2D>().position;
+                            this.lerpPositionEnd   = pair.Key.gameObject.transform.position;
+
+                            // We got one, no need to go look for any more
+                            // And if for some reason there is another candidate, then first detected, first interacted
+                            return;
+                        }
+                    }
+
+                    // If there were no appropriate candidates, just stamp down
+                    this.SetStampState(StampState.Placed);
                 break;
 
                 case StampState.MovingToArea:
@@ -115,7 +137,6 @@ public class StampController : MonoBehaviour, IPointerClickHandler
         {
             this.spriteRenderer = this.GetComponent<SpriteRenderer>();
             this.boxCollider2D  = this.GetComponent<BoxCollider2D>();
-            //this.rigidbody2D    = this.GetComponent<Rigidbody2D>();
         }
 
 
@@ -138,6 +159,7 @@ public class StampController : MonoBehaviour, IPointerClickHandler
                         this.GetComponent<Rigidbody2D>().Overlap(colliders);
                         GameObject? candidateCollider = colliders[0].gameObject;
                         
+                        // Interact with the interacatable
                         if (candidateCollider.GetComponent<StampSlotController>() != null) {
                             this.SetStampState(StampState.Idle);
                         }
@@ -184,9 +206,20 @@ public class StampController : MonoBehaviour, IPointerClickHandler
 
 
         void OnTriggerEnter2D(Collider2D other) {
-            other.gameObject.GetComponent<StampSpaceController>()?.SetHighlight(true);
+            // In order to set the highlight of an interactable, we need to see if we are overlapping all of their corner colliders
+
+            List<Collider2D> colliders = new();
+            if (this.GetComponent<Rigidbody2D>().Overlap(colliders) < 4) return; // We need to overlap all 4 corners
+
+            int count = 0;
+            foreach (Collider2D collider in colliders)
+            {
+                if (collider.gameObject == other.gameObject) count++;
+                if (count == 4) other.gameObject.GetComponent<StampSpaceController>()?.SetHighlight(true);
+            }
         }
         void OnTriggerExit2D(Collider2D other) {
+            // If we're exiting any collider, then we're not enough to keep that collider's GameObject highlighted
             other.gameObject.GetComponent<StampSpaceController>()?.SetHighlight(false);
         }
     // ==--
