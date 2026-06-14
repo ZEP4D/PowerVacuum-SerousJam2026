@@ -7,6 +7,7 @@ using System.Text;
 using System.Collections.Generic;
 
 
+
 [RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(BoxCollider2D))]
 [RequireComponent(typeof(Rigidbody2D))]
@@ -16,10 +17,13 @@ public class StampController : MonoBehaviour, IPointerClickHandler
         [field: Header("Setup")]
         [SerializeField] StampSlotController homeSlot;
         [SerializeField] StampType stampType;
+        [SerializeField] Sprite stampMarkSprite;
 
         [field: Header("Timing Values")]
-        [SerializeField] float stampLerpTravelTime = 0.25f;
+        [SerializeField] readonly float stampLerpTravelTime = 0.25f;
         [SerializeField] float stampPlaceTime = 0.5f;
+        [SerializeField] float stampMarkLifetime = 5f;
+        [SerializeField] float stampMarkFadeTime = 1f;
     // ==--
 
 
@@ -41,6 +45,35 @@ public class StampController : MonoBehaviour, IPointerClickHandler
 
 
     // --== CLASS METHODS ==-- //
+        /// Checks wether stamp is hovering over an accessable interactable (overlapping all 4 corner colliders),
+        /// and if so, returns the GameObject of that interactable
+        #nullable enable
+        public GameObject? GetInteractable() {
+            // Get a list of all overlapping colliders
+            List<Collider2D> colliders = new();
+            if (this.GetComponent<Rigidbody2D>().Overlap(colliders) < 4) {
+                // We aren't hovering over enough colliders to be over all 4 of an interactable
+                return null;
+            }
+
+            // Iterate over all overlapping colliders and sort them by owning gameobject
+            Dictionary<GameObject, List<Collider2D>> gameObjectColliders = new();
+            foreach (Collider2D collider in colliders)
+            {
+                if (!gameObjectColliders.ContainsKey(collider.gameObject)) gameObjectColliders.Add(collider.gameObject, new());
+                gameObjectColliders[collider.gameObject].Add(collider);
+            }
+
+            // If hovering over all 4 colliders of a gameobject, it will be the interactable we are looking for, so return it
+            foreach (KeyValuePair<GameObject, List<Collider2D>> pair in gameObjectColliders)
+            {
+                if (pair.Value.Count == 4) return pair.Key;
+            }
+
+            // Or if we are not, then there is no interactable
+            return null;
+        }
+
         private void SetStampState(StampState stampStateIn)
         {
             this.currentStampState = stampStateIn;
@@ -73,43 +106,30 @@ public class StampController : MonoBehaviour, IPointerClickHandler
                 break;
 
                 case StampState.Held:
-                    // Get a list of all colliders we are hovering over;
-                    // If the count is less than 4, it means we are not overlapping enough colliders to be overlapping all 4 corners of an interactable
-                    // - In this case, we tell the stamp to place itself, then break early
-                    List<Collider2D> colliders = new();
-                    if (this.GetComponent<Rigidbody2D>().Overlap(colliders) < 4) {
+                    // See if we are hovering over an interactable, if we are not, spawn a stamp mark
+                    GameObject? interactable = this.GetInteractable();
+
+                    if (interactable is not null) {
+                        this.SetStampState(StampState.MovingToArea);
+
+                        this.lerpPositionBegin = this.GetComponent<Rigidbody2D>().position;
+                        this.lerpPositionEnd   = interactable.transform.position;
+                        return;
+
+                    } else {
                         this.SetStampState(StampState.Placed);
-                        break; // Exit early
+                        GameObject spawnedStampMark = new("perishable_stamp_mark");
+
+                        // Add before script as unity will add it for us, blocking us from accessing it
+                        SpriteRenderer spawnedStampMarkSpriteRenderer = spawnedStampMark.AddComponent<SpriteRenderer>();
+                        spawnedStampMarkSpriteRenderer.sprite = this.stampMarkSprite;
+
+                        StampMarkController spawnedStampMarkController = spawnedStampMark.AddComponent<StampMarkController>();
+                        spawnedStampMarkController.fadeTime = this.stampMarkFadeTime;
+                        spawnedStampMarkController.lifetimeRemaining = this.stampMarkLifetime;
+
+                        spawnedStampMark.transform.position = this.gameObject.transform.position;
                     }
-
-                    // If we are overlapping at least 4 colliders, we might be doing so for all 4 corner colliders of an interactable, which brings us here
-                    // - We need to both verify if we are overlapping over all 4 corner colliders of an interactable, and also get the GameObject associated
-                    //   With it in order to tell the stamp who to interact with. To do that we group colliders by GameObject, and if a group has 4, that
-                    //   means that GameObject is an interactable
-                    Dictionary<GameObject, List<Collider2D>> gameObjectColliders = new();
-                    foreach (Collider2D collider in colliders)
-                    {
-                        if (!gameObjectColliders.ContainsKey(collider.gameObject)) gameObjectColliders.Add(collider.gameObject, new());
-                        gameObjectColliders[collider.gameObject].Add(collider);
-                    }
-
-                    foreach (KeyValuePair<GameObject, List<Collider2D>> pair in gameObjectColliders)
-                    {
-                        if (pair.Value.Count == 4)
-                        {
-                            // Move stamp to interactable's position, and tell it to stamp down
-                            this.SetStampState(StampState.MovingToArea);
-                            this.lerpPositionBegin = this.GetComponent<Rigidbody2D>().position;
-                            this.lerpPositionEnd   = pair.Key.gameObject.transform.position;
-
-                            // We got one, no need to go look for any more
-                            // And if for some reason there is another candidate, then first detected, first interacted
-                            return;
-                        }
-                    }
-
-                    // If there were no appropriate candidates, just stamp down
-                    this.SetStampState(StampState.Placed);
                 break;
 
                 case StampState.MovingToArea:
