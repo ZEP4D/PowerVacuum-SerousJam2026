@@ -17,13 +17,19 @@ public class StampController : MonoBehaviour, IPointerClickHandler
         [field: Header("Setup")]
         [SerializeField] StampSlotController homeSlot;
         [SerializeField] StampType stampType;
-        [SerializeField] Sprite stampMarkSprite;
 
-        [field: Header("Timing Values")]
-        [SerializeField] readonly float stampLerpTravelTime = 0.25f;
+        [field: Header("Timings")]
+        [SerializeField] float stampLerpTravelTime = 0.25f;
         [SerializeField] float stampPlaceTime = 0.5f;
         [SerializeField] float stampMarkLifetime = 5f;
         [SerializeField] float stampMarkFadeTime = 1f;
+
+        [field: Header("Sprites")]
+        [SerializeField] Sprite stampMarkSprite;
+        [SerializeField] Sprite stampPloppedSprite;
+        [SerializeField] Sprite stampHeldSprite;
+        [SerializeField] Sprite stampStampedSprite;
+
     // ==--
 
 
@@ -84,15 +90,21 @@ public class StampController : MonoBehaviour, IPointerClickHandler
                 break;
                 
                 case StampState.Placed:
+                    this.spriteRenderer.sprite = this.stampStampedSprite;
                     this.placedTimeLeft = this.stampPlaceTime;
                 break;
                 
                 case StampState.ReturnToMouse:
+                    this.spriteRenderer.sprite = this.stampHeldSprite;
                     this.lerpTimeLeft = this.stampLerpTravelTime;
                 break;
 
                 case StampState.Idle:
+                    this.spriteRenderer.sprite = this.stampPloppedSprite;
+                break;
+
                 case StampState.Held:
+                    this.spriteRenderer.sprite = this.stampHeldSprite;
                 break;
             }
         }
