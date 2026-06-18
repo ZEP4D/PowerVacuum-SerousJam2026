@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(SpriteRenderer))]
-public class StampSpaceController : MonoBehaviour
+public class StampSpaceController : MonoBehaviour, IStampInteractable
 {
     // --== ATTACHED COMPONENTS ==-- //
         private SpriteRenderer spriteRenderer;
@@ -9,6 +9,10 @@ public class StampSpaceController : MonoBehaviour
 
 
     // --== CLASS METHODS ==-- //
+    // ==--
+
+
+    // --== 'IStampInteractable' METHODS ==-- //
         public void SetHighlight(bool doHighlight)
         {
             this.spriteRenderer.color = doHighlight

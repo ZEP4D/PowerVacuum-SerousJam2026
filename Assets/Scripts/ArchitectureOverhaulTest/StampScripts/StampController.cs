@@ -16,7 +16,7 @@ public class StampController : MonoBehaviour, IPointerClickHandler
     // --== SERIALIZED FIELDS ==-- //
         [field: Header("Setup")]
         [SerializeField] StampSlotController homeSlot;
-        [SerializeField] StampType stampType;
+        [SerializeField] public StampType stampType;
 
         [field: Header("Timings")]
         [SerializeField] float stampLerpTravelTime = 0.25f;
@@ -51,12 +51,16 @@ public class StampController : MonoBehaviour, IPointerClickHandler
         private Vector2 lerpPositionEnd;
         private float lerpTimeLeft;
         private float placedTimeLeft;
+
+        private GameObject interactableDue;
     // ==--
 
 
     // --== CLASS METHODS ==-- //
         /// Checks wether stamp is hovering over an accessable interactable (overlapping all 4 corner colliders),
-        /// and if so, returns the GameObject of that interactable
+        /// and if so, returns the GameObject of that interactable.
+        /// NOTE: GameObjects are REQUIRED to implement `IStampIntetractable` in order to be returnable by this
+        /// method
         #nullable enable
         public GameObject? GetInteractable() {
             // Get a list of all overlapping colliders
@@ -77,7 +81,10 @@ public class StampController : MonoBehaviour, IPointerClickHandler
             // If hovering over all 4 colliders of a gameobject, it will be the interactable we are looking for, so return it
             foreach (KeyValuePair<GameObject, List<Collider2D>> pair in gameObjectColliders)
             {
-                if (pair.Value.Count == 4) return pair.Key;
+                if (
+                    pair.Value.Count == 4
+                    & pair.Key.GetComponent<IStampInteractable>() != null
+                ) return pair.Key;
             }
 
             // Or if we are not, then there is no interactable
@@ -132,6 +139,9 @@ public class StampController : MonoBehaviour, IPointerClickHandler
 
                         this.lerpPositionBegin = this.GetComponent<Rigidbody2D>().position;
                         this.lerpPositionEnd   = interactable.transform.position;
+
+                        this.interactableDue = interactable;
+                        
                         return;
 
                     } else {
@@ -192,18 +202,14 @@ public class StampController : MonoBehaviour, IPointerClickHandler
                     if (this.lerpTimeLeft <= 0) {
                         // Place the stamp down and interact with the given interactable
                         this.SetStampState(StampState.Placed);
-
-                        List<Collider2D> colliders = new();
-                        this.GetComponent<Rigidbody2D>().Overlap(colliders);
-                        GameObject? candidateCollider = colliders[0].gameObject;
                         
-                        // Interact with the interacatable
-                        if (candidateCollider.GetComponent<StampSlotController>() != null) {
-                            this.SetStampState(StampState.Idle);
-                        }
-                        if (candidateCollider.GetComponent<StampSpaceController>() != null) {
-                            this.SetStampState(StampState.Placed);
-                        }
+                        if (this.interactableDue.gameObject.GetComponent<StampSlotController>() != null) this.SetStampState(StampState.Idle);
+                        else this.SetStampState(StampState.Placed);
+
+                        // This will throw an exeption if `this.interactableDue` is not an `IStampInteractable`, which SHOULD NOT ever be the case
+                        this.interactableDue?
+                            .GetComponent<IStampInteractable>()
+                            .InteractPrimary(this);
                         
                     } else {
                         this.lerpTimeLeft -= Time.deltaTime;
@@ -253,12 +259,19 @@ public class StampController : MonoBehaviour, IPointerClickHandler
             foreach (Collider2D collider in colliders)
             {
                 if (collider.gameObject == other.gameObject) count++;
-                if (count == 4) other.gameObject.GetComponent<StampSpaceController>()?.SetHighlight(true);
+
+                if (count == 4) other
+                    .gameObject
+                    .GetComponent<StampSpaceController>()?
+                    .SetHighlight(true);
             }
         }
         void OnTriggerExit2D(Collider2D other) {
             // If we're exiting any collider, then we're not enough to keep that collider's GameObject highlighted
-            other.gameObject.GetComponent<StampSpaceController>()?.SetHighlight(false);
+            other
+                .gameObject
+                .GetComponent<StampSpaceController>()?
+                .SetHighlight(false);
         }
     // ==--
 }
