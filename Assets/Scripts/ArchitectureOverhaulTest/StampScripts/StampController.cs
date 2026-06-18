@@ -30,6 +30,10 @@ public class StampController : MonoBehaviour, IPointerClickHandler
         [SerializeField] Sprite stampHeldSprite;
         [SerializeField] Sprite stampStampedSprite;
 
+        [field: Header("Misc")]
+        [SerializeField] private int orderInLayerGrabbed = 11;
+        [SerializeField] private int orderInLayerIdle = 10;
+
     // ==--
 
 
@@ -101,10 +105,12 @@ public class StampController : MonoBehaviour, IPointerClickHandler
 
                 case StampState.Idle:
                     this.spriteRenderer.sprite = this.stampPloppedSprite;
+                    this.spriteRenderer.sortingOrder = this.orderInLayerIdle;
                 break;
 
                 case StampState.Held:
                     this.spriteRenderer.sprite = this.stampHeldSprite;
+                    this.spriteRenderer.sortingOrder = this.orderInLayerGrabbed;
                 break;
             }
         }

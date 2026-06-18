@@ -812,6 +812,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   homeSlot: {fileID: 111703273}
   stampType: 0
+  stampLerpTravelTime: 0.25
   stampPlaceTime: 0.5
   stampMarkLifetime: 5
   stampMarkFadeTime: 1
@@ -819,6 +820,8 @@ MonoBehaviour:
   stampPloppedSprite: {fileID: 887936140345609494, guid: 53ac072187169354dad9fc9db3453a81, type: 3}
   stampHeldSprite: {fileID: -429062179448801907, guid: 8517e238e3a086c4da6d77f2b340b15e, type: 3}
   stampStampedSprite: {fileID: 7190737614338943992, guid: 5e152f1076e66634faef1c7301776742, type: 3}
+  orderInLayerGrabbed: 11
+  orderInLayerIdle: 10
 --- !u!61 &593766232
 BoxCollider2D:
   m_ObjectHideFlags: 0
