@@ -91,7 +91,7 @@ public class StampController : MonoBehaviour, IPointerClickHandler
             return null;
         }
 
-        private void SetStampState(StampState stampStateIn)
+        public void SetStampState(StampState stampStateIn)
         {
             this.currentStampState = stampStateIn;
             switch(stampStateIn)
@@ -202,9 +202,6 @@ public class StampController : MonoBehaviour, IPointerClickHandler
                     if (this.lerpTimeLeft <= 0) {
                         // Place the stamp down and interact with the given interactable
                         this.SetStampState(StampState.Placed);
-                        
-                        if (this.interactableDue.gameObject.GetComponent<StampSlotController>() != null) this.SetStampState(StampState.Idle);
-                        else this.SetStampState(StampState.Placed);
 
                         // This will throw an exeption if `this.interactableDue` is not an `IStampInteractable`, which SHOULD NOT ever be the case
                         this.interactableDue?
