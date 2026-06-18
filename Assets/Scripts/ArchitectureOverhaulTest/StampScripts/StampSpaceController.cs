@@ -12,8 +12,8 @@ public class StampSpaceController : MonoBehaviour
         public void SetHighlight(bool doHighlight)
         {
             this.spriteRenderer.color = doHighlight
-                ? new Color(183, 255, 0,   255)
-                : new Color(255, 255, 255, 255);
+                ? new Color(255, 255, 255, 255)
+                : new Color(183, 255, 0,   255);
         }
     // ==--
 
@@ -22,6 +22,7 @@ public class StampSpaceController : MonoBehaviour
         void Start()
         {
             this.spriteRenderer = this.GetComponent<SpriteRenderer>();
+            this.spriteRenderer.color = new Color(255, 255, 0,   2550);
         }
 
         void Update()
