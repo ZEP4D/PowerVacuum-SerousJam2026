@@ -127,7 +127,8 @@ public class StampController : MonoBehaviour, IPointerClickHandler
             switch (this.currentStampState)
             {
                 case StampState.Idle:
-                    this.SetStampState(StampState.Held);
+                    this.lerpPositionBegin = this.GetComponent<Rigidbody2D>().position;
+                    this.SetStampState(StampState.ReturnToMouse);
                 break;
 
                 case StampState.Held:
