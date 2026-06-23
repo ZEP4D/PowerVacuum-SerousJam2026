@@ -1,0 +1,16 @@
+{
+    "name": "ControlScripts",
+    "rootNamespace": "ControlScripts",
+    "references": [
+        "GUID:b7a4333a26c185a439e55ebd22986e83"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
