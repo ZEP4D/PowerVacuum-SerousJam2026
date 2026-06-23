@@ -1,7 +1,10 @@
 using UnityEngine;
 
-public interface IStampInteractable
+namespace StampScripts
 {
-    void SetHighlight(bool doHighlight) {}
-    void InteractPrimary(StampController withStamp) {}
+    public interface IStampInteractable
+    {
+        void SetHighlight(bool doHighlight) {}
+        void InteractPrimary(StampController withStamp) {}
+    }
 }

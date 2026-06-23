@@ -1,8 +1,11 @@
-public enum StampState
+namespace StampScripts
 {
-    Idle,
-    Held,
-    MovingToArea,
-    Placed,
-    ReturnToMouse,
+    public enum StampState
+    {
+        Idle,
+        Held,
+        MovingToArea,
+        Placed,
+        ReturnToMouse,
+    }
 }

@@ -1,7 +1,9 @@
 {
     "name": "ControlScripts",
     "rootNamespace": "ControlScripts",
-    "references": [],
+    "references": [
+        "GUID:b7a4333a26c185a439e55ebd22986e83"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

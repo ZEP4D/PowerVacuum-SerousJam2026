@@ -1,5 +1,8 @@
-public enum StampSlotState
+namespace StampScripts
 {
-    Occupied,
-    Empty,
+    public enum StampSlotState
+    {
+        Occupied,
+        Empty,
+    }
 }

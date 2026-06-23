@@ -1,9 +1,12 @@
 using UnityEngine;
 
-public class StampSlotController : MonoBehaviour, IStampInteractable
+namespace StampScripts
 {
-    public void InteractPrimary(StampController withStamp)
+    public class StampSlotController : MonoBehaviour, IStampInteractable
     {
-        withStamp.SetStampState(StampState.Idle);
+        public void InteractPrimary(StampController withStamp)
+        {
+            withStamp.SetStampState(StampState.Idle);
+        }
     }
 }

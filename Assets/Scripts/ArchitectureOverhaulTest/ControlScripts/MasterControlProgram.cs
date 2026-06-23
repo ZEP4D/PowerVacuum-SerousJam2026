@@ -4,6 +4,8 @@ using UnityEngine.Scripting;
 using System;
 using System.Collections.Generic;
 
+using StampScripts;
+
 namespace ControlScripts
 {
     public class MasterControlProgram : MonoBehaviour

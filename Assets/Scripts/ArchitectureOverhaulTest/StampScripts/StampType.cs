@@ -1,5 +1,8 @@
-public enum StampType
+namespace StampScripts
 {
-    Approving,
-    Declining,
+    public enum StampType
+    {
+        Approving,
+        Declining,
+    }
 }
