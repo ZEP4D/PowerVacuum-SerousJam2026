@@ -11,8 +11,7 @@ namespace ControlScripts
     public class MasterControlProgram : MonoBehaviour
     {
         // --== SERIALIZED FIELDS ==-- //
-            [SerializeReference]
-            List<DayController> dayControllers;
+            [SerializeReference] List<DayController> dayControllers;
         // ==--
 
 

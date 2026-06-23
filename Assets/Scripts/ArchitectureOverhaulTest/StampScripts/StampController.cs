@@ -260,7 +260,7 @@ namespace StampScripts
 
                     if (count == 4) other
                         .gameObject
-                        .GetComponent<StampSpaceController>()?
+                        .GetComponent<StampAreaController>()?
                         .SetHighlight(true);
                 }
             }
@@ -268,7 +268,7 @@ namespace StampScripts
                 // If we're exiting any collider, then we're not enough to keep that collider's GameObject highlighted
                 other
                     .gameObject
-                    .GetComponent<StampSpaceController>()?
+                    .GetComponent<StampAreaController>()?
                     .SetHighlight(false);
             }
         // ==--

@@ -3,7 +3,7 @@ using UnityEngine;
 namespace StampScripts
 {
     [RequireComponent(typeof(SpriteRenderer))]
-    public class StampSpaceController : MonoBehaviour, IStampInteractable
+    public class StampAreaController : MonoBehaviour, IStampInteractable
     {
         // --== ATTACHED COMPONENTS ==-- //
             private SpriteRenderer spriteRenderer;
