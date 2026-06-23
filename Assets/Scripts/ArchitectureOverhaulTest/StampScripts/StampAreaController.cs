@@ -1,5 +1,7 @@
 using UnityEngine;
 
+using ControlScripts;
+
 namespace StampScripts
 {
     [RequireComponent(typeof(SpriteRenderer))]
@@ -7,6 +9,11 @@ namespace StampScripts
     {
         // --== ATTACHED COMPONENTS ==-- //
             private SpriteRenderer spriteRenderer;
+        // ==--
+
+
+        // --== SERIALIZED FIELDS ==-- //
+            [SerializeField] MasterControlProgram m_masterControlProgram;
         // ==--
 
 
@@ -20,6 +27,10 @@ namespace StampScripts
                 this.spriteRenderer.color = doHighlight
                     ? new Color(255, 255, 255, 255)
                     : new Color(183, 255, 0,   255);
+            }
+            public void InteractPrimary(StampController withStamp)
+            {
+                //
             }
         // ==--
 

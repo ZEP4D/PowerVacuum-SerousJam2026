@@ -5,21 +5,23 @@ using System;
 using System.Collections.Generic;
 
 using StampScripts;
+using System.Runtime.Serialization;
 
 namespace ControlScripts
 {
     public class MasterControlProgram : MonoBehaviour
     {
         // --== SERIALIZED FIELDS ==-- //
-            [SerializeReference] List<DayController> dayControllers;
-        // ==--
-
-
-        // --== ATTACHED COMPONENTS ==-- //
+            [SerializeReference] List<DayController> m_dayControllers;
+            [SerializeField] StampAreaController m_stampArea;
         // ==--
 
 
         // --== CLASS FIELDS ==-- //
+        // ==--
+
+
+        // --== ATTACHED COMPONENTS ==-- //
         // ==--
 
 
