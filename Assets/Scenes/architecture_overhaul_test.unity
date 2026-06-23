@@ -428,7 +428,7 @@ GameObject:
   - component: {fileID: 302781949}
   - component: {fileID: 302781948}
   m_Layer: 0
-  m_Name: stamp_space
+  m_Name: stamp_area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -704,6 +704,50 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 0.5}
   m_EdgeRadius: 0
+--- !u!1 &503814973
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 503814975}
+  - component: {fileID: 503814974}
+  m_Layer: 0
+  m_Name: day_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &503814974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 503814973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b8f0d0959fe554439108e01831aa48a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: DayControllers::DayControllers.DayController1
+--- !u!4 &503814975
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 503814973}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 739594123}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &593766227
 GameObject:
   m_ObjectHideFlags: 0
@@ -1015,10 +1059,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b3ec8f9caa404347803d2fd8e736c93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: ControlScripts::ControlScripts.MasterControlProgram
-  loadedDayControllers: []
-  references:
-    version: 2
-    RefIds: []
+  dayControllers:
+  - {fileID: 503814974}
 --- !u!4 &739594123
 Transform:
   m_ObjectHideFlags: 0
@@ -1031,7 +1073,8 @@ Transform:
   m_LocalPosition: {x: -0.4058, y: -0.0564, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 503814975}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1471335043
