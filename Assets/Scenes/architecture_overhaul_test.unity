@@ -520,6 +520,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7949f4bae200c684d81a26f093882b2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  m_masterControlProgram: {fileID: 0}
 --- !u!61 &302781947
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1059,8 +1060,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b3ec8f9caa404347803d2fd8e736c93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: ControlScripts::ControlScripts.MasterControlProgram
-  dayControllers:
-  - {fileID: 503814974}
+  m_dayControllers: []
 --- !u!4 &739594123
 Transform:
   m_ObjectHideFlags: 0

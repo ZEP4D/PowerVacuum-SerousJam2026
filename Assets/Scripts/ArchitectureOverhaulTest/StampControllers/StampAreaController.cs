@@ -1,8 +1,7 @@
 using UnityEngine;
 
-using ControlScripts;
 
-namespace StampScripts
+namespace ArchitectureOverhaul
 {
     [RequireComponent(typeof(SpriteRenderer))]
     public class StampAreaController : MonoBehaviour, IStampInteractable

@@ -1,8 +1,8 @@
 {
-    "name": "ControlScripts",
-    "rootNamespace": "ControlScripts",
+    "name": "ArchitectureOverhaul",
+    "rootNamespace": "ArchitectureOverhaul",
     "references": [
-        "GUID:b7a4333a26c185a439e55ebd22986e83"
+        "GUID:75469ad4d38634e559750d17036d5f7c"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

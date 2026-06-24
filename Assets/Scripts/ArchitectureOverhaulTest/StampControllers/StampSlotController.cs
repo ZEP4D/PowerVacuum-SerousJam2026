@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace StampScripts
+namespace ArchitectureOverhaul
 {
     public class StampSlotController : MonoBehaviour, IStampInteractable
     {

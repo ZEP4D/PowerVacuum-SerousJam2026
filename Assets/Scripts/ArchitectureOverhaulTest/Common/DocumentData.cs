@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace ControlScripts
+namespace ArchitectureOverhaul
 {
     public class DocumentData
     {

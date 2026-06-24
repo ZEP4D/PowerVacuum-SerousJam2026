@@ -1,4 +1,4 @@
-namespace StampScripts
+namespace ArchitectureOverhaul
 {
     public enum StampSlotState
     {

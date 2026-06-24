@@ -4,16 +4,14 @@ using UnityEngine.Scripting;
 using System;
 using System.Collections.Generic;
 
-using StampScripts;
-using System.Runtime.Serialization;
 
-namespace ControlScripts
+namespace ArchitectureOverhaul
 {
     public class MasterControlProgram : MonoBehaviour
     {
         // --== SERIALIZED FIELDS ==-- //
             [SerializeReference] List<DayController> m_dayControllers;
-            [SerializeField] StampAreaController m_stampArea;
+            [SerializeField] IStampInteractable m_stampArea;
         // ==--
 
 

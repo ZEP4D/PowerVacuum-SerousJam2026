@@ -1,6 +1,7 @@
 using UnityEngine;
 
-namespace StampScripts
+
+namespace ArchitectureOverhaul
 {
     public interface IStampInteractable
     {

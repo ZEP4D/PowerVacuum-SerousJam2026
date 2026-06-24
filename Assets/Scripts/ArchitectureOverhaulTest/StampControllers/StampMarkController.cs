@@ -1,5 +1,5 @@
 using UnityEngine;
-namespace StampScripts
+namespace ArchitectureOverhaul
 {
     [RequireComponent(typeof(SpriteRenderer))]
     public class StampMarkController : MonoBehaviour

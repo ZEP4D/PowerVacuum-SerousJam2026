@@ -2,9 +2,7 @@ using UnityEngine;
 
 using System.Collections.Generic;
 
-using ControlScripts;
-
-namespace DayControllers
+namespace ArchitectureOverhaul
 {
     public class DayController1 : DayController
     {

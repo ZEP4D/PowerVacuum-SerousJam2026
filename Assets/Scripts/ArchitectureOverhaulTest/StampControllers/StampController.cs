@@ -6,7 +6,7 @@ using System;
 using System.Text;
 using System.Collections.Generic;
 
-namespace StampScripts
+namespace ArchitectureOverhaul
 {
     [RequireComponent(typeof(SpriteRenderer))]
     [RequireComponent(typeof(BoxCollider2D))]
