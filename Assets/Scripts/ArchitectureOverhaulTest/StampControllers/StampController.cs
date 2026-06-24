@@ -261,7 +261,7 @@ namespace ArchitectureOverhaul
                     if (count == 4) other
                         .gameObject
                         .GetComponent<StampAreaController>()?
-                        .SetHighlight(true);
+                        .SetHighlight(true, this);
                 }
             }
             void OnTriggerExit2D(Collider2D other) {
@@ -269,7 +269,7 @@ namespace ArchitectureOverhaul
                 other
                     .gameObject
                     .GetComponent<StampAreaController>()?
-                    .SetHighlight(false);
+                    .SetHighlight(false, this);
             }
         // ==--
     }

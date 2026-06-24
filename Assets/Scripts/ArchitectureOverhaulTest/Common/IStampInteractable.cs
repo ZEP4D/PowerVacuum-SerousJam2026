@@ -5,7 +5,7 @@ namespace ArchitectureOverhaul
 {
     public interface IStampInteractable
     {
-        void SetHighlight(bool doHighlight) {}
+        void SetHighlight(bool doHighlight, StampController withStamp) {}
         void InteractPrimary(StampController withStamp) {}
     }
 }

@@ -13,6 +13,9 @@ namespace ArchitectureOverhaul
 
         // --== SERIALIZED FIELDS ==-- //
             [SerializeField] MasterControlProgram m_masterControlProgram;
+            
+            [SerializeField] Sprite m_approvingSprite;
+            [SerializeField] Sprite m_declingSprite;
         // ==--
 
 
@@ -21,11 +24,14 @@ namespace ArchitectureOverhaul
 
 
         // --== 'IStampInteractable' METHODS ==-- //
-            public void SetHighlight(bool doHighlight)
+            public void SetHighlight(bool doHighlight, StampController withStamp)
             {
-                this.spriteRenderer.color = doHighlight
-                    ? new Color(255, 255, 255, 255)
-                    : new Color(183, 255, 0,   255);
+                Sprite sprite = withStamp.stampType == StampType.Approving 
+                    ? this.m_approvingSprite
+                    : this.m_declingSprite;
+
+                this.spriteRenderer.enabled = doHighlight;
+                this.spriteRenderer.sprite = sprite;
             }
             public void InteractPrimary(StampController withStamp)
             {
@@ -38,7 +44,6 @@ namespace ArchitectureOverhaul
             void Start()
             {
                 this.spriteRenderer = this.GetComponent<SpriteRenderer>();
-                this.spriteRenderer.color = new Color(255, 255, 0,   2550);
             }
 
             void Update()
