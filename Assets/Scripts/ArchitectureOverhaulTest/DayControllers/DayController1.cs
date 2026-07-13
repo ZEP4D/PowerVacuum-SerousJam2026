@@ -2,11 +2,13 @@ using UnityEngine;
 
 using System.Collections.Generic;
 
+
+using ArchitectureOverhaul.Common;
 namespace ArchitectureOverhaul
 {
-    public class DayController1 : DayController
+    public class DayController1 : IDayController
     {
-        public override List<DocumentData> GetDayDocuments(MasterControlProgram mcp)
+        public List<DocumentData> GetDayDocuments(IMCP mcp)
         {
             return new();
         }

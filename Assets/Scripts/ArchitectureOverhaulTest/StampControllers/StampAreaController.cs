@@ -1,6 +1,7 @@
 using UnityEngine;
 
 
+using ArchitectureOverhaul.Common;
 namespace ArchitectureOverhaul
 {
     [RequireComponent(typeof(SpriteRenderer))]
@@ -12,7 +13,7 @@ namespace ArchitectureOverhaul
 
 
         // --== SERIALIZED FIELDS ==-- //
-            [SerializeField] MasterControlProgram m_masterControlProgram;
+            [SerializeField] IMCP m_masterControlProgram;
             
             [SerializeField] Sprite m_approvingSprite;
             [SerializeField] Sprite m_declingSprite;

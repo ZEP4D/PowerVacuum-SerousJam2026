@@ -6,12 +6,13 @@ using System;
 using System.Text;
 using System.Collections.Generic;
 
+using ArchitectureOverhaul.Common;
 namespace ArchitectureOverhaul
 {
     [RequireComponent(typeof(SpriteRenderer))]
     [RequireComponent(typeof(BoxCollider2D))]
     [RequireComponent(typeof(Rigidbody2D))]
-    public class StampController : MonoBehaviour, IPointerClickHandler
+    public class StampController : MonoBehaviour, IStampController, IPointerClickHandler
     {
         // --== SERIALIZED FIELDS ==-- //
             [field: Header("Setup")]

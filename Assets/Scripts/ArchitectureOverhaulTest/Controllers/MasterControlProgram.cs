@@ -5,13 +5,14 @@ using System;
 using System.Collections.Generic;
 
 
+using ArchitectureOverhaul.Common;
 namespace ArchitectureOverhaul
 {
     public class MasterControlProgram : MonoBehaviour
     {
         // --== SERIALIZED FIELDS ==-- //
-            [SerializeField] List<DayController> m_dayControllers;
-            [SerializeField] StampAreaController m_stampArea;
+            [SerializeField] List<GameObject> _dayControllers;
+            [SerializeField] GameObject _documentStampArea;
 
             [SerializeField] PageArrowController m_leftArrow;
             [SerializeField] PageArrowController m_rightArrow;
@@ -22,7 +23,7 @@ namespace ArchitectureOverhaul
 
 
         // --== CLASS FIELDS ==-- //
-            private List< KeyValuePair<DayController, List<DocumentData>> > m_loadedDays;
+            private List< KeyValuePair<IDayController, List<DocumentData>> > m_loadedDays;
             private uint m_currentDay = 0;
             private uint m_currentDocument = 0;
 

@@ -1,0 +1,16 @@
+{
+    "name": "ArchitectureOverhaul.DayControllers",
+    "rootNamespace": "ArchitectureOverhaul.DayControllers",
+    "references": [
+        "GUID:1113734bbefbf9e4eaba26410ea94189"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

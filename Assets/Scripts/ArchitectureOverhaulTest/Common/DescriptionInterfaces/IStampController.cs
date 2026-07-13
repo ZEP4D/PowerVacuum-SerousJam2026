@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace ArchitectureOverhaul.Common
 {
-    public class DocumentData
+    public interface IStampController
     {
     
     }

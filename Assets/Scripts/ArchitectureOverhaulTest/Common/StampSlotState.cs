@@ -1,4 +1,4 @@
-namespace ArchitectureOverhaul
+namespace ArchitectureOverhaul.Common
 {
     public enum StampSlotState
     {

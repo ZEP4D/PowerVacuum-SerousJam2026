@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace ArchitectureOverhaul
+namespace ArchitectureOverhaul.Common
 {
     public class IPowerPlant
     {
