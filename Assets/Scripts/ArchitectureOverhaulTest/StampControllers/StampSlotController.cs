@@ -6,7 +6,7 @@ namespace ArchitectureOverhaul
 {
     public class StampSlotController : MonoBehaviour, IStampInteractable
     {
-        public void InteractPrimary(StampController withStamp)
+        public void InteractPrimary(IStampController withStamp)
         {
             withStamp.SetStampState(StampState.Idle);
         }

@@ -92,36 +92,6 @@ namespace ArchitectureOverhaul
                 return null;
             }
 
-            public void SetStampState(StampState stampStateIn)
-            {
-                this.currentStampState = stampStateIn;
-                switch(stampStateIn)
-                {
-                    case StampState.MovingToArea:
-                        this.lerpTimeLeft = this.stampLerpTravelTime;
-                    break;
-                    
-                    case StampState.Placed:
-                        this.spriteRenderer.sprite = this.stampStampedSprite;
-                        this.placedTimeLeft = this.stampPlaceTime;
-                    break;
-                    
-                    case StampState.ReturnToMouse:
-                        this.spriteRenderer.sprite = this.stampHeldSprite;
-                        this.lerpTimeLeft = this.stampLerpTravelTime;
-                    break;
-
-                    case StampState.Idle:
-                        this.spriteRenderer.sprite = this.stampPloppedSprite;
-                        this.spriteRenderer.sortingOrder = this.orderInLayerIdle;
-                    break;
-
-                    case StampState.Held:
-                        this.spriteRenderer.sprite = this.stampHeldSprite;
-                        this.spriteRenderer.sortingOrder = this.orderInLayerGrabbed;
-                    break;
-                }
-            }
 
             private void HandleInteractionPrimary()
             {
@@ -165,6 +135,40 @@ namespace ArchitectureOverhaul
                     case StampState.MovingToArea:
                     case StampState.Placed:
                     case StampState.ReturnToMouse:
+                    break;
+                }
+            }
+        // ==--
+
+
+        // --== 'IStampController' METHODS ==-- //
+            public void SetStampState(StampState stampStateIn)
+            {
+                this.currentStampState = stampStateIn;
+                switch(stampStateIn)
+                {
+                    case StampState.MovingToArea:
+                        this.lerpTimeLeft = this.stampLerpTravelTime;
+                    break;
+                    
+                    case StampState.Placed:
+                        this.spriteRenderer.sprite = this.stampStampedSprite;
+                        this.placedTimeLeft = this.stampPlaceTime;
+                    break;
+                    
+                    case StampState.ReturnToMouse:
+                        this.spriteRenderer.sprite = this.stampHeldSprite;
+                        this.lerpTimeLeft = this.stampLerpTravelTime;
+                    break;
+
+                    case StampState.Idle:
+                        this.spriteRenderer.sprite = this.stampPloppedSprite;
+                        this.spriteRenderer.sortingOrder = this.orderInLayerIdle;
+                    break;
+
+                    case StampState.Held:
+                        this.spriteRenderer.sprite = this.stampHeldSprite;
+                        this.spriteRenderer.sortingOrder = this.orderInLayerGrabbed;
                     break;
                 }
             }
