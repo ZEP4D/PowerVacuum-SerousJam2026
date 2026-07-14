@@ -8,7 +8,7 @@ namespace ArchitectureOverhaul
 {
     public class DayController1 : MonoBehaviour, IDayController
     {
-        public List<DocumentData> GetDayDocuments(IMCP mcp)
+        public List<IDocumentProposition> GetDayPropositions(IMCP mcp)
         {
             return new();
         }

@@ -7,6 +7,6 @@ namespace ArchitectureOverhaul.Common
 {
     public interface IDayController
     {
-        public List<DocumentData> GetDayDocuments(IMCP mcp);
+        public List<IDocumentProposition> GetDayPropositions(IMCP mcp);
     }
 }

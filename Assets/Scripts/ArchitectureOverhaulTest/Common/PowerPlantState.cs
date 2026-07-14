@@ -2,8 +2,9 @@ using UnityEngine;
 
 namespace ArchitectureOverhaul.Common
 {
-    public class DocumentData
+    public enum PowerPlantState
     {
-    
+        Complete,
+        Incomplete
     }
 }
