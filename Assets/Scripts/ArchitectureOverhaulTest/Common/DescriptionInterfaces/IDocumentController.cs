@@ -2,8 +2,8 @@ using UnityEngine;
 
 namespace ArchitectureOverhaul.Common
 {
-    public interface IMCP
+    public interface IDocumentController
     {
-    
+        
     }
 }
