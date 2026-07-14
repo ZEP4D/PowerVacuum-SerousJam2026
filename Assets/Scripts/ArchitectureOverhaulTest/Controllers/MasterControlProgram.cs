@@ -12,13 +12,11 @@ namespace ArchitectureOverhaul
     {
         // --== SERIALIZED FIELDS ==-- //
             [SerializeField] List<GameObject> _dayControllers;
-            [SerializeField] GameObject _documentStampArea;
+            private List<IDayController> m_dayControllers = new();
 
-            [SerializeField] PageArrowController m_leftArrow;
-            [SerializeField] PageArrowController m_rightArrow;
-            [SerializeField] EndDayButtonController m_endDayButton;
-
+            [field: Header("Scene objects")]
             [SerializeField] DocumentController m_document;
+            [SerializeField] EndDayButtonController m_endDayButton;
         // ==--
 
 
@@ -45,7 +43,25 @@ namespace ArchitectureOverhaul
         // --== UNITY METHODS ==-- //
             void Start()
             {
-                //
+                // Verify supplied day controllers implement 'IDayController'
+                
+                #nullable enable
+                int idx = 0;
+                foreach( GameObject candidateObject in this._dayControllers )
+                {
+                    IDayController? dayControlScript = candidateObject.GetComponent<IDayController>();
+
+                    if( dayControlScript is not null ) this.m_dayControllers.Add( dayControlScript );
+                    else Debug.LogError(
+                        "Invalid Day Controller at index " +
+                        idx +
+                        ": '" +
+                        candidateObject.name +
+                        "'. Does not implement the 'IDayController' interface! Skipping..."
+                    );
+
+                    idx++;
+                }
             }
         // ==--
     }

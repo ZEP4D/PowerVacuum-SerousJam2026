@@ -1565,11 +1565,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: ControlScripts::ControlScripts.MasterControlProgram
   _dayControllers:
   - {fileID: 503814973}
-  _documentStampArea: {fileID: 302781943}
-  m_leftArrow: {fileID: 986060079}
-  m_rightArrow: {fileID: 110733984}
-  m_endDayButton: {fileID: 638518715}
   m_document: {fileID: 1499448296}
+  m_endDayButton: {fileID: 638518715}
 --- !u!4 &739594123
 Transform:
   m_ObjectHideFlags: 0
