@@ -1,5 +1,8 @@
 using UnityEngine;
 
+using System;
+
+
 
 using ArchitectureOverhaul.Common;
 namespace ArchitectureOverhaul
@@ -8,15 +11,20 @@ namespace ArchitectureOverhaul
     public class StampAreaController : MonoBehaviour, IStampInteractable
     {
         // --== ATTACHED COMPONENTS ==-- //
-            private SpriteRenderer spriteRenderer;
+            private IMCP m_masterControlProgram;
         // ==--
 
 
         // --== SERIALIZED FIELDS ==-- //
-            [SerializeField] IMCP m_masterControlProgram;
+            [SerializeField] GameObject _masterControlProgram;
             
             [SerializeField] Sprite m_approvingSprite;
             [SerializeField] Sprite m_declingSprite;
+        // ==--
+
+
+        // --== CLASS FIELDS ==-- //
+            private SpriteRenderer m_spriteRenderer;
         // ==--
 
 
@@ -25,18 +33,18 @@ namespace ArchitectureOverhaul
 
 
         // --== 'IStampInteractable' METHODS ==-- //
-            public void SetHighlight(bool doHighlight, StampController withStamp)
+            public void SetHighlight(bool doHighlight, IStampController withStamp)
             {
-                Sprite sprite = withStamp.stampType == StampType.Approving 
+                Sprite sprite = withStamp.GetStampType() == StampType.Approving 
                     ? this.m_approvingSprite
                     : this.m_declingSprite;
 
-                this.spriteRenderer.enabled = doHighlight;
-                this.spriteRenderer.sprite = sprite;
+                this.m_spriteRenderer.enabled = doHighlight;
+                this.m_spriteRenderer.sprite = sprite;
             }
-            public void InteractPrimary(StampController withStamp)
+            public void InteractPrimary(IStampController withStamp)
             {
-                //
+                this.m_masterControlProgram.DocumentStampAreaInteracted(withStamp);
             }
         // ==--
 
@@ -44,7 +52,13 @@ namespace ArchitectureOverhaul
         // --== UNITY METHODS ==-- //
             void Start()
             {
-                this.spriteRenderer = this.GetComponent<SpriteRenderer>();
+                this.m_spriteRenderer = this.GetComponent<SpriteRenderer>();
+
+                // Verify 'this._masterControlProgram' is an instance of 'IMCP'
+                #nullable enable
+                IMCP? candidateMCP = this._masterControlProgram.GetComponent<IMCP>();
+                if (candidateMCP is not null ) this.m_masterControlProgram = candidateMCP;
+                else throw new Exception("Provided 'MasterControllProgram' does not implement interface 'IMCP'. Aborting");
             }
 
             void Update()

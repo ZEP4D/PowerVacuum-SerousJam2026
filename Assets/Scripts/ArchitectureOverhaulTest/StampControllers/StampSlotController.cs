@@ -10,5 +10,6 @@ namespace ArchitectureOverhaul
         {
             withStamp.SetStampState(StampState.Idle);
         }
+        public void SetHighlight(bool doHighlight, IStampController withStamp) {}
     }
 }

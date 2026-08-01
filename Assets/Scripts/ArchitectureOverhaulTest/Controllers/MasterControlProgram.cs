@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using ArchitectureOverhaul.Common;
 namespace ArchitectureOverhaul
 {
-    public class MasterControlProgram : MonoBehaviour
+    public class MasterControlProgram : MonoBehaviour, IMCP
     {
         // --== SERIALIZED FIELDS ==-- //
             [SerializeField] List<GameObject> _dayControllers;
@@ -30,7 +30,8 @@ namespace ArchitectureOverhaul
         // ==--
 
 
-        // --== ATTACHED COMPONENTS ==-- //
+        // --== 'IMCP' METHODS ==-- //
+            void DocumentStampAreaInteracted(IStampController withStamp) {}
         // ==--
 
 

@@ -624,6 +624,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7949f4bae200c684d81a26f093882b2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  _masterControlProgram: {fileID: 739594121}
   m_approvingSprite: {fileID: -1823829712903839183, guid: e4d739102395c70488f4c1e6e2eaf9fb, type: 3}
   m_declingSprite: {fileID: 4102133886280439897, guid: c4ed48fcd2e0fa644945b5efdb2c7b99, type: 3}
 --- !u!61 &302781947
@@ -868,7 +869,7 @@ GameObject:
   - component: {fileID: 593766232}
   - component: {fileID: 593766233}
   m_Layer: 0
-  m_Name: stamp
+  m_Name: approving_stamp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -961,7 +962,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   homeSlot: {fileID: 111703273}
-  stampType: 0
+  m_stampType: 0
   stampLerpTravelTime: 0.25
   stampPlaceTime: 0.5
   stampMarkLifetime: 5
@@ -2222,7 +2223,7 @@ GameObject:
   - component: {fileID: 1978701796}
   - component: {fileID: 1978701795}
   m_Layer: 0
-  m_Name: stamp
+  m_Name: declining_stamp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2388,7 +2389,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   homeSlot: {fileID: 634109088}
-  stampType: 1
+  m_stampType: 1
   stampLerpTravelTime: 0.25
   stampPlaceTime: 0.5
   stampMarkLifetime: 5

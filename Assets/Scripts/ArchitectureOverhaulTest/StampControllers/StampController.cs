@@ -17,7 +17,7 @@ namespace ArchitectureOverhaul
         // --== SERIALIZED FIELDS ==-- //
             [field: Header("Setup")]
             [SerializeField] StampSlotController homeSlot;
-            [SerializeField] public StampType stampType;
+            [SerializeField] public StampType m_stampType;
 
             [field: Header("Timings")]
             [SerializeField] float stampLerpTravelTime = 0.25f;
@@ -142,6 +142,8 @@ namespace ArchitectureOverhaul
 
 
         // --== 'IStampController' METHODS ==-- //
+            public StampType GetStampType() { return this.m_stampType; }
+
             public void SetStampState(StampState stampStateIn)
             {
                 this.currentStampState = stampStateIn;
@@ -213,7 +215,6 @@ namespace ArchitectureOverhaul
                             this.interactableDue?
                                 .GetComponent<IStampInteractable>()
                                 .InteractPrimary(this);
-                            
                         } else {
                             this.lerpTimeLeft -= Time.deltaTime;
                             this.GetComponent<Rigidbody2D>().position  = Vector2.Lerp(
