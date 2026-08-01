@@ -21,15 +21,12 @@ namespace ArchitectureOverhaul
 
 
         // --== CLASS FIELDS ==-- //
-            private List<IDocumentProposition> m_loadedPropositions;
-            private int m_currentDay = 0;
-            private int m_currentDocument = 0;
+            private List<IDocumentProposition> m_loadedPropositions = new();
+            private int m_currentDay       = 0;
+            private int m_currentDocument  = 0;
 
-            /// <summary>
-            /// The key of this dictionary is the type of a class implementing IPowerPlant
-            /// </summary>
-            private Dictionary<Type, List<IPowerPlant>> m_powerPlants;
-            private List<IPowerPlant> m_incompletePowerPlants;
+            private Dictionary<PowerPlantType, List<IPowerPlant>> m_powerPlants = new();
+            private List<IPowerPlant> m_incompletePowerPlants = new();
         // ==--
 
 
@@ -40,16 +37,15 @@ namespace ArchitectureOverhaul
         // --== CLASS METHODS ==-- //
             void PrepareForDay()
             {
-                if( this.m_dayControllers.Count < this.m_currentDay ) throw new Exception(
+                if( this.m_dayControllers.Count <= this.m_currentDay ) throw new Exception(
                     "Trying to prepare for day nr " +
                     this.m_currentDay +
                     ", despite only having " +
                     this.m_dayControllers.Count +
-                    " day controllers. (Indexing from zero)"
+                    " day controller(s). (Indexing from zero)"
                 );
 
                 this.m_loadedPropositions.Clear();
-
                 this.m_loadedPropositions.AddRange(
                     this.m_dayControllers[this.m_currentDay].GetDayPropositions(this as IMCP)
                 );
@@ -95,6 +91,11 @@ namespace ArchitectureOverhaul
 
                     idx++;
                 }
+
+                // Prepare for the first day
+                this.m_currentDay = 0;
+                this.m_currentDocument = 0;
+                this.PrepareForDay();
             }
         // ==--
     }

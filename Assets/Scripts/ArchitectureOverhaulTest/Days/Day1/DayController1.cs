@@ -10,7 +10,9 @@ namespace ArchitectureOverhaul
     {
         public List<IDocumentProposition> GetDayPropositions(IMCP mcp)
         {
-            return new();
+            List<IDocumentProposition> documentPropositions = new();
+
+            return documentPropositions;
         }
     }
 }
