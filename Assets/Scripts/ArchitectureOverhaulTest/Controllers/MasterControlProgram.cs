@@ -47,24 +47,28 @@ namespace ArchitectureOverhaul
                 );
 
                 this.m_loadedPropositions.Clear();
-                this.m_loadedPropositions.AddRange(
-                    this.m_dayControllers[this.m_currentDay].GetDayPropositions(this as IMCP)
-                );
+                foreach ( IDayController day_controller in this.m_dayControllers )
+                {
+                    this.m_loadedPropositions.AddRange( day_controller.GetDayPropositions(this as IMCP) );
+                }
 
                 foreach( IPowerPlant incompletePlant in this.m_incompletePowerPlants )
-                for( int idx = 0; idx < this.m_incompletePowerPlants.Count; idx++ )
                 {
-                    if( this.m_incompletePowerPlants[idx].GetState() == PowerPlantState.Complete )
+                    for( int idx = 0; idx < this.m_incompletePowerPlants.Count; idx++ )
                     {
-                        this.m_incompletePowerPlants.RemoveAt(idx);
-                        continue;
+                        if( this.m_incompletePowerPlants[idx].GetState() == PowerPlantState.Complete )
+                        {
+                            this.m_incompletePowerPlants.RemoveAt(idx);
+                            continue;
+                        }
+                        #nullable enable
+                        // Should theoretically always return one, but just to be sure.
+                        // Plus, if we ever want to add powerplant build time, this will just work.
+                        IDocumentProposition? buildStepProposition = this.m_incompletePowerPlants[idx].GetBuildProposition();
+                        if( buildStepProposition is not null ) this.m_loadedPropositions.Add( buildStepProposition ); 
                     }
-                    #nullable enable
-                    // Should theoretically always return one, but just to be sure.
-                    // Plus, if we ever want to add delays to build time, this will just work.
-                    IDocumentProposition? buildStepProposition = this.m_incompletePowerPlants[idx].GetBuildProposition();
-                    if( buildStepProposition is not null ) this.m_loadedPropositions.Add( buildStepProposition ); 
                 }
+
 
             }
         // ==--
